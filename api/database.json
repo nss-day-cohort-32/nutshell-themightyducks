@@ -1,0 +1,64 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "userName": "carly",
+            "email": "carly@carly.com",
+            "password": "carly",
+            "userPhoto": "url"
+        },
+        {
+            "id": 2,
+            "userName": "jake",
+            "email": "jake@jake.com",
+            "password": "jake",
+            "userPhoto": "url"
+        }
+    ],
+    "friends": [
+        {
+            "id": 1,
+            "userId": 1,
+            "friendUserId": 2
+        }
+    ],
+    "newsfeed": [
+        {
+            "id": 1,
+            "userId": 1,
+            "title": "carly news",
+            "description": "description",
+            "location": "location",
+            "url": "url",
+            "eventDate": "eventDate",
+            "postDate": "postDate"
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "title": "jake news",
+            "description": "jakedescription",
+            "location": "location",
+            "url": "url",
+            "eventDate": "eventDate",
+            "postDate": "postDate"
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "userId": 1,
+            "message": "message yooo",
+            "postedTime": "05:00am"
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "entered": "05:00am",
+            "isComplete": false,
+            "userId": 1,
+            "task": "eat"
+        }
+    ]
+}
