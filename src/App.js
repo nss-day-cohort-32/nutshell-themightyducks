@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import API from './components/dbCalls/dbCalls'
 
 function App() {
+  console.log(API.getFriendNewsfeed(1))
+  console.log(API.getUserInfo(1))
   return (
     <div className="App">
       <header className="App-header">
