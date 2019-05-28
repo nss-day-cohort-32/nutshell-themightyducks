@@ -3,6 +3,8 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import { Route, Redirect } from "react-router-dom"
 import firebase from 'firebase';
 import fire from '../../config/Fire';
+import logo from "../../Nutshell-01.svg"
+import navbarcss from "../nav/navbar.css"
 
 class TopNav extends Component {
 
@@ -32,8 +34,8 @@ class TopNav extends Component {
     render() {
         return (
             <div>
-                <Navbar color="faded" light>
-                    <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
+                <Navbar color="faded" light id="navbar">
+                    <img className="mainlogo" src={logo}></img>
                     <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                     <Collapse isOpen={!this.state.collapsed} navbar>
                         <Nav navbar>
