@@ -1,29 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import API from './components/dbCalls/dbCalls'
+import React, { Component } from 'react';
+// import './App.css';
+import fire from './config/Fire';
+// import Home from './Home';
+import Auth from './components/auth/Auth';
+import { Route, Redirect } from "react-router-dom"
 
-function App() {
-  console.log(API.getFriendNewsfeed(1))
-  console.log(API.getUserInfo(1))
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    user: null
+  }
+
+  componentDidMount = () => {
+    this.authListener();
+  }
+
+  authListener = () => {
+    fire.auth().onAuthStateChanged((user) => {
+      console.log("user", user);
+      if (user) {
+        this.setState({ user });
+        localStorage.setItem('user', user.uid);
+      } else {
+        this.setState({ user: null });
+        localStorage.removeItem('user');
+      }
+    });
+  }
+  render() {
+    return (
+      <div>{
+        this.state.user ? (console.log("Login successful!")) : (console.log("did not login"))
+        // this.state.user ? (<Route exact path="/newsfeed" />) : (<Auth />)
+      }</div>
+    )
+  }
 }
 
 export default App;
