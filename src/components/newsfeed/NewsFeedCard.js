@@ -5,7 +5,7 @@ import { Card, CardImg, CardText, CardBody, CardLink,
 const NewsFeedCard = (props) => {
 
   return (
-      <Card className={props.newsItem.type} style={{ backgroundColor: props.color }}>
+      <Card style={{ backgroundColor: props.color }}>
         <CardBody>
           <CardTitle>{props.newsItem.title}</CardTitle>
           <CardText>{props.newsItem.description}</CardText>

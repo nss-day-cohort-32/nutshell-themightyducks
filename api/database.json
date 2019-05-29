@@ -4,14 +4,21 @@
             "id": 1,
             "userName": "carly",
             "email": "carly@carly.com",
-            "password": "carly",
+            "password": "password",
             "userPhoto": "url"
         },
         {
             "id": 2,
             "userName": "jake",
             "email": "jake@jake.com",
-            "password": "jake",
+            "password": "password",
+            "userPhoto": "url"
+        },
+        {
+            "id": 3,
+            "userName": "jason",
+            "email": "strangehandle@gmail.com",
+            "password": "nashville",
             "userPhoto": "url"
         }
     ],

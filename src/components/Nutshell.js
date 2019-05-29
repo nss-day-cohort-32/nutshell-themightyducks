@@ -5,6 +5,7 @@ import { withRouter, Route } from 'react-router'
 import fire from '../config/Fire';
 import Auth from "./auth/Auth"
 
+
 class Nutshell extends Component {
     state = {
         user: null
@@ -24,6 +25,7 @@ class Nutshell extends Component {
             } else {
                 this.setState({ user: null });
                 localStorage.removeItem('user');
+                sessionStorage.removeItem('id');
             }
         });
     }
