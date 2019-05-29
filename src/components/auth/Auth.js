@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import fire from '../../config/Fire';
 import App from "../../App"
+import API from "../dbCalls/dbCalls"
 
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
@@ -15,8 +16,7 @@ class Auth extends Component {
         error: []
     };
 
-
-    // For modal 
+    // For modal
     toggle = () => {
         console.log("state", this.state)
         this.setState(prevState => ({
@@ -44,16 +44,16 @@ class Auth extends Component {
         }
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then((u) => {
-                console.log(u)
-                localStorage.setItem('user', u.uid);
-                this.props.history.push('/newsfeed')
-            })
-            .catch((error) => {
-                newState.modal = !this.state.modal
-                newState.error = error.message
-                this.setState(newState)
-            })
+            .then((u) => { localStorage.setItem('user', u.uid) })
+            .then(() => API.getUserID(this.state.email)
+                .then(result => sessionStorage.setItem('id', parseInt(result[0].id)))
+                .then(() => this.props.history.push('/newsfeed'))
+                .catch((error) => {
+                    newState.modal = !this.state.modal
+                    newState.error = error.message
+                    this.setState(newState)
+                })
+            )
     }
 
     signup = (e) => {

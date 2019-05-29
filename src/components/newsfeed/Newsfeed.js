@@ -7,8 +7,8 @@ class Newsfeed extends Component {
 
 
     render() {
-        console.log("user", localStorage.getItem("user"))
-        console.log("Newsfeed")
+        //console.log("user", localStorage.getItem("user"))
+       // console.log("Newsfeed")
         return (
             <>
                 <h1>Working Newsfeed Page</h1>
