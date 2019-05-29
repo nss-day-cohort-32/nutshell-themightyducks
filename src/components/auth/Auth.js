@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import fire from '../../config/Fire';
 import App from "../../App"
-<<<<<<< HEAD
 import TitleBar from "../nav/TitleBar"
-=======
 import API from "../dbCalls/dbCalls"
->>>>>>> master
 
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
