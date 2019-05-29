@@ -53,13 +53,11 @@ class ApplicationViews extends Component {
                             <NewsFeed />
                         )
                     } else {
-                        //console.log("no user")
                         return (
                             <Redirect to="/auth" component={Auth} />
                         )
                     }
                 }} />
-
                 <Route exact path="/friends" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
