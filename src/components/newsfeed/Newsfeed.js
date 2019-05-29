@@ -12,18 +12,21 @@ class Newsfeed extends Component {
             <div className="newsfeed--container">
             <h1>NewsFeed</h1>
             <section className="newsfeed--list">
-                {
-                    this.props.newsfeed.map((item) => {
-                        console.log(item.type)
-                        let color;
-                        if (item.type === "article") {
-                            color = "lightblue"
-                        } else if (item.type === "event") {
-                            color = "lightgray"
-                        }
-                        return <NewsFeedCard key={item.id} newsItem={item} {...this.props} color={color} />
-                    })
-                }
+            {
+                (this.props.newsfeed) ? (
+                this.props.newsfeed.map((item) => {
+                    console.log(item.type)
+                    let color;
+                    if (item.type === "article") {
+                    color = "lightblue"
+                    } else if (item.type === "event") {
+                    color = "lightgray"
+                    }
+                    return <NewsFeedCard key={item.id} newsItem={item} {...this.props} color={color} />
+                })
+                )
+                : null
+            }
             </section>
             </div>
         );
