@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import fire from '../../config/Fire';
 import App from "../../App"
+import TitleBar from "../nav/TitleBar"
 
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
@@ -69,6 +70,7 @@ class Auth extends Component {
 
         return (
             <>
+                <TitleBar title="Authentication" />
                 <div className="col-md-6">
                     <form>
                         <div className="form-group">

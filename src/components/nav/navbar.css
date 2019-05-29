@@ -1,7 +1,20 @@
 .mainlogo {
-    height: 15px;
+    height: 20px;
 }
 
 #navbar {
     background-color: white;
+}
+
+#titleBar {
+    background-color: #2CB79C;
+    margin-top: -10px;
+}
+
+#titleBar > h4{
+    color: white;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    font-size: 1em;
+    padding: 5px;
 }

@@ -13,6 +13,13 @@
             "email": "jake@jake.com",
             "password": "jake",
             "userPhoto": "url"
+        },
+        {
+            "id": 3,
+            "userName": "Colin",
+            "email": "colinasandlin0024@gmail.com",
+            "password": "nashville",
+            "userPhoto": "url"
         }
     ],
     "friends": [
@@ -20,6 +27,16 @@
             "id": 1,
             "userId": 1,
             "friendUserId": 2
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "friendUserId": 1
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "friendUserId": 3
         }
     ],
     "newsfeed": [
@@ -38,6 +55,16 @@
             "userId": 2,
             "title": "jake news",
             "description": "jakedescription",
+            "location": "location",
+            "url": "url",
+            "eventDate": "eventDate",
+            "postDate": "postDate"
+        },
+        {
+            "id": 3,
+            "userId": 3,
+            "title": "Colin News",
+            "description": "colindescription",
             "location": "location",
             "url": "url",
             "eventDate": "eventDate",

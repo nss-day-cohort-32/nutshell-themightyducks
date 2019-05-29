@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import fire from '../../config/Fire';
 import TitleBar from "../nav/TitleBar"
 
-class Newsfeed extends Component {
+class Tasks extends Component {
 
 
     render() {
         return (
             <>
-                <TitleBar title="News Feed" />
-                <h1>Working Newsfeed Page</h1>
+                <TitleBar title="Tasks" />
+                <h1>Tasks Page</h1>
             </>
         );
     }
 }
-export default Newsfeed;
+export default Tasks;
