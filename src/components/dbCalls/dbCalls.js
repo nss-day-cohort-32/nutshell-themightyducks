@@ -4,7 +4,6 @@ const API = {
     getUserInfo: (userId) => {
         return fetch(`${db}/users/${userId}?_embed=friends&_embed=tasks&_embed=newsfeed`)
             .then(w => w.json())
-            .then(r => console.log(r))
     },
     getFriendNewsfeed: (userId) => {
         return fetch(`${db}/users/${userId}?_embed=friends`)

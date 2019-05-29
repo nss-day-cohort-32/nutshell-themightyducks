@@ -3,12 +3,24 @@ import { Route, Redirect } from "react-router-dom"
 import NewsFeed from "./newsfeed/Newsfeed"
 import TopNav from "./nav/TopNav"
 import Auth from "./auth/Auth"
+import API from "./dbCalls/dbCalls"
 
 class ApplicationViews extends Component {
-    state = {}
+
+    state = {
+        newsfeed: [],
+        friends: [],
+        users: []
+    }
 
     isAuthenticated = () => localStorage.getItem("user") !== null
 
+    componentDidMount() {
+        let newState = {}
+        API.getUserInfo(1)
+            .then(user => newState.newsfeed = user.newsfeed)
+            .then(() => this.setState(newState))
+    }
 
     render() {
         return (
@@ -20,7 +32,7 @@ class ApplicationViews extends Component {
                     console.log("Function is evaluating")
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed />
+                            <NewsFeed newsfeed={this.state.newsfeed} />
                         )
                     } else {
                         console.log("no user")
@@ -29,6 +41,10 @@ class ApplicationViews extends Component {
                         )
                     }
                 }} />
+
+                {/* <Route exact path="/newsfeed/:newsfeed(\d+)/edit" render={props => {
+                    return <EditFormNewsFeed {...props} newsfeed={this.state.newsfeed} />
+                }} /> */}
 
                 <Route exact path="/friends" render={(props) => {
 

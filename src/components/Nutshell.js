@@ -10,23 +10,23 @@ class Nutshell extends Component {
         user: null
     }
 
-    // componentDidMount = () => {
-    //     this.authListener();
-    // }
+    componentDidMount = () => {
+        this.authListener();
+    }
 
-    // authListener = () => {
-    //     fire.auth().onAuthStateChanged((user) => {
-    //         console.log("user", user);
-    //         if (user) {
-    //             this.setState({ user });
-    //             localStorage.setItem('user', user.uid);
-    //             // sessionStorage.setItem('user', )
-    //         } else {
-    //             this.setState({ user: null });
-    //             localStorage.removeItem('user');
-    //         }
-    //     });
-    // }
+    authListener = () => {
+        fire.auth().onAuthStateChanged((user) => {
+            console.log("user", user);
+            if (user) {
+                this.setState({ user });
+                localStorage.setItem('user', user.uid);
+                // sessionStorage.setItem('user', )
+            } else {
+                this.setState({ user: null });
+                localStorage.removeItem('user');
+            }
+        });
+    }
 
     render() {
         return (

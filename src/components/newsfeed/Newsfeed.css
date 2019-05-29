@@ -1,0 +1,33 @@
+.newsfeed--list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-title {
+    text-transform: uppercase;
+}
+
+.card {
+    width: 25rem;
+    margin: 1rem;
+    text-transform: capitalize;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsItem--buttons {
+    margin-top: 0.6rem;
+}
+
+.newsItem--edit-btn {
+    margin-right: 0.4rem;
+}
+
+.newsItem--delete-btn {
+    margin-left: 0.4rem;
+}
