@@ -6,12 +6,17 @@ const API = {
             .then(w => w.json())
             .then(r => console.log(r))
     },
+    getUserID: (email) => {
+        console.log(email)
+        return fetch(`${db}/users/?email=${email}`)
+            .then(w => w.json())
+    },
     getFriendNewsfeed: (userId) => {
         return fetch(`${db}/users/${userId}?_embed=friends`)
             .then(w => w.json())
             .then(users => {
                 const data = users.friends.map(friend => {
-                    console.log(friend)
+                    //console.log(friend)
                     let friendId = friend.friendUserId
                     return fetch(`${db}/users/${friendId}?_embed=newsfeed`)
                         .then(w => w.json())

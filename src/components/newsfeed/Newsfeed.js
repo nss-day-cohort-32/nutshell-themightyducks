@@ -7,6 +7,8 @@ class Newsfeed extends Component {
 
 
     render() {
+        //console.log("user", localStorage.getItem("user"))
+        // console.log("Newsfeed")
         return (
             <>
                 <TitleBar title="News Feed" />

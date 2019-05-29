@@ -16,8 +16,13 @@
         },
         {
             "id": 3,
+<<<<<<< HEAD
             "userName": "Colin",
             "email": "colinasandlin0024@gmail.com",
+=======
+            "userName": "jason",
+            "email": "strangehandle@gmail.com",
+>>>>>>> master
             "password": "nashville",
             "userPhoto": "url"
         }

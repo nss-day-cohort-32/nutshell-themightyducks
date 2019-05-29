@@ -8,6 +8,9 @@ import Friends from "./friends/Friends"
 import Tasks from "./tasks/Tasks"
 import Messages from "./messages/Messages"
 import dbCalls from "./dbCalls/dbCalls"
+import API from "./dbCalls/dbCalls"
+import { verify } from "crypto";
+
 
 class ApplicationViews extends Component {
     state = {
@@ -15,6 +18,10 @@ class ApplicationViews extends Component {
     }
 
     isAuthenticated = () => localStorage.getItem("user") !== null
+
+    // verifyEmail = (email) => {
+    // API.getUserID(email)
+    // }
 
 
     componentDidMount() {
@@ -42,13 +49,13 @@ class ApplicationViews extends Component {
 
                 <Route exact path="/newsfeed" render={(props) => {
                     // return <NewsFeed />
-                    console.log("Function is evaluating")
+                    // console.log("Function is evaluating")
                     if (this.isAuthenticated()) {
                         return (
                             <NewsFeed />
                         )
                     } else {
-                        console.log("no user")
+                        //console.log("no user")
                         return (
                             <Redirect to="/auth" component={Auth} />
                         )
