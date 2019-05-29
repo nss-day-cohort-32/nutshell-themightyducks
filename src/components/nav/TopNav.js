@@ -3,6 +3,8 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import { Route, Redirect } from "react-router-dom"
 import firebase from 'firebase';
 import fire from '../../config/Fire';
+import logo from "../../Nutshell-01.svg"
+import navbarcss from "../nav/navbar.css"
 
 class TopNav extends Component {
 
@@ -12,16 +14,14 @@ class TopNav extends Component {
     };
 
     logout = () => {
-        fire.auth().signOut();
+        fire.auth().signOut()
+            .then(() => localStorage.clear())
+
     }
 
     logoutRedirect = () => {
         this.logout()
         return <Redirect to="/auth" />
-    }
-
-    testaction = () => {
-        console.log("tied to github link")
     }
 
     toggleNavbar = () => {
@@ -32,19 +32,26 @@ class TopNav extends Component {
     render() {
         return (
             <div>
-                <Navbar color="faded" light>
-                    <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
+                <Navbar color="faded" light id="navbar">
+                    <img className="mainlogo" src={logo}></img>
                     <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                     <Collapse isOpen={!this.state.collapsed} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
+                                <NavLink href="/newsfeed/">Newsfeed</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink onClick={this.testaction} href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                                <NavLink href="/friends">Friends</NavLink>
                             </NavItem>
                             <NavItem>
-                                <button onClick={this.logoutRedirect} >Logout</button>
+                                <NavLink href="/tasks">Tasks</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/messages">Messages</NavLink>
+                            </NavItem>
+                            <hr />
+                            <NavItem>
+                                <NavLink href="/auth/" onClick={this.logoutRedirect}>Logout</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
