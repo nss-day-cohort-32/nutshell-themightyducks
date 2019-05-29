@@ -36,11 +36,18 @@ class TopNav extends Component {
                     <Collapse isOpen={!this.state.collapsed} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
+                                <NavLink href="/newsfeed/">Newsfeed</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                                <NavLink href="/friends">Friends</NavLink>
                             </NavItem>
+                            <NavItem>
+                                <NavLink href="/tasks">Tasks</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/messages">Messages</NavLink>
+                            </NavItem>
+                            <hr />
                             <NavItem>
                                 <NavLink href="/auth/" onClick={this.logoutRedirect}>Logout</NavLink>
                             </NavItem>

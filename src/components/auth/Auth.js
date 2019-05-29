@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import fire from '../../config/Fire';
 import App from "../../App"
+
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
@@ -13,6 +14,7 @@ class Auth extends Component {
         modal: false,
         error: []
     };
+
 
     // For modal 
     toggle = () => {
@@ -41,13 +43,16 @@ class Auth extends Component {
             error: []
         }
         e.preventDefault();
-        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => { console.log(u) })
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then((u) => {
+                console.log(u)
+                this.props.history.push('/newsfeed')
+            })
             .catch((error) => {
                 newState.modal = !this.state.modal
                 newState.error = error.message
-                this.setState(newState);
+                this.setState(newState)
             })
-            .then(() => this.props.history.push("/regulate"))
     }
 
     signup = (e) => {
@@ -60,6 +65,7 @@ class Auth extends Component {
 
     }
     render() {
+
         return (
             <>
                 <div className="col-md-6">

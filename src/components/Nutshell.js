@@ -20,6 +20,7 @@ class Nutshell extends Component {
             if (user) {
                 this.setState({ user });
                 localStorage.setItem('user', user.uid);
+                // sessionStorage.setItem('user', )
             } else {
                 this.setState({ user: null });
                 localStorage.removeItem('user');
@@ -30,13 +31,8 @@ class Nutshell extends Component {
     render() {
         return (
             <>
-                {
-                    this.state.user ? (
-                        <>
-                            <TopNav />
-                            <ApplicationViews />
-                        </>) : (<Route path="/auth" component={Auth} />)
-                }
+                <TopNav />
+                <ApplicationViews />
             </>
         )
     }
