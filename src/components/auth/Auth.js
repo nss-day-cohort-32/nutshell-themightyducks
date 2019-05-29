@@ -70,7 +70,6 @@ class Auth extends Component {
 
         return (
             <>
-                <TitleBar title="Authentication" />
                 <div className="col-md-6">
                     <form>
                         <div className="form-group">

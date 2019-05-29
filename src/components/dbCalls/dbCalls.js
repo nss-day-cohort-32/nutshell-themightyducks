@@ -23,7 +23,6 @@ const API = {
                 })
                 return Promise.all(data)
             })
-            .then(r => console.log(r))
     },
     delete: (resource, id) => {
         return fetch(`${db}/${resource}/${id}`, {
@@ -63,7 +62,6 @@ const API = {
                     return fetch(`${db}/users/${friendId}`)
                         .then(results => results.json())
                 })
-                console.log("Promise", Promise.all(data))
                 return Promise.all(data)
             })
     }

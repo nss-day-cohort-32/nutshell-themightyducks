@@ -10,6 +10,7 @@ import Messages from "./messages/Messages"
 import dbCalls from "./dbCalls/dbCalls"
 import API from "./dbCalls/dbCalls"
 import { verify } from "crypto";
+// import main from "../main.css"
 
 
 class ApplicationViews extends Component {
@@ -19,10 +20,9 @@ class ApplicationViews extends Component {
 
     isAuthenticated = () => localStorage.getItem("user") !== null
 
-    // verifyEmail = (email) => {
-    // API.getUserID(email)
-    // }
+    deleteFriend = () => {
 
+    }
 
     componentDidMount() {
         // Declaring new state
@@ -35,21 +35,19 @@ class ApplicationViews extends Component {
         dbCalls.getFriends(1)
             .then(friends => {
                 newState.friends = friends
-                console.log("newState", newState)
                 this.setState(newState)
             })
     }
 
     render() {
-        console.log("path is:", this.props.location.pathname)
+
 
         return (
             <>
                 <Route path="/auth" component={Auth} />
 
                 <Route exact path="/newsfeed" render={(props) => {
-                    // return <NewsFeed />
-                    // console.log("Function is evaluating")
+
                     if (this.isAuthenticated()) {
                         return (
                             <NewsFeed />
