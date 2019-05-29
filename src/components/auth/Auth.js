@@ -46,6 +46,7 @@ class Auth extends Component {
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then((u) => {
                 console.log(u)
+                localStorage.setItem('user', u.uid);
                 this.props.history.push('/newsfeed')
             })
             .catch((error) => {

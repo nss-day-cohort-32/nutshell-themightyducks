@@ -14,7 +14,9 @@ class TopNav extends Component {
     };
 
     logout = () => {
-        fire.auth().signOut();
+        fire.auth().signOut()
+            .then(() => localStorage.clear())
+
     }
 
     logoutRedirect = () => {

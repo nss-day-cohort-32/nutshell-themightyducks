@@ -16,17 +16,18 @@ class ApplicationViews extends Component {
                 <Route path="/auth" component={Auth} />
 
                 <Route exact path="/newsfeed" render={(props) => {
-                    return <NewsFeed />
-                    // if (this.isAuthenticated()) {
-                    //     return (
-                    //         <NewsFeed />
-                    //     )
-                    // } else {
-                    //     console.log("no user")
-                    //     return (
-                    //         <Redirect to="/auth" component={Auth} />
-                    //     )
-                    // }
+                    // return <NewsFeed />
+                    console.log("Function is evaluating")
+                    if (this.isAuthenticated()) {
+                        return (
+                            <NewsFeed />
+                        )
+                    } else {
+                        console.log("no user")
+                        return (
+                            <Redirect to="/auth" component={Auth} />
+                        )
+                    }
                 }} />
 
                 <Route exact path="/friends" render={(props) => {
