@@ -47,6 +47,7 @@ class Auth extends Component {
                 newState.error = error.message
                 this.setState(newState);
             })
+            .then(() => this.props.history.push("/regulate"))
     }
 
     signup = (e) => {

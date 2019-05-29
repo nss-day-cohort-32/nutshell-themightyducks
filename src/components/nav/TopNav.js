@@ -22,10 +22,6 @@ class TopNav extends Component {
         return <Redirect to="/auth" />
     }
 
-    testaction = () => {
-        console.log("tied to github link")
-    }
-
     toggleNavbar = () => {
         this.setState({
             collapsed: !this.state.collapsed
@@ -43,10 +39,10 @@ class TopNav extends Component {
                                 <NavLink href="/components/">Components</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink onClick={this.testaction} href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
                             </NavItem>
                             <NavItem>
-                                <button onClick={this.logoutRedirect} >Logout</button>
+                                <NavLink href="/auth/" onClick={this.logoutRedirect}>Logout</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
