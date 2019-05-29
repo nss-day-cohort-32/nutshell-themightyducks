@@ -24,6 +24,7 @@ class App extends Component {
       } else {
         this.setState({ user: null });
         localStorage.removeItem('user');
+        sessionStorage.removeItem('id');
       }
     });
   }

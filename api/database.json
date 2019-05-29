@@ -13,6 +13,13 @@
             "email": "jake@jake.com",
             "password": "jake",
             "userPhoto": "url"
+        },
+        {
+            "id": 3,
+            "userName": "jason",
+            "email": "strangehandle@gmail.com",
+            "password": "nashville",
+            "userPhoto": "url"
         }
     ],
     "friends": [
