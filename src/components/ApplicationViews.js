@@ -10,7 +10,6 @@ import Messages from "./messages/Messages"
 import dbCalls from "./dbCalls/dbCalls"
 import API from "./dbCalls/dbCalls"
 import { verify } from "crypto";
-import NewsfeedForm from "./newsfeed/addNewsfeed"
 
 class ApplicationViews extends Component {
     state = {
@@ -173,9 +172,6 @@ class ApplicationViews extends Component {
                             <Redirect to="/auth" component={Auth} />
                         )
                     }
-                }} />
-                <Route exact path="/newsfeed/new" render={(props) => {
-                    return <NewsfeedForm addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} {...props} />
                 }} />
             </>
         )

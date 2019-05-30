@@ -19,6 +19,7 @@ class AddFormModal extends React.Component {
   }
 
   toggle() {
+      console.log("toggled!")
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
@@ -33,7 +34,7 @@ class AddFormModal extends React.Component {
       if (this.state.formtype === "Article") {
           formType = <ArticleForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} modal={this.state.modal} toggle={this.toggle} />
       } else if (this.state.formtype === "Event") {
-           formType = <EventsForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} />
+           formType = <EventsForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} modal={this.state.modal} toggle={this.toggle} />
       }
 
     return (
