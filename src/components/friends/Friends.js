@@ -4,20 +4,31 @@ import TitleBar from "../nav/TitleBar"
 
 import {
     Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText
+    CardTitle, CardText, Badge
 } from 'reactstrap';
 
 import main from "../../main.css"
 
 
 class Friends extends Component {
-
-
+    state = {
+    }
 
     render() {
+        let numfriends
+        if (this.props.friends) {
+            numfriends = this.props.friends.length
+        } else {
+            console.log("cant do it")
+        }
         return (
             <>
                 <TitleBar title="Friends" />
+                <div className="button-holder">
+                    <Button color="primary" outline>
+                        Number of Friends <Badge color="secondary">{numfriends}</Badge>
+                    </Button>
+                </div>
                 {
                     (this.props.friends) ?
                         (this.props.friends.map(friend =>
