@@ -24,7 +24,7 @@ class Newsfeed extends Component {
                                     } else if (item.type === "event") {
                                         color = "lightgray"
                                     }
-                                    return <NewsFeedCard key={item.id} newsItem={item} {...this.props} color={color} />
+                                    return <NewsFeedCard key={item.id} newsItem={item} {...this.props} color={color} deleteNewsItem={this.props.deleteNewsItem} />
                                 })
                             )
                                 : null

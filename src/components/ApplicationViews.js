@@ -43,7 +43,6 @@ class ApplicationViews extends Component {
             API.getUserInfo(id)
                 .then(user => {
                     newState.newsfeed = user.newsfeed
-                    newState.friends = user.friends
                     newState.messages = user.messages
                     newState.tasks = user.tasks
                     newState.currentUserId = id
@@ -74,6 +73,31 @@ class ApplicationViews extends Component {
 
     }
 
+    //Carly and Jake - calls the newsfeeds of the current user and their friends, sets a new newsfeed state and sends the user back to their updated newsfeed page
+    getSetAndPushNewsfeed = () => {
+        const newState = {}
+        const userId = this.state.currentUserId
+        API.getUserInfo(userId)
+                .then(user => {
+                    newState.newsfeed = user.newsfeed
+                })
+                .then(() => API.getFriendNewsfeed(userId))
+                .then(friends => friends.map(friend =>
+                    friend.newsfeed.map(news =>
+                        newState.newsfeed.push(news)
+                    )
+                ))
+                .then(() => {
+                    this.props.history.push("/newsfeed")
+                    this.setState(newState)
+                })
+    }
+
+    //Carly
+    deleteNewsItem = (newsfeed, newsItemId) => {
+        API.delete(newsfeed, newsItemId)
+        .then(() => this.getSetAndPushNewsfeed())
+    }
 
 
     render() {
@@ -87,7 +111,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed newsfeed={this.state.newsfeed} />
+                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} />
                         )
                     } else {
                         return (
