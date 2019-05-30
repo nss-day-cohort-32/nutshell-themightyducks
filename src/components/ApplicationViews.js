@@ -20,10 +20,6 @@ class ApplicationViews extends Component {
 
     isAuthenticated = () => localStorage.getItem("user") !== null
 
-    deleteFriend = () => {
-
-    }
-
     componentDidMount() {
         // Declaring new state
         const newState = {
@@ -37,6 +33,22 @@ class ApplicationViews extends Component {
                 newState.friends = friends
                 this.setState(newState)
             })
+    }
+
+    //Colin
+    deleteFriend = (friends, idtodelete) => {
+        const newState = {}
+        const userId = sessionStorage.getItem("id")
+        dbCalls.delete(friends, idtodelete)
+            .then(() => dbCalls.getFriends(1))
+            .then(friends => {
+                newState.friends = friends
+            })
+            .then(() => {
+                this.props.history.push("/friends")
+                this.setState(newState);
+            })
+
     }
 
     render() {

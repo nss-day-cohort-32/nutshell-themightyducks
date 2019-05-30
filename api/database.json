@@ -53,30 +53,55 @@
     {
       "id": 1,
       "userId": 1,
+      "type": "article",
       "title": "carly news",
       "description": "description",
       "location": "location",
-      "url": "url",
+      "url": "https://www.linkedin.com/in/carlybergthold/",
+      "eventDate": "eventDate",
+      "postDate": "postDate"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "type": "event",
+      "title": "carly event",
+      "description": "description",
+      "location": "location",
+      "url": "https://www.linkedin.com/in/carlybergthold/",
+      "eventDate": "eventDate",
+      "postDate": "postDate"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "type": "article",
+      "title": "carly news",
+      "description": "description",
+      "location": "location",
+      "url": "https://www.linkedin.com/in/carlybergthold/",
+      "eventDate": "eventDate",
+      "postDate": "postDate"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "type": "event",
+      "title": "carly event",
+      "description": "description",
+      "location": "location",
+      "url": "https://www.linkedin.com/in/carlybergthold/",
       "eventDate": "eventDate",
       "postDate": "postDate"
     },
     {
       "id": 2,
       "userId": 2,
-      "title": "jake news",
+      "type": "event",
+      "title": "jake event",
       "description": "jakedescription",
       "location": "location",
-      "url": "url",
-      "eventDate": "eventDate",
-      "postDate": "postDate"
-    },
-    {
-      "id": 3,
-      "userId": 3,
-      "title": "Colin News",
-      "description": "colindescription",
-      "location": "location",
-      "url": "url",
+      "url": "https://www.linkedin.com/in/carlybergthold/",
       "eventDate": "eventDate",
       "postDate": "postDate"
     }

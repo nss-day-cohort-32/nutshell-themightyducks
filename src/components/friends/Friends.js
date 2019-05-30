@@ -41,7 +41,7 @@ class Friends extends Component {
                                     <CardTitle></CardTitle>
                                     <CardText>{friend.userName} is: {friend.status}</CardText>
                                     <Button className="hidden">Go somewhere</Button>
-                                    <Button onClick={this.props.deleteFriend}>Delete Friend</Button>
+                                    <Button onClick={() => this.props.deleteFriend(friend.id)}>Delete Friend</Button>
                                 </CardBody>
                             </Card>
                         )) : (null)
