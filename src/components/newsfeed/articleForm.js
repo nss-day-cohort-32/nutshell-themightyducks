@@ -42,7 +42,7 @@ export default class ArticleForm extends React.Component {
             < Form >
                 <FormGroup>
                     <Label for="Title">Title</Label>
-                    <Input type="text" name="title" id="articleTitle" placeholder="Title" onChange={this.handleFieldChange} />
+                    <Input type="text" name="title" id="title" placeholder="Title" onChange={this.handleFieldChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="">Date Published</Label>
@@ -50,7 +50,7 @@ export default class ArticleForm extends React.Component {
                 </FormGroup>
                 <FormGroup>
                     <Label for="url">Link</Label>
-                    <Input type="url" name="url" id="articleUrl" placeholder="url" onChange={this.handleFieldChange} />
+                    <Input type="url" name="url" id="url" placeholder="Url" onChange={this.handleFieldChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="synopsis">Synopsis</Label>
