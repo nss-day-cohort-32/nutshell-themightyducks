@@ -10,22 +10,17 @@ import API from '../dbCalls/dbCalls';
 
 
 class FriendButton extends Component {
-    state = {
+
+
+    constructNewFriend = (userId, friendUserId) => {
+        const newFriend = {
+            userId: userId,
+            friendUserId: friendUserId
+        }
+
+        this.props.addFriend(newFriend)
     }
 
-    // {
-    //   "id": 1,
-    //   "userId": 1,
-    //   "friendUserId": 2
-    // }
-
-    // addFriend = (userId) => {
-    //     const newfriendObj = {
-    //         userId: 
-    //     }
-
-    //     API.addFriend
-    // }
 
     render() {
         const userId = sessionStorage.getItem("id");
@@ -35,7 +30,7 @@ class FriendButton extends Component {
                     (this.props.relationships) ?
                         (
                             <>
-                                <Button className="add-friend-btn" outline color="primary">Add Friend</Button>
+                                <Button className="add-friend-btn" outline color="primary" onClick={this.constructNewFriend(userId, this.props.userId)}>Add Friend</Button>
                             </>
                         ) : (null)
                 }

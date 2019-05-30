@@ -124,6 +124,19 @@ class ApplicationViews extends Component {
 
 
 
+
+    addFriend = (newFriendObj) => {
+        API.addFriend(newFriendObj)
+            .then(() => API.getMessages())
+            .then(messages =>
+                this.setState({
+                    messages: messages
+                }))
+            .then(() => this.props.history.push("/messages"))
+    }
+
+
+
     //Carly and Jake - calls the newsfeeds of the current user and their friends, sets a new newsfeed state and sends the user back to their updated newsfeed page
     getSetAndPushNewsfeed = () => {
         const newState = {}
@@ -199,7 +212,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/messages" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} relationships={this.state.relationships} />
+                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} relationships={this.state.relationships} addFriend={this.addFriend} />
                         )
                     } else {
                         console.log("no user")
