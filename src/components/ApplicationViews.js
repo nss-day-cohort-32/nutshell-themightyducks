@@ -20,17 +20,21 @@ class ApplicationViews extends Component {
     isAuthenticated = () => localStorage.getItem("user") !== null
 
     componentDidMount() {
+        //We'll likely need to change this after we figure out why a refresh is needed to show newsfeed after login
         let newState = {}
         let id = sessionStorage.getItem("id");
-        API.getUserInfo(id)
-            .then(user => {
-                newState.newsfeed = user.newsfeed
-                newState.friends = user.friends
-                newState.messages = user.messages
-                newState.tasks = user.tasks
-                newState.currentUserId = id
-            })
-            .then(() => this.setState(newState))
+
+        if (this.isAuthenticated()) {
+            API.getUserInfo(id)
+                .then(user => {
+                    newState.newsfeed = user.newsfeed
+                    newState.friends = user.friends
+                    newState.messages = user.messages
+                    newState.tasks = user.tasks
+                    newState.currentUserId = id
+                })
+                .then(() => this.setState(newState))
+        }
     }
     // verifyEmail = (email) => {
         // API.getUserID(email)
