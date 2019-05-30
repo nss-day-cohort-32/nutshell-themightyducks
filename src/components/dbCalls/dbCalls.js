@@ -4,7 +4,6 @@ const API = {
     getUserInfo: (userId) => {
         return fetch(`${db}/users/${userId}?_embed=friends&_embed=tasks&_embed=newsfeed`)
             .then(w => w.json())
-            .then(r => console.log(r))
     },
     getUserID: (email) => {
         console.log(email)
@@ -23,7 +22,6 @@ const API = {
                 })
                 return Promise.all(data)
             })
-            .then(r => console.log(r))
     },
     delete: (resource, id) => {
         return fetch(`${db}/${resource}/${id}`, {
@@ -53,6 +51,18 @@ const API = {
         })
             .then(e => e.json())
 
+    },
+    getFriends: (userId) => {
+        return fetch(`${db}/users/${userId}?_embed=friends`)
+            .then(results => results.json())
+            .then(users => {
+                const data = users.friends.map(friend => {
+                    let friendId = friend.friendUserId
+                    return fetch(`${db}/users/${friendId}`)
+                        .then(results => results.json())
+                })
+                return Promise.all(data)
+            })
     }
 }
 
