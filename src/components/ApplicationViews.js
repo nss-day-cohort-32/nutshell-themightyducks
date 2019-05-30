@@ -5,12 +5,32 @@ import TopNav from "./nav/TopNav"
 import Auth from "./auth/Auth"
 import API from "./dbCalls/dbCalls"
 import { verify } from "crypto";
-
+import NewsfeedForm from "./newsfeed/addNewsfeed"
 
 class ApplicationViews extends Component {
-    state = {}
+    state = {
+        newsfeed: [],
+        friends: [],
+        messages: [],
+        tasks: [],
+        currentUserId: ""
+    }
 
     isAuthenticated = () => localStorage.getItem("user") !== null
+
+    componentDidMount() {
+        let newState = {}
+        let id = sessionStorage.getItem("id");
+        API.getUserInfo(id)
+            .then(user => {
+                newState.newsfeed = user.newsfeed
+                newState.friends = user.friends
+                newState.messages = user.messages
+                newState.tasks = user.tasks
+                newState.currentUserId = id
+            })
+            .then(() => this.setState(newState))
+    }
 
     render() {
         return (
@@ -29,6 +49,9 @@ class ApplicationViews extends Component {
                     }
                 }} />
                 <Route exact path="/friends" render={(props) => {
+                }} />
+                <Route exact path="/newsfeed/new" render={(props) => {
+                    return <NewsfeedForm currentUserId={this.state.currentUserId} {...props} />
                 }} />
             </>
         )

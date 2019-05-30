@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 export default class ArticleForm extends React.Component {
     state = {
         userId: "",
-        type: "event",
+        type: "article",
         title: "",
         description: "",
         url: "",
@@ -19,6 +19,21 @@ export default class ArticleForm extends React.Component {
 
     contructNewNewsfeed = (evt) => {
         console.log(evt)
+    }
+
+    contructNewNewsfeed = (evt) => {
+        // console.log(evt)
+        const newsfeed = {
+            userId: this.props.currentUserId,
+            type: this.state.type,
+            title: this.state.title,
+            description: this.state.description,
+            url: this.state.url,
+            eventDate: this.state.eventDate,
+            postDate: Date.now()
+        }
+        console.log(newsfeed)
+        this.props.addNewsfeed(newsfeed)
     }
 
     render() {
@@ -41,7 +56,7 @@ export default class ArticleForm extends React.Component {
                     <Label for="synopsis">Synopsis</Label>
                     <Input type="textarea" name="text" id="description" onChange={this.handleFieldChange} />
                 </FormGroup>
-                <Button>Submit</Button>
+                <Button onClick={this.contructNewNewsfeed}>Submit</Button>
             </Form >
         );
     }

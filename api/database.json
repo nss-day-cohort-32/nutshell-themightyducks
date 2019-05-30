@@ -1,95 +1,101 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "userName": "carly",
-      "email": "carly@carly.com",
-      "password": "carly",
-      "userPhoto": "url"
-    },
-    {
-      "id": 2,
-      "userName": "jake",
-      "email": "jake@jake.com",
-      "password": "jake",
-      "userPhoto": "url"
-    },
-    {
-      "id": 3,
-      "userName": "jason",
-      "email": "strangehandle@gmail.com",
-      "password": "nashville",
-      "userPhoto": "url"
-    },
-    {
-      "email": "Test@testmail.com",
-      "password": "testtest",
-      "url": "url",
-      "id": 4
-    },
-    {
-      "email": "TESTGUY@hello.com",
-      "password": "SUPSUPSUP",
-      "url": "url",
-      "id": 5
-    },
-    {
-      "email": "ImARealGuy@FAKEAF.com",
-      "password": "sodangreal",
-      "url": "url",
-      "id": 6
-    },
-    {
-      "email": "GuyNamedTest@mail.com",
-      "password": "HELLOimTEST",
-      "url": "url",
-      "id": 7
-    }
-  ],
-  "friends": [
-    {
-      "id": 1,
-      "userId": 1,
-      "friendUserId": 2
-    }
-  ],
-  "newsfeed": [
-    {
-      "id": 1,
-      "userId": 1,
-      "title": "carly news",
-      "description": "description",
-      "location": "location",
-      "url": "url",
-      "eventDate": "eventDate",
-      "postDate": "postDate"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "title": "jake news",
-      "description": "jakedescription",
-      "location": "location",
-      "url": "url",
-      "eventDate": "eventDate",
-      "postDate": "postDate"
-    }
-  ],
-  "messages": [
-    {
-      "id": 1,
-      "userId": 1,
-      "message": "message yooo",
-      "postedTime": "05:00am"
-    }
-  ],
-  "tasks": [
-    {
-      "id": 1,
-      "entered": "05:00am",
-      "isComplete": false,
-      "userId": 1,
-      "task": "eat"
-    }
-  ]
+    "users": [
+        {
+            "id": 1,
+            "userName": "carly",
+            "email": "carly@carly.com",
+            "password": "carly",
+            "userPhoto": "url"
+        },
+        {
+            "id": 2,
+            "userName": "jake",
+            "email": "jake@jake.com",
+            "password": "jake",
+            "userPhoto": "url"
+        },
+        {
+            "id": 3,
+            "userName": "jason",
+            "email": "strangehandle@gmail.com",
+            "password": "nashville",
+            "userPhoto": "url"
+        },
+        {
+            "email": "Test@testmail.com",
+            "password": "testtest",
+            "url": "url",
+            "id": 4
+        },
+        {
+            "email": "TESTGUY@hello.com",
+            "password": "SUPSUPSUP",
+            "url": "url",
+            "id": 5
+        },
+        {
+            "email": "ImARealGuy@FAKEAF.com",
+            "password": "sodangreal",
+            "url": "url",
+            "id": 6
+        },
+        {
+            "email": "GuyNamedTest@mail.com",
+            "password": "HELLOimTEST",
+            "url": "url",
+            "id": 7
+        },
+        {
+            "email": "jake@outlook.com",
+            "password": "nashville",
+            "url": "url",
+            "id": 8
+        }
+    ],
+    "friends": [
+        {
+            "id": 1,
+            "userId": 1,
+            "friendUserId": 2
+        }
+    ],
+    "newsfeed": [
+        {
+            "id": 1,
+            "userId": 1,
+            "title": "carly news",
+            "description": "description",
+            "location": "location",
+            "url": "url",
+            "eventDate": "eventDate",
+            "postDate": "postDate"
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "title": "jake news",
+            "description": "jakedescription",
+            "location": "location",
+            "url": "url",
+            "eventDate": "eventDate",
+            "postDate": "postDate"
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "userId": 1,
+            "message": "message yooo",
+            "postedTime": "05:00am"
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "entered": "05:00am",
+            "isComplete": false,
+            "userId": 1,
+            "task": "eat"
+        }
+    ]
 }

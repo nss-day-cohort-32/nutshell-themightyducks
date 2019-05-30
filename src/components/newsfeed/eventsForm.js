@@ -17,9 +17,8 @@ export default class EventsForm extends React.Component {
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
-
     contructNewNewsfeed = (evt) => {
-        console.log(evt)
+        // console.log(evt)
         const newsfeed = {
             userId: this.props.currentUserId,
             type: this.state.type,
@@ -27,13 +26,13 @@ export default class EventsForm extends React.Component {
             description: this.state.description,
             url: this.state.url,
             eventDate: this.state.eventDate,
-            postDate: Date
+            postDate: Date.now()
         }
         console.log(newsfeed)
+        this.props.addNewsfeed(newsfeed)
     }
-
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         console.log(this.props)
         return (
             <Form>
