@@ -26,7 +26,7 @@ class Friends extends Component {
             <>
                 <TitleBar title="Friends" />
                 <div className="button-holder">
-                    <Button color="primary" outline>
+                    <Button className="friends-num-btn" style={{ border: '1px solid #2CB79C', color: "#2CB79C", }} outline>
                         Number of Friends -   <Badge color="secondary">{numfriends}</Badge>
                     </Button>
                 </div>
@@ -34,8 +34,8 @@ class Friends extends Component {
                     (this.props.friends) ?
                         (this.props.friends.map(friend =>
                             <Card key={friend.id} className="friend-card">
-                                <CardHeader className="friend-card-header">
-                                    <img className="profile-image" src={friend.userPhoto}></img>
+                                <CardHeader className="friend-card-header" >
+                                    <img className="profile-image" src={friend.userPhoto} style={{ border: '2px solid #2CB79C' }}></img>
                                     <h3>{friend.userName}</h3>
                                 </CardHeader>
                                 <CardBody className="friend-card-body">

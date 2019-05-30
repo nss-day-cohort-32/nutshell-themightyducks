@@ -11,6 +11,7 @@
 .friend-card-header {
     display: flex;
     flex-direction: row;
+    border-bottom: 2px solid #2CB79C;
 }
 
 .friend-card-header > h3 {
@@ -45,4 +46,9 @@
 
 .delete-friend-btn {
     right: 0;
+}
+
+.friends-num-btn {
+    color: #2CB79C;
+    border-color: #2CB79C;
 }
