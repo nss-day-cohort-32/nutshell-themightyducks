@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import fire from '../../config/Fire';
 import App from "../../App"
+import TitleBar from "../nav/TitleBar"
 import API from "../dbCalls/dbCalls"
 
 
@@ -47,7 +48,9 @@ class Auth extends Component {
             .then((u) => { localStorage.setItem('user', u.uid) })
             .then(() => API.getUserID(this.state.email)
                 .then(result => sessionStorage.setItem('id', parseInt(result[0].id)))
-                .then(() => this.props.history.push('/newsfeed'))
+                .then(() => {
+                    this.props.history.push('/newsfeed')
+                })
             ).catch((error) => {
                 console.log("ERROR", error)
                 newState.modal = !this.state.modal
