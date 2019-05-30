@@ -26,22 +26,21 @@ class Friends extends Component {
                 <TitleBar title="Friends" />
                 <div className="button-holder">
                     <Button color="primary" outline>
-                        Number of Friends <Badge color="secondary">{numfriends}</Badge>
+                        Number of Friends -   <Badge color="secondary">{numfriends}</Badge>
                     </Button>
                 </div>
                 {
                     (this.props.friends) ?
                         (this.props.friends.map(friend =>
                             <Card key={friend.id} className="friend-card">
-                                <CardHeader className="card-header">
+                                <CardHeader className="friend-card-header">
                                     <img className="profile-image" src={friend.userPhoto}></img>
                                     <h3>{friend.userName}</h3>
                                 </CardHeader>
-                                <CardBody>
-                                    <CardTitle></CardTitle>
+                                <CardBody className="friend-card-body">
+                                    {/* <CardTitle></CardTitle> */}
                                     <CardText>{friend.userName} is: {friend.status}</CardText>
-                                    <Button className="hidden">Go somewhere</Button>
-                                    <Button onClick={() => this.props.deleteFriend(friend.id)}>Delete Friend</Button>
+                                    <Button className="delete-friend-btn" onClick={() => this.props.deleteFriend(friend.id)} outline color="danger">Delete</Button>
                                 </CardBody>
                             </Card>
                         )) : (null)

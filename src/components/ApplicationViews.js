@@ -43,7 +43,7 @@ class ApplicationViews extends Component {
             API.getUserInfo(id)
                 .then(user => {
                     newState.newsfeed = user.newsfeed
-                    newState.friends = user.friends
+                    // newState.friends = user.friends
                     newState.messages = user.messages
                     newState.tasks = user.tasks
                     newState.currentUserId = id
@@ -53,19 +53,20 @@ class ApplicationViews extends Component {
     }
 
     //Colin
-    deleteFriend = (friends, idtodelete) => {
+    deleteFriend = (idtodelete) => {
         const newState = {}
         const userId = sessionStorage.getItem("id")
-        dbCalls.delete(friends, idtodelete)
-            .then(() => dbCalls.getFriends(1))
-            .then(friends => {
-                newState.friends = friends
-            })
-            .then(() => {
-                this.props.history.push("/friends")
-                this.setState(newState);
-            })
-
+        if (window.confirm("Are you sure you want to ruin this friendship?")) {
+            dbCalls.deleteFriend(idtodelete)
+                .then(() => dbCalls.getFriends(1))
+                .then(friends => {
+                    newState.friends = friends
+                })
+                .then(() => {
+                    this.props.history.push("/friends")
+                    this.setState(newState);
+                })
+        }
     }
 
 
@@ -92,7 +93,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/friends" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Friends friends={this.state.friends} {...props} />
+                            <Friends friends={this.state.friends} deleteFriend={this.deleteFriend} {...props} />
                         )
                     } else {
                         console.log("no user")

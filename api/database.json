@@ -29,7 +29,8 @@
       "userName": "jason",
       "email": "strangehandle@gmail.com",
       "password": "nashville",
-      "userPhoto": "url"
+      "status": "Firing firebase",
+      "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/980145_10103194319550195_6182930118244811468_o.jpg?_nc_cat=107&_nc_ht=scontent-atl3-1.xx&oh=19a3f390f891aac15ddeedb89b6cb811&oe=5D9D6EB7"
     }
   ],
   "friends": [
@@ -47,6 +48,36 @@
       "id": 3,
       "userId": 1,
       "friendUserId": 3
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "friendUserId": 1
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "friendUserId": 4
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "friendUserId": 5
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "friendUserId": 6
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "friendUserId": 7
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "friendUserId": 8
     }
   ],
   "newsfeed": [

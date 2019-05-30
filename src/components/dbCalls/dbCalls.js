@@ -63,6 +63,14 @@ const API = {
                 })
                 return Promise.all(data)
             })
+    },
+    deleteFriend: (friendId) => {
+        return fetch(`${db}/friends/${friendId}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
     }
 }
 
