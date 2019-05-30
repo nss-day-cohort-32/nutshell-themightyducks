@@ -88,6 +88,20 @@ const API = {
             }
         })
     },
+    getFriendsRelationships: (userId) => {
+        return fetch(`${db}/users/${userId}?_embed=friends`)
+            .then(response => response.json())
+    },
+    addFriend: (userId, friendId, obj) => {
+        return fetch(`${db}/friends`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+            .then(e => e.json())
+    }
 }
 
 export default API

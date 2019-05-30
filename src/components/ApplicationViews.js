@@ -43,6 +43,13 @@ class ApplicationViews extends Component {
                 this.setState(newState)
             })
 
+        API.getFriendsRelationships(id)
+            .then(relationships => {
+                newState.relationships = relationships
+                this.setState(newState)
+            })
+
+
 
         if (this.isAuthenticated()) {
             API.getUserInfo(id)
@@ -84,6 +91,7 @@ class ApplicationViews extends Component {
     }
 
     //Colin
+
     deleteFriend = (friendId, userId) => {
         const newState = {}
 
@@ -113,6 +121,8 @@ class ApplicationViews extends Component {
                 )
         }
     }
+
+
 
     //Carly and Jake - calls the newsfeeds of the current user and their friends, sets a new newsfeed state and sends the user back to their updated newsfeed page
     getSetAndPushNewsfeed = () => {
@@ -189,7 +199,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/messages" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} />
+                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} relationships={this.state.relationships} />
                         )
                     } else {
                         console.log("no user")

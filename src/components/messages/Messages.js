@@ -8,6 +8,8 @@ import {
 } from 'reactstrap';
 
 import main from "../../main.css"
+import { conditionalExpression } from '@babel/types';
+import FriendButton from "./FriendButton"
 
 
 class Messages extends Component {
@@ -35,7 +37,6 @@ class Messages extends Component {
                                 <CardBody className="friend-card-body">
                                     <CardText>{message.postedTime}: "{message.message}"</CardText>
                                     {
-                                        // console.log(`userId, ${userId}`, `message.userId, ${message.userId}`)
                                         (userId == message.userId) ?
                                             (<>
                                                 <Button className="edit-message-btn" outline color="warning">Edit</Button>
@@ -45,11 +46,14 @@ class Messages extends Component {
                                             ) : (console.log("x"))
                                     }
                                     {
-                                        // (this.props.friends.map(friend => {
-                                        //     (friend.id !== this.props.user.)
-                                        // }))
+                                        (this.props.relationships) ? (
+                                            this.props.relationships.friends.map(friend => {
+                                                return (message.user.id == userId) ? (null) :
+                                                    (message.user.id !== friend.friendUserId) ?
+                                                        (<FriendButton key={message.id} relationships={this.props.relationships} user={this.props.user} />) : (null)
+                                            })
+                                        ) : null
                                     }
-
                                 </CardBody>
                             </Card>
                         )) : (null)
