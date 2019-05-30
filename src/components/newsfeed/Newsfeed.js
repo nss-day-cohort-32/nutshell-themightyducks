@@ -1,9 +1,12 @@
+// Authors: Carly and Jake
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import fire from '../../config/Fire';
 import NewsFeedCard from "./NewsFeedCard";
 import "./Newsfeed.css"
 import TitleBar from "../nav/TitleBar"
+import AddFormModal from './addFormModal';
 
 
 class Newsfeed extends Component {
@@ -24,12 +27,13 @@ class Newsfeed extends Component {
                                     } else if (item.type === "event") {
                                         color = "lightgray"
                                     }
-                                    return <NewsFeedCard key={item.id} newsItem={item} {...this.props} color={color} />
+                                    return <NewsFeedCard key={item.id} newsItem={item} {...this.props} color={color} deleteNewsItem={this.props.deleteNewsItem} />
                                 })
                             )
                                 : null
                         }
                     </section>
+                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} />
                 </div>
             </>
         );

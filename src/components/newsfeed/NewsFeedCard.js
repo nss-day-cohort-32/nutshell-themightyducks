@@ -3,8 +3,11 @@ import {
   Card, CardImg, CardText, CardBody, CardLink,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import { Route, Redirect, withRouter } from "react-router-dom"
 
 const NewsFeedCard = (props) => {
+
+  const newsItemId = props.newsItem.id
 
   return (
     <Card style={{ backgroundColor: props.color }}>

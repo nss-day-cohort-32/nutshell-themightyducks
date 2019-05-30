@@ -10,11 +10,8 @@ import Messages from "./messages/Messages"
 import dbCalls from "./dbCalls/dbCalls"
 import API from "./dbCalls/dbCalls"
 import { verify } from "crypto";
-// import main from "../main.css"
-
 
 class ApplicationViews extends Component {
-
     state = {
         newsfeed: [],
         friends: [],
@@ -31,9 +28,7 @@ class ApplicationViews extends Component {
             friends: [],
             messages: [],
         }
-
         const id = sessionStorage.getItem("id")
-
         dbCalls.getFriends(1)
             .then(friends => {
                 newState.friends = friends
@@ -56,8 +51,36 @@ class ApplicationViews extends Component {
                     newState.tasks = user.tasks
                     newState.currentUserId = id
                 })
+                .then(() => API.getFriendNewsfeed(id))
+                .then(friends => friends.map(friend =>
+                    friend.newsfeed.map(news =>
+                        newState.newsfeed.push(news)
+                    )
+                ))
                 .then(() => this.setState(newState))
         }
+    }
+
+    getSetAndPushNewsfeed = () => {
+        const newState = {}
+        const userId = this.state.currentUserId
+        API.getUserInfo(userId)
+            .then(user => {
+                newState.newsfeed = user.newsfeed
+            })
+            .then(() => API.getFriendNewsfeed(userId))
+            .then(friends => friends.map(friend =>
+                friend.newsfeed.map(news =>
+                    newState.newsfeed.push(news)
+                )
+            ))
+            .then(this.props.history.push("/newsfeed"))
+            .then(() => this.setState(newState))
+    }
+
+    addNewsfeed = (data) => {
+        API.post("newsfeed", data)
+            .then(() => this.getSetAndPushNewsfeed())
     }
 
     //Colin
@@ -91,6 +114,31 @@ class ApplicationViews extends Component {
         }
     }
 
+    //Carly and Jake - calls the newsfeeds of the current user and their friends, sets a new newsfeed state and sends the user back to their updated newsfeed page
+    getSetAndPushNewsfeed = () => {
+        const newState = {}
+        const userId = this.state.currentUserId
+        API.getUserInfo(userId)
+            .then(user => {
+                newState.newsfeed = user.newsfeed
+            })
+            .then(() => API.getFriendNewsfeed(userId))
+            .then(friends => friends.map(friend =>
+                friend.newsfeed.map(news =>
+                    newState.newsfeed.push(news)
+                )
+            ))
+            .then(() => {
+                this.props.history.push("/newsfeed")
+                this.setState(newState)
+            })
+    }
+
+    //Carly
+    deleteNewsItem = (newsfeed, newsItemId) => {
+        API.delete(newsfeed, newsItemId)
+            .then(() => this.getSetAndPushNewsfeed())
+    }
 
 
     render() {
@@ -104,7 +152,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed newsfeed={this.state.newsfeed} />
+                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} />
                         )
                     } else {
                         return (

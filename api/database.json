@@ -4,7 +4,6 @@
       "id": 1,
       "userName": "carly",
       "email": "carly@carly.com",
-      "status": "Hating this group project bc of my group",
       "password": "carly",
       "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/49895255_10213128530997235_6275040282807369728_o.jpg?_nc_cat=104&_nc_ht=scontent-atl3-1.xx&oh=926d3e581c68cd24819976d5771d686d&oe=5D555EE2"
     },
@@ -12,7 +11,6 @@
       "id": 2,
       "userName": "jake",
       "email": "jake@jake.com",
-      "status": "Feelin' real java about Javascript",
       "password": "jake",
       "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/52995408_2294319350589304_4371270216101920768_n.jpg?_nc_cat=107&_nc_ht=scontent-atl3-1.xx&oh=26e86ceac2fff7300e3efe9d5aaccd95&oe=5D5469FE"
     },
@@ -46,73 +44,118 @@
       "id": 1,
       "userId": 1,
       "friendUserId": 2
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "friendUserId": 1
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "friendUserId": 3
     }
   ],
   "newsfeed": [
     {
-      "id": 1,
       "userId": 1,
       "type": "article",
-      "title": "carly news",
-      "description": "description",
-      "location": "location",
-      "url": "https://www.linkedin.com/in/carlybergthold/",
-      "eventDate": "eventDate",
-      "postDate": "postDate"
+      "title": "event",
+      "description": "1`234567",
+      "url": "https://github.com/nashville-software-school/client-side-mastery",
+      "eventDate": "2019-05-31",
+      "postDate": 1559229621179,
+      "id": 1
     },
     {
-      "id": 4,
-      "userId": 1,
-      "type": "event",
-      "title": "carly event",
-      "description": "description",
-      "location": "location",
-      "url": "https://www.linkedin.com/in/carlybergthold/",
-      "eventDate": "eventDate",
-      "postDate": "postDate"
-    },
-    {
-      "id": 5,
       "userId": 1,
       "type": "article",
-      "title": "carly news",
-      "description": "description",
-      "location": "location",
-      "url": "https://www.linkedin.com/in/carlybergthold/",
-      "eventDate": "eventDate",
-      "postDate": "postDate"
+      "title": "new",
+      "description": "so  new new ",
+      "url": "https://github.com/nashville-software-school/client-side-mastery",
+      "eventDate": "2019-05-31",
+      "postDate": 1559233381743,
+      "id": 3
     },
     {
-      "id": 6,
+      "userId": null,
+      "type": "event",
+      "title": "ddd",
+      "description": "sss",
+      "url": "ss",
+      "eventDate": "2019-05-09",
+      "postDate": 1559238611739,
+      "id": 4
+    },
+    {
+      "userId": null,
+      "type": "event",
+      "title": "ddd",
+      "description": "sss",
+      "url": "ss",
+      "eventDate": "2019-05-09",
+      "postDate": 1559238615562,
+      "id": 5
+    },
+    {
+      "userId": null,
+      "type": "event",
+      "title": "ddd",
+      "description": "sss",
+      "url": "ss",
+      "eventDate": "2019-05-09",
+      "postDate": 1559238711317,
+      "id": 6
+    },
+    {
       "userId": 1,
       "type": "event",
-      "title": "carly event",
-      "description": "description",
-      "location": "location",
-      "url": "https://www.linkedin.com/in/carlybergthold/",
-      "eventDate": "eventDate",
-      "postDate": "postDate"
+      "title": "ddd",
+      "description": "dddd",
+      "url": "ddd",
+      "eventDate": "2019-05-23",
+      "postDate": 1559238776500,
+      "id": 7
     },
     {
-      "id": 2,
-      "userId": 2,
+      "userId": 1,
+      "type": "article",
+      "title": "baby shark",
+      "description": "do dooooo",
+      "url": "https://github.com/nss-day-cohort-32/nutshell-themightyducks/blob/master/api/database.json",
+      "eventDate": "2019-05-18",
+      "postDate": 1559239312409,
+      "id": 8
+    },
+    {
+      "userId": 1,
       "type": "event",
-      "title": "jake event",
-      "description": "jakedescription",
-      "location": "location",
-      "url": "https://www.linkedin.com/in/carlybergthold/",
-      "eventDate": "eventDate",
-      "postDate": "postDate"
+      "title": "ddd",
+      "description": "h",
+      "url": "h",
+      "eventDate": "2019-05-03",
+      "postDate": 1559239735683,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "asd",
+      "description": "asdsad",
+      "url": "asdasd",
+      "eventDate": "2019-05-15",
+      "postDate": 1559239929650,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "type": "article",
+      "title": "asdas",
+      "description": "asdsa",
+      "url": "asdas",
+      "eventDate": "2019-05-03",
+      "postDate": 1559239945219,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "asd",
+      "description": "asd",
+      "url": "asd",
+      "eventDate": "2019-05-23",
+      "postDate": 1559240215162,
+      "id": 12
     }
   ],
   "messages": [
