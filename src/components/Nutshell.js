@@ -17,11 +17,11 @@ class Nutshell extends Component {
 
     authListener = () => {
         fire.auth().onAuthStateChanged((user) => {
-            console.log("user", user);
+            // console.log("user", user);
             if (user) {
                 this.setState({ user });
                 localStorage.setItem('user', user.uid);
-                // sessionStorage.setItem('user', )
+
             } else {
                 this.setState({ user: null });
                 localStorage.removeItem('user');
@@ -33,8 +33,13 @@ class Nutshell extends Component {
     render() {
         return (
             <>
-                <TopNav />
-                <ApplicationViews />
+                {
+                    this.state.user ? (
+                        <>
+                            <TopNav />
+                            <ApplicationViews />
+                        </>) : (<Route path="/auth" component={Auth} />)
+                }
             </>
         )
     }
