@@ -33,6 +33,12 @@ class ApplicationViews extends Component {
                     newState.tasks = user.tasks
                     newState.currentUserId = id
                 })
+                .then(() => API.getFriendNewsfeed(id))
+                .then(friends => friends.map(friend =>
+                    friend.newsfeed.map(news =>
+                        newState.newsfeed.push(news)
+                    )
+                ))
                 .then(() => this.setState(newState))
         }
     }
