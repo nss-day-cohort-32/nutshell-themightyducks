@@ -53,7 +53,10 @@ export default class EventsForm extends React.Component {
                     <Label for="eventDescription">Description</Label>
                     <Input type="textarea" name="text" id="description" onChange={this.handleFieldChange} />
                 </FormGroup>
-                <Button onClick={this.contructNewNewsfeed}>Submit</Button>
+                <Button onClick={() => {
+                    this.contructNewNewsfeed()
+                    this.props.toggle()
+                }}>Submit</Button>
             </Form>
         );
     }
