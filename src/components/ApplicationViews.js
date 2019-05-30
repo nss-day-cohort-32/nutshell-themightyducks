@@ -119,7 +119,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/messages" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Messages />
+                            <Messages messags={this.state.messages} />
                         )
                     } else {
                         console.log("no user")
