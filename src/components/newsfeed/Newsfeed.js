@@ -33,7 +33,7 @@ class Newsfeed extends Component {
                                 : null
                         }
                     </section>
-                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} />
+                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} newsfeed={this.props.newsfeed} />
                 </div>
             </>
         );

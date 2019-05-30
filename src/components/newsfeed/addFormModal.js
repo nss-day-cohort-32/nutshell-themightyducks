@@ -4,6 +4,7 @@ import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
 import ArticleForm from './articleForm';
 import EventsForm from './eventsForm';
+import ArticleUpdateForm from './updateNewsfeedForm';
 
 
 class AddFormModal extends React.Component {
@@ -19,7 +20,7 @@ class AddFormModal extends React.Component {
   }
 
   toggle() {
-      console.log("toggled!")
+    console.log("toggled!")
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
@@ -27,15 +28,17 @@ class AddFormModal extends React.Component {
 
   handleSelect = (event) => {
     this.setState({ formtype: event.target.value })
-    }
+  }
 
   render() {
-      let formType;
-      if (this.state.formtype === "Article") {
-          formType = <ArticleForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} modal={this.state.modal} toggle={this.toggle} />
-      } else if (this.state.formtype === "Event") {
-           formType = <EventsForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} modal={this.state.modal} toggle={this.toggle} />
-      }
+    let formType;
+    if (this.state.formtype === "Article") {
+      formType = <ArticleForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} modal={this.state.modal} toggle={this.toggle} />
+    } else if (this.state.formtype === "Event") {
+      formType = <EventsForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} modal={this.state.modal} toggle={this.toggle} />
+    } else if (this.state.formtype === "Edit") {
+      formType = <ArticleUpdateForm currentUserId={this.props.currentUserId} modal={this.state.modal} toggle={this.toggle} newsfeed={this.props.newsfeed} />
+    }
 
     return (
       <div>
@@ -43,9 +46,9 @@ class AddFormModal extends React.Component {
           <FormGroup>
             <Label for="select">Type</Label>{' '}
             <Input type="select" name="select" id="exampleSelect" onChange={this.handleSelect}>
-                <option value="SelectForm">Select</option>
-                <option value="Article">Article</option>
-                <option value="Event">Event</option>
+              <option value="SelectForm">Select</option>
+              <option value="Article">Article</option>
+              <option value="Event">Event</option>
             </Input>
           </FormGroup>
           {' '}
