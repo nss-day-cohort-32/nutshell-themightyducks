@@ -9,6 +9,7 @@ import EventUpdateForm from './eventUpdateForm';
 
 class AddFormModal extends React.Component {
 
+
   render() {
       let formType;
       if (this.props.formtype === "Article") {
@@ -19,7 +20,7 @@ class AddFormModal extends React.Component {
     //   else if (this.props.formtype === "article") {
     //     formType = <ArticleUpdateForm currentUserId={this.props.currentUserId} modal={this.props.modal} toggle={this.props.toggle} newsfeed={this.props.newsfeed} />}
      else if (this.props.formtype === "event") {
-       formType = <EventUpdateForm currentUserId={this.props.currentUserId} modal={this.props.modal} toggle={this.props.toggle} newsfeed={this.props.newsfeed} />
+       formType = <EventUpdateForm currentUserId={this.props.currentUserId} modal={this.props.modal} toggle={this.props.toggle} newsfeed={this.props.newsfeed} newsItem={this.props.newsItem} />
      }
 
     return (
