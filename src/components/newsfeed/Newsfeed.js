@@ -6,6 +6,7 @@ import fire from '../../config/Fire';
 import NewsFeedCard from "./NewsFeedCard";
 import "./Newsfeed.css"
 import TitleBar from "../nav/TitleBar"
+import AddFormModal from './addFormModal';
 
 
 class Newsfeed extends Component {
@@ -32,6 +33,7 @@ class Newsfeed extends Component {
                                 : null
                         }
                     </section>
+                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} />
                 </div>
             </>
         );

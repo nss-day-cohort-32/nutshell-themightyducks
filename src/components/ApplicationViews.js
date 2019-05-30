@@ -128,7 +128,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} />
+                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} />
                         )
                     } else {
                         return (
