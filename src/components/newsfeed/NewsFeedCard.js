@@ -8,18 +8,24 @@ import { Route, Redirect, withRouter } from "react-router-dom"
 const NewsFeedCard = (props) => {
 
   const newsItemId = props.newsItem.id
+  const newsItemType = props.newsItem.type
 
   return (
-    <Card style={{ backgroundColor: props.color }}>
-      <CardBody className="newsfeed-card">
+    <Card style={{ backgroundColor: props.color }} onDoubleClick={(event) => {
+      props.toggle()
+      props.handleSelect(event)
+      props.handleDbleClick(event, newsItemType)
+    }}>
+      <CardBody value={props.newsItem.type}>
         <CardTitle>{props.newsItem.title}</CardTitle>
         <CardText>{props.newsItem.description}</CardText>
         <CardSubtitle>{props.newsItem.location}</CardSubtitle>
         <CardSubtitle>{props.newsItem.eventDate}</CardSubtitle>
         <CardLink href={props.newsItem.url} target="_blank">{props.newsItem.type} Link</CardLink>
         <section className="newsItem--buttons">
-          <Button className="newsItem--edit-btn">Edit</Button>
-          <Button className="newsItem--delete-btn">Delete</Button>
+          <Button className="newsItem--delete-btn"
+            onClick={() => props.deleteNewsItem("newsfeed", newsItemId)}
+          >Delete</Button>
         </section>
       </CardBody>
     </Card>
