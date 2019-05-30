@@ -13,6 +13,7 @@ export default class Footer extends Component {
     }
 
     render() {
+        console.log("FOOTER")
         return (
             <footer className="footer">
                 <Button className={this.isActive}  text="All" setActiveFilter={this.props.setActiveFilter} />

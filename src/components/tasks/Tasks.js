@@ -14,7 +14,8 @@ export default class Tasks extends Component {
     state = {
         todoValue: "",
         filterType: "All",
-        todos: [],
+        // todos: []
+        todos: this.props.todos
     }
 
     handleChange = (event) => {
@@ -28,7 +29,7 @@ export default class Tasks extends Component {
         if (this.state.todoValue !== "") {
             const todo = {
                 id: Date.now(),
-                text: this.state.todoValue,
+                task: this.state.todoValue,
                 done: false,
             }
             this.setState({
@@ -85,7 +86,27 @@ export default class Tasks extends Component {
         })
     }
 
+    // componentDidMount(){
+    //    // iterate over todos, create a todos obj with state.todos types and add to state.todos array.
+    //    console.log("thisPROPStodos", this.props.todos)
+    //    let newTodos = []
+    //    this.props.todos.forEach(API_task => {
+    //        let todoOBJ = {
+    //            id : "",
+    //            done : false,
+    //            task : API_task.task
+    //        }
+    //     newTodos.push(todoOBJ)
+    //     });
+    //     console.log("newTodos:", newTodos)
+    //     this.setState({
+    //         todos: newTodos
+    //     })
+    // }
+
     render() {
+        console.log("TASKS State = ", this.state)
+        console.log("TASKS todos = ", this.props.todos)
         return (
             <>
             <TitleBar title="Tasks" />
@@ -96,7 +117,8 @@ export default class Tasks extends Component {
                     handleClick={this.handleClick}
                     handleChange={this.handleChange}
                     todoValue={this.state.todoValue}
-                    todos={this.getVisibleTodos()} />
+                    // todos={this.getVisibleTodos()} />
+                    todos={this.props.todos} />
                 <Footer setActiveFilter={this.setActiveFilter}
                     deleteCompleted={this.deleteCompleted}
                     filter={this.state.filterType} />
