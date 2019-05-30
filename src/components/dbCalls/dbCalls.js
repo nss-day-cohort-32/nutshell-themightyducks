@@ -29,7 +29,7 @@ const API = {
             headers: {
                 'Content-Type': 'application/json'
             }
-        })
+        }).then(e => console.log("Delete Response=", e))
     },
     post: (resource, data) => {
         return fetch(`${db}/${resource}`, {
@@ -63,7 +63,11 @@ const API = {
                 })
                 return Promise.all(data)
             })
-    }
+    },
+    getTasks: (userId) => {
+        return fetch(`${db}/tasks/?userId=${userId}`)
+            .then(results => results.json())
+        }
 }
 
 export default API

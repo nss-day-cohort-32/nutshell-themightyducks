@@ -15,15 +15,15 @@ export default class Tasks extends Component {
         todoValue: "",
         filterType: "All",
         // todos: []
-        todos: this.props.todos
+        todos: []
     }
-
+//This updates state every time a character is entered into the FORM input
     handleChange = (event) => {
         this.setState({
             todoValue: event.target.value,
         })
     }
-
+//This handles the clicking of the ADD button
     handleClick = (event) => {
         event.preventDefault();
         if (this.state.todoValue !== "") {
@@ -54,12 +54,12 @@ export default class Tasks extends Component {
             }
         })
     }
-
-    handleDelete = (id) => {
-        this.setState({
-            todos: this.state.todos.filter(item => item.id !== id)
-        })
-    }
+    //Not using this as of now
+    // handleDelete = (id) => {
+    //     this.setState({
+    //         todos: this.state.todos.filter(item => item.id !== id)
+    //     })
+    // }
 
     deleteCompleted = () => {
         this.setState({
@@ -112,7 +112,8 @@ export default class Tasks extends Component {
             <TitleBar title="Tasks" />
             <div className="container">
                 <Header countTodo={this.state.todos.length} />
-                <Form handleDelete={this.handleDelete}
+                <Form //handleDelete={this.handleDelete}
+                    deleteTask={this.props.deleteTask}
                     handleToggle={this.handleToggle}
                     handleClick={this.handleClick}
                     handleChange={this.handleChange}

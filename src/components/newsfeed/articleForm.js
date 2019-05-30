@@ -56,7 +56,10 @@ export default class ArticleForm extends React.Component {
                     <Label for="synopsis">Synopsis</Label>
                     <Input type="textarea" name="text" id="description" onChange={this.handleFieldChange} />
                 </FormGroup>
-                <Button onClick={this.contructNewNewsfeed}>Submit</Button>
+                <Button onClick={() => {
+                    this.contructNewNewsfeed()
+                    this.props.toggle()
+                }}>Submit</Button>
             </Form >
         );
     }

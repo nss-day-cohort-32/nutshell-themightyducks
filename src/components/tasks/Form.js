@@ -11,8 +11,10 @@ export default class Form extends Component {
                 placeholder="Add todo" onChange={this.props.handleChange} value={this.props.todoValue}/>
 
                 <button className="form__button" type="submit" onClick={this.props.handleClick}>╋</button>
-                <Todo todos={this.props.todos} handleToggle={this.props.handleToggle} 
-                handleDelete={this.props.handleDelete}/>
+                <Todo todos={this.props.todos} handleToggle={this.props.handleToggle}
+                deleteTask={this.props.deleteTask}
+                //handleDelete={this.props.handleDelete}
+                />
             </form>
         )
     }

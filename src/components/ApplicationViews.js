@@ -10,7 +10,6 @@ import Messages from "./messages/Messages"
 import dbCalls from "./dbCalls/dbCalls"
 import API from "./dbCalls/dbCalls"
 import { verify } from "crypto";
-import NewsfeedForm from "./newsfeed/addNewsfeed"
 
 class ApplicationViews extends Component {
     state = {
@@ -53,6 +52,7 @@ class ApplicationViews extends Component {
         }
     }
 
+
     getSetAndPushNewsfeed = () => {
         const newState = {}
         const userId = this.state.currentUserId
@@ -90,7 +90,48 @@ class ApplicationViews extends Component {
             })
 
     }
+    //Jason
+    deleteTask = (idtodelete) => {
+        console.log("ID to delete ", idtodelete)
+        const newState = {}
+        const userId = sessionStorage.getItem("id")
+        const url = "tasks"
+        API.delete(url, idtodelete)
+            .then(() => dbCalls.getTasks(userId))
+            .then(tasks => {
+                newState.tasks = tasks
+            })
+            .then(() => {
+                //this.props.history.push("/tasks")
+                this.setState(newState);
+            })
+    }
 
+    //Carly and Jake - calls the newsfeeds of the current user and their friends, sets a new newsfeed state and sends the user back to their updated newsfeed page
+    getSetAndPushNewsfeed = () => {
+        const newState = {}
+        const userId = this.state.currentUserId
+        API.getUserInfo(userId)
+                .then(user => {
+                    newState.newsfeed = user.newsfeed
+                })
+                .then(() => API.getFriendNewsfeed(userId))
+                .then(friends => friends.map(friend =>
+                    friend.newsfeed.map(news =>
+                        newState.newsfeed.push(news)
+                    )
+                ))
+                .then(() => {
+                    this.props.history.push("/newsfeed")
+                    this.setState(newState)
+                })
+    }
+
+    //Carly
+    deleteNewsItem = (newsfeed, newsItemId) => {
+        API.delete(newsfeed, newsItemId)
+        .then(() => this.getSetAndPushNewsfeed())
+    }
 
 
     render() {
@@ -104,7 +145,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed newsfeed={this.state.newsfeed} />
+                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} />
                         )
                     } else {
                         return (
@@ -128,7 +169,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/tasks" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Tasks todos={this.state.tasks}/>
+                            <Tasks todos={this.state.tasks} deleteTask={this.deleteTask}/>
                         )
                     } else {
                         console.log("no user")
@@ -149,9 +190,6 @@ class ApplicationViews extends Component {
                             <Redirect to="/auth" component={Auth} />
                         )
                     }
-                }} />
-                <Route exact path="/newsfeed/new" render={(props) => {
-                    return <NewsfeedForm addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} {...props} />
                 }} />
             </>
         )
