@@ -8,9 +8,38 @@ import { verify } from "crypto";
 
 
 class ApplicationViews extends Component {
-    state = {}
+
+    state = {
+        newsfeed: [],
+        friends: [],
+        messages: [],
+        tasks: [],
+        currentUserId: ""
+    }
 
     isAuthenticated = () => localStorage.getItem("user") !== null
+
+    componentDidMount() {
+        //We'll likely need to change this after we figure out why a refresh is needed to show newsfeed after login
+        let newState = {}
+        let id = sessionStorage.getItem("id");
+
+        if (this.isAuthenticated()) {
+            API.getUserInfo(id)
+                .then(user => {
+                    newState.newsfeed = user.newsfeed
+                    newState.friends = user.friends
+                    newState.messages = user.messages
+                    newState.tasks = user.tasks
+                    newState.currentUserId = id
+                })
+                .then(() => this.setState(newState))
+        }
+    }
+    // verifyEmail = (email) => {
+        // API.getUserID(email)
+    // }
+
 
     render() {
         return (
@@ -20,7 +49,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/newsfeed" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed />
+                            <NewsFeed newsfeed={this.state.newsfeed} />
                         )
                     } else {
                         return (
