@@ -16,18 +16,14 @@ export default class NewsfeedForm extends React.Component {
         this.setState({ type: event.target.value })
     }
 
-    addNewsfeed = (data) => {
-        API.post("newsfeed", data)
-    }
-
 
     render() {
         console.log(this.props)
         let formType
         if (this.state.type === "ArticleForm") {
-            return formType = <ArticleForm currentUserId={this.props.currentUserId} addNewsfeed={this.addNewsfeed} />
+            return formType = <ArticleForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} />
         } else if (this.state.type === "EventsForm") {
-            return formType = <EventsForm currentUserId={this.props.currentUserId} addNewsfeed={this.addNewsfeed} />
+            return formType = <EventsForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} />
         } else {
 
         }

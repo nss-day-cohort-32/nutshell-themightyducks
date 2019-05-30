@@ -20,7 +20,7 @@ export default class EventsForm extends React.Component {
     contructNewNewsfeed = (evt) => {
         // console.log(evt)
         const newsfeed = {
-            userId: this.props.currentUserId,
+            userId: parseInt(this.props.currentUserId),
             type: this.state.type,
             title: this.state.title,
             description: this.state.description,
@@ -30,6 +30,7 @@ export default class EventsForm extends React.Component {
         }
         console.log(newsfeed)
         this.props.addNewsfeed(newsfeed)
+
     }
     render() {
         // console.log(this.state)

@@ -24,7 +24,7 @@ export default class ArticleForm extends React.Component {
     contructNewNewsfeed = (evt) => {
         // console.log(evt)
         const newsfeed = {
-            userId: this.props.currentUserId,
+            userId: parseInt(this.props.currentUserId),
             type: this.state.type,
             title: this.state.title,
             description: this.state.description,
@@ -32,12 +32,12 @@ export default class ArticleForm extends React.Component {
             eventDate: this.state.eventDate,
             postDate: Date.now()
         }
-        console.log(newsfeed)
+        // console.log(newsfeed)
         this.props.addNewsfeed(newsfeed)
     }
 
     render() {
-        console.log(this.state)
+        console.log(this.props)
         return (
             < Form >
                 <FormGroup>
