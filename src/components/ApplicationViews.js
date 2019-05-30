@@ -14,8 +14,13 @@ import { verify } from "crypto";
 
 
 class ApplicationViews extends Component {
+
     state = {
-        title: "",
+        newsfeed: [],
+        friends: [],
+        messages: [],
+        tasks: [],
+        currentUserId: ""
     }
 
     isAuthenticated = () => localStorage.getItem("user") !== null
@@ -33,6 +38,18 @@ class ApplicationViews extends Component {
                 newState.friends = friends
                 this.setState(newState)
             })
+
+        if (this.isAuthenticated()) {
+            API.getUserInfo(id)
+                .then(user => {
+                    newState.newsfeed = user.newsfeed
+                    newState.friends = user.friends
+                    newState.messages = user.messages
+                    newState.tasks = user.tasks
+                    newState.currentUserId = id
+                })
+                .then(() => this.setState(newState))
+        }
     }
 
     //Colin
@@ -51,6 +68,8 @@ class ApplicationViews extends Component {
 
     }
 
+
+
     render() {
 
 
@@ -62,7 +81,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed />
+                            <NewsFeed newsfeed={this.state.newsfeed} />
                         )
                     } else {
                         return (
