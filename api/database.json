@@ -48,36 +48,6 @@
       "id": 3,
       "userId": 1,
       "friendUserId": 3
-    },
-    {
-      "id": 4,
-      "userId": 3,
-      "friendUserId": 1
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "friendUserId": 4
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "friendUserId": 5
-    },
-    {
-      "id": 7,
-      "userId": 1,
-      "friendUserId": 6
-    },
-    {
-      "id": 8,
-      "userId": 1,
-      "friendUserId": 7
-    },
-    {
-      "id": 9,
-      "userId": 1,
-      "friendUserId": 8
     }
   ],
   "newsfeed": [

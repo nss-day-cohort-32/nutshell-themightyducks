@@ -15,6 +15,7 @@ class Friends extends Component {
     }
 
     render() {
+        const userId = sessionStorage.getItem("id");
         let numfriends
         if (this.props.friends) {
             numfriends = this.props.friends.length
@@ -40,7 +41,7 @@ class Friends extends Component {
                                 <CardBody className="friend-card-body">
                                     {/* <CardTitle></CardTitle> */}
                                     <CardText>{friend.userName} is: {friend.status}</CardText>
-                                    <Button className="delete-friend-btn" onClick={() => this.props.deleteFriend(friend.id)} outline color="danger">Delete</Button>
+                                    <Button className="delete-friend-btn" onClick={() => this.props.deleteFriend(friend.id, userId)} outline color="danger">Delete</Button>
                                 </CardBody>
                             </Card>
                         )) : (null)

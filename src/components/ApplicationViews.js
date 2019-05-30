@@ -53,12 +53,12 @@ class ApplicationViews extends Component {
     }
 
     //Colin
-    deleteFriend = (idtodelete) => {
+    deleteFriend = (friendId, userId) => {
         const newState = {}
-        const userId = sessionStorage.getItem("id")
+
         if (window.confirm("Are you sure you want to ruin this friendship?")) {
-            dbCalls.deleteFriend(idtodelete)
-                .then(() => dbCalls.getFriends(1))
+            dbCalls.deleteFriend(friendId, userId)
+                .then(() => dbCalls.getFriends(userId))
                 .then(friends => {
                     newState.friends = friends
                 })
