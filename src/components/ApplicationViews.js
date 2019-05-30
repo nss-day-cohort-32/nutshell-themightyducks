@@ -10,11 +10,9 @@ import Messages from "./messages/Messages"
 import dbCalls from "./dbCalls/dbCalls"
 import API from "./dbCalls/dbCalls"
 import { verify } from "crypto";
-// import main from "../main.css"
-
+import NewsfeedForm from "./newsfeed/addNewsfeed"
 
 class ApplicationViews extends Component {
-
     state = {
         newsfeed: [],
         friends: [],
@@ -30,15 +28,12 @@ class ApplicationViews extends Component {
         const newState = {
             friends: []
         }
-
         const id = sessionStorage.getItem("id")
-
         dbCalls.getFriends(1)
             .then(friends => {
                 newState.friends = friends
                 this.setState(newState)
             })
-
         if (this.isAuthenticated()) {
             API.getUserInfo(id)
                 .then(user => {
@@ -55,6 +50,28 @@ class ApplicationViews extends Component {
                 ))
                 .then(() => this.setState(newState))
         }
+    }
+
+    getSetAndPushNewsfeed = () => {
+        const newState = {}
+        const userId = this.state.currentUserId
+        API.getUserInfo(userId)
+            .then(user => {
+                newState.newsfeed = user.newsfeed
+            })
+            .then(() => API.getFriendNewsfeed(userId))
+            .then(friends => friends.map(friend =>
+                friend.newsfeed.map(news =>
+                    newState.newsfeed.push(news)
+                )
+            ))
+            .then(this.props.history.push("/newsfeed"))
+            .then(() => this.setState(newState))
+    }
+
+    addNewsfeed = (data) => {
+        API.post("newsfeed", data)
+            .then(() => this.getSetAndPushNewsfeed())
     }
 
     //Colin
@@ -156,6 +173,9 @@ class ApplicationViews extends Component {
                             <Redirect to="/auth" component={Auth} />
                         )
                     }
+                }} />
+                <Route exact path="/newsfeed/new" render={(props) => {
+                    return <NewsfeedForm addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} {...props} />
                 }} />
             </>
         )
