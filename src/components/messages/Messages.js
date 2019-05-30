@@ -15,7 +15,7 @@ class Messages extends Component {
     }
 
     render() {
-        console.log(this.props.messages)
+
         const userId = sessionStorage.getItem("id");
         return (
             <>
@@ -25,14 +25,31 @@ class Messages extends Component {
                     (this.props.messages) ?
                         (this.props.messages.map(message =>
                             <Card key={message.id} className="friend-card">
-                                <CardHeader className="friend-card-header" >
-                                    {/* <img className="profile-image" src={friend.userPhoto} style={{ border: '2px solid #2CB79C' }}></img>
-                                    <h3>{message.userName}</h3> */}
+                                <CardHeader className="message-card-header" >
+                                    <div className="message-user-container">
+                                        <img className="message-image" src={message.user.userPhoto} ></img>
+                                        <h6>{message.user.userName}</h6>
+                                    </div>
+                                    <p></p>
                                 </CardHeader>
                                 <CardBody className="friend-card-body">
-                                    {/* <CardTitle></CardTitle> */}
-                                    {/* <CardText>{friend.userName} is: {friend.status}</CardText>
-                                    <Button className="delete-friend-btn" onClick={() => this.props.deleteFriend(friend.id, userId)} outline color="danger">Delete</Button> */}
+                                    <CardText>{message.postedTime}: "{message.message}"</CardText>
+                                    {
+                                        // console.log(`userId, ${userId}`, `message.userId, ${message.userId}`)
+                                        (userId == message.userId) ?
+                                            (<>
+                                                <Button className="edit-message-btn" outline color="warning">Edit</Button>
+                                                <Button onClick={() => this.props.deleteMessage(message.id)} className="delete-message-btn" outline color="danger">Delete
+                                                </Button>
+                                            </>
+                                            ) : (console.log("x"))
+                                    }
+                                    {
+                                        // (this.props.friends.map(friend => {
+                                        //     (friend.id !== this.props.user.)
+                                        // }))
+                                    }
+
                                 </CardBody>
                             </Card>
                         )) : (null)

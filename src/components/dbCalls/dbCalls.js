@@ -75,7 +75,19 @@ const API = {
                     }
                 })
             })
-    }
+    },
+    getMessages: () => {
+        return fetch(`${db}/messages?_expand=user`)
+            .then(response => response.json())
+    },
+    deleteMessage: (id) => {
+        return fetch(`${db}/messages/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    },
 }
 
 export default API

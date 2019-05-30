@@ -8,10 +8,28 @@
     border-radius: 50%;
 }
 
+.message-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
 .friend-card-header {
     display: flex;
     flex-direction: row;
     border-bottom: 2px solid #2CB79C;
+}
+
+.message-card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.message-user-container {
+    display: flex;
+    flex-direction: row;
 }
 
 .friend-card-header > h3 {

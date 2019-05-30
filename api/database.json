@@ -6,7 +6,7 @@
       "email": "carly@carly.com",
       "status": "Hating this group project bc of my group",
       "password": "carly",
-      "userPhoto": "url"
+      "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/49895255_10213128530997235_6275040282807369728_o.jpg?_nc_cat=104&_nc_ht=scontent-atl3-1.xx&oh=926d3e581c68cd24819976d5771d686d&oe=5D555EE2"
     },
     {
       "id": 2,
@@ -27,6 +27,14 @@
     {
       "id": 4,
       "userName": "jason",
+      "email": "strangehandle@gmail.com",
+      "password": "nashville",
+      "status": "Firing firebase",
+      "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/980145_10103194319550195_6182930118244811468_o.jpg?_nc_cat=107&_nc_ht=scontent-atl3-1.xx&oh=19a3f390f891aac15ddeedb89b6cb811&oe=5D9D6EB7"
+    },
+    {
+      "id": 9,
+      "userName": "Not Your Friend",
       "email": "strangehandle@gmail.com",
       "password": "nashville",
       "status": "Firing firebase",
@@ -112,6 +120,30 @@
       "id": 1,
       "userId": 1,
       "message": "message yooo",
+      "postedTime": "05:00am"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "message": "message yooo",
+      "postedTime": "05:00am"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "message": "message yooo",
+      "postedTime": "05:00am"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "message": "message yooo",
+      "postedTime": "05:00am"
+    },
+    {
+      "id": 5,
+      "userId": 9,
+      "message": "I am not your friend",
       "postedTime": "05:00am"
     }
   ],

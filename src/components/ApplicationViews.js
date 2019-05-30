@@ -28,7 +28,8 @@ class ApplicationViews extends Component {
     componentDidMount() {
         // Declaring new state
         const newState = {
-            friends: []
+            friends: [],
+            messages: [],
         }
 
         const id = sessionStorage.getItem("id")
@@ -39,12 +40,19 @@ class ApplicationViews extends Component {
                 this.setState(newState)
             })
 
+
+        API.getMessages()
+            .then(messages => {
+                console.log(messages)
+                newState.messages = messages
+                this.setState(newState)
+            })
+
+
         if (this.isAuthenticated()) {
             API.getUserInfo(id)
                 .then(user => {
                     newState.newsfeed = user.newsfeed
-                    // newState.friends = user.friends
-                    newState.messages = user.messages
                     newState.tasks = user.tasks
                     newState.currentUserId = id
                 })
@@ -66,6 +74,20 @@ class ApplicationViews extends Component {
                     this.props.history.push("/friends")
                     this.setState(newState);
                 })
+        }
+    }
+
+    deleteMessage = (messageId) => {
+        const newState = {}
+
+        if (window.confirm("Are you sure you want to delete this message?")) {
+            dbCalls.deleteMessage(messageId)
+                .then(() => API.getMessages()
+                    .then(messages => {
+                        newState.messages = messages
+                        this.setState(newState)
+                    })
+                )
         }
     }
 
@@ -119,7 +141,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/messages" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Messages messags={this.state.messages} />
+                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} />
                         )
                     } else {
                         console.log("no user")
