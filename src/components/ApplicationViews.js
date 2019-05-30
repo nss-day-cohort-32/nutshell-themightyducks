@@ -17,7 +17,9 @@ class ApplicationViews extends Component {
         friends: [],
         messages: [],
         tasks: [],
-        currentUserId: ""
+        currentUserId: "",
+        modal: false,
+        formtype: []
     }
 
     isAuthenticated = () => localStorage.getItem("user") !== null
@@ -89,6 +91,25 @@ class ApplicationViews extends Component {
 
     }
 
+    //Carly - toggle function for modal
+    toggle = () => {
+        this.setState(prevState => ({
+          modal: !prevState.modal
+        }));
+    }
+
+    //changes formtype state to tell modal which form to display
+    handleSelect = (event) => {
+        this.setState({ formtype: event.target.value })
+    }
+
+    handleDbleClick = (event, newsItemType) => {
+        console.log("doubleclick", event)
+        console.log("dbl", newsItemType)
+        this.setState({ formtype: newsItemType })
+    }
+
+
     //Carly and Jake - calls the newsfeeds of the current user and their friends, sets a new newsfeed state and sends the user back to their updated newsfeed page
     getSetAndPushNewsfeed = () => {
         const newState = {}
@@ -127,7 +148,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} />
+                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} toggle={this.toggle} modal={this.state.modal} handleSelect={this.handleSelect} formtype={this.state.formtype} handleDbleClick={this.handleDbleClick} />
                         )
                     } else {
                         return (
