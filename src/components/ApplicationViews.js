@@ -40,10 +40,11 @@ class ApplicationViews extends Component {
             })
 
         if (this.isAuthenticated()) {
+            console.log("NEWSFEED")
             API.getUserInfo(id)
                 .then(user => {
                     newState.newsfeed = user.newsfeed
-                    newState.friends = user.friends
+                    //newState.friends = user.friends
                     newState.messages = user.messages
                     newState.tasks = user.tasks
                     newState.currentUserId = id
@@ -105,7 +106,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/tasks" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Tasks />
+                            <Tasks todos={this.state.tasks}/>
                         )
                     } else {
                         console.log("no user")
