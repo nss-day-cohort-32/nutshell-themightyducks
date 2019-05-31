@@ -30,7 +30,7 @@ class ApplicationViews extends Component {
             friends: []
         }
         const id = sessionStorage.getItem("id")
-        dbCalls.getFriends(1)
+        API.getFriends(id)
             .then(friends => {
                 newState.friends = friends
                 this.setState(newState)
@@ -148,7 +148,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} toggle={this.toggle} modal={this.state.modal} handleSelect={this.handleSelect} formtype={this.state.formtype} handleDbleClick={this.handleDbleClick} />
+                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} toggle={this.toggle} modal={this.state.modal} handleSelect={this.handleSelect} formtype={this.state.formtype} handleDbleClick={this.handleDbleClick} getSetAndPushNewsfeed={this.getSetAndPushNewsfeed}/>
                         )
                     } else {
                         return (

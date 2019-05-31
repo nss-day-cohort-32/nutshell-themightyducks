@@ -20,22 +20,22 @@ class AddFormModal extends React.Component {
     //   else if (this.props.formtype === "article") {
     //     formType = <ArticleUpdateForm currentUserId={this.props.currentUserId} modal={this.props.modal} toggle={this.props.toggle} newsfeed={this.props.newsfeed} />}
      else if (this.props.formtype === "event") {
-       formType = <EventUpdateForm currentUserId={this.props.currentUserId} modal={this.props.modal} toggle={this.props.toggle} newsfeed={this.props.newsfeed} newsItem={this.props.newsItem} />
+       formType = <EventUpdateForm currentUserId={this.props.currentUserId} modal={this.props.modal} toggle={this.props.toggle} newsfeed={this.props.newsfeed} newsItem={this.props.newsItem} getSetAndPushNewsfeed={this.props.getSetAndPushNewsfeed} />
      }
 
     return (
       <div>
-        <Form inline onSubmit={(e) => e.preventDefault()}>
+        <Form inline onSubmit={(e) => e.preventDefault()} className="newsModal">
           <FormGroup>
-            <Label for="select">Type</Label>{' '}
-            <Input type="select" name="select" id="exampleSelect" onChange={this.props.handleSelect}>
+            <Label for="select">Select Type</Label>{' '}
+            <Input type="select" name="select" id="exampleSelect" onChange={this.props.handleSelect} className="newsModalInput">
                 <option value="SelectForm">Select</option>
                 <option value="Article">Article</option>
                 <option value="Event">Event</option>
             </Input>
           </FormGroup>
           {' '}
-          <Button color="danger" onClick={this.props.toggle}>Add an Item</Button>
+          <Button className="newsModalBtn" onClick={this.props.toggle}>Add an Item</Button>
         </Form>
         <Modal isOpen={this.props.modal} toggle={this.props.toggle} >
           <ModalHeader toggle={this.props.toggle}>Add an {this.props.formtype}</ModalHeader>

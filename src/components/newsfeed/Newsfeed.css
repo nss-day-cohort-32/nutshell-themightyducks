@@ -31,3 +31,12 @@
 .newsItem--delete-btn {
     margin-left: 0.4rem;
 }
+
+.newsModal {
+    justify-content: flex-end;
+    margin: 0 1rem 1rem 0;
+}
+
+.newsModalBtn {
+    margin-left: 0.6rem;
+}
