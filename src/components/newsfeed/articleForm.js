@@ -18,10 +18,6 @@ export default class ArticleForm extends React.Component {
     };
 
     contructNewNewsfeed = (evt) => {
-        console.log(evt)
-    }
-
-    contructNewNewsfeed = (evt) => {
         // console.log(evt)
         const newsfeed = {
             userId: parseInt(this.props.currentUserId),
