@@ -54,11 +54,6 @@
       "id": 3,
       "userId": 1,
       "friendUserId": 4
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "friendUserId": 9
     }
   ],
   "newsfeed": [
@@ -73,7 +68,7 @@
       "id": 3
     },
     {
-      "userId": null,
+      "userId": 1,
       "type": "event",
       "title": "ddd",
       "description": "sss",
@@ -83,7 +78,7 @@
       "id": 4
     },
     {
-      "userId": null,
+      "userId": 1,
       "type": "event",
       "title": "ddd",
       "description": "sss",
@@ -93,7 +88,7 @@
       "id": 5
     },
     {
-      "userId": null,
+      "userId": 1,
       "type": "event",
       "title": "ddd",
       "description": "sss",
@@ -162,6 +157,12 @@
       "id": 5,
       "userId": 9,
       "message": "I am not your friend",
+      "postedTime": "05:00am"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "message": "sup",
       "postedTime": "05:00am"
     }
   ],

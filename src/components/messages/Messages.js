@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 
 import TitleBar from "../nav/TitleBar"
 
-import {
-    Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText, Badge
-} from 'reactstrap';
 
-import main from "../../main.css"
-import { conditionalExpression } from '@babel/types';
-import FriendButton from "./FriendButton"
 
 import MessageItem from "./MessageItem"
 
@@ -29,6 +22,7 @@ class Messages extends Component {
         const userId = sessionStorage.getItem("id");
         return (
             <>
+                <TitleBar title="Messages" />
                 {
                     (this.props.messages) ? (
                         this.props.messages.map(message => {

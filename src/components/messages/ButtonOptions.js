@@ -1,34 +1,28 @@
 import React, { Component } from 'react';
-import {
-    Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText, Badge
-} from 'reactstrap';
-import main from "../../main.css"
-import { conditionalExpression } from '@babel/types';
-import FriendButton from "./FriendButton"
+import { Button } from 'reactstrap';
+
 
 export default class ButtonOptions extends Component {
 
-    // checkRelationship = (message, userId) => {
-    //     if (this.props.relationships) {
-    //         this.props.relationships.friends.filter(friend => {
-    //             if (message.user.id == userId) {
-    //                 console.log("message user is same as user")
-    //             }
-    //             if (message.user.id == userId) {
-    //                 console.log("1")
-    //             } else if (message.user.id !== friend.friendUserId) {
-    //                 return <FriendButton key={message.id} relationships={this.props.relationships} user={this.props.user} addFriend={this.props.addFriend} />
-    //             } else {
-    //                 console.log("2")
-    //             }
-    //         })
-    //     }
-    //     else {
-    //         console.log("nope")
-    //     }
-    // }
 
+    determineIfFriend = () => {
+        const userId = sessionStorage.getItem("id");
+        const messageCreatorId = this.props.message.userId
+        let friendIds = []
+        let friendsArray = this.props.relationships.friends
+        for (var i = 0; i < friendsArray.length; i++) {
+            friendIds[i] = friendsArray[i].friendUserId
+        }
+        friendIds.push(parseInt(userId));
+        let isFriend = false;
+
+        for (var i = 0; i < friendIds.length; i++) {
+            if (friendIds[i] === messageCreatorId || userId === messageCreatorId) {
+                isFriend = true
+            }
+        }
+        return isFriend
+    }
 
     render() {
         const userId = sessionStorage.getItem("id");
@@ -39,12 +33,13 @@ export default class ButtonOptions extends Component {
                         (<>
                             <Button key={this.props.message.id} className="edit-message-btn" outline color="warning">Edit</Button>
                             <Button onClick={() => this.props.deleteMessage(this.props.message.id)} className="delete-message-btn" outline color="danger">Delete
-                                                        </Button>
+                            </Button>
+
                         </>
                         ) : (null)
                 }
                 {
-                    (this.props.relationships.friends[0].friendUserId !== this.props.message.user.id) ? (console.log(this.props.relationships.friends[0].friendUserId !== this.props.message.user.id)) : (null)
+                    (this.determineIfFriend()) ? (null) : (<Button key={this.props.message.id} className="edit-message-btn" outline color="primary">Add Friend</Button>)
                 }
             </>
         )

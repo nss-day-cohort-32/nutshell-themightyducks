@@ -9,25 +9,6 @@ import FriendButton from "./FriendButton"
 import ButtonOptions from "./ButtonOptions"
 export default class MessageItem extends Component {
 
-    // checkRelationship = (message, userId) => {
-    //     if (this.props.relationships) {
-    //         this.props.relationships.friends.filter(friend => {
-    //             if (message.user.id == userId) {
-    //                 console.log("message user is same as user")
-    //             }
-    //             if (message.user.id == userId) {
-    //                 console.log("1")
-    //             } else if (message.user.id !== friend.friendUserId) {
-    //                 return <FriendButton key={message.id} relationships={this.props.relationships} user={this.props.user} addFriend={this.props.addFriend} />
-    //             } else {
-    //                 console.log("2")
-    //             }
-    //         })
-    //     }
-    //     else {
-    //         console.log("nope")
-    //     }
-    // }
 
 
     render() {
