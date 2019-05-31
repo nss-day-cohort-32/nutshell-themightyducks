@@ -41,11 +41,6 @@
   ],
   "friends": [
     {
-      "id": 1,
-      "userId": 1,
-      "friendUserId": 2
-    },
-    {
       "id": 2,
       "userId": 1,
       "friendUserId": 3
@@ -54,17 +49,27 @@
       "id": 3,
       "userId": 1,
       "friendUserId": 4
+    },
+    {
+      "userId": 1,
+      "friendUserId": 2,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "friendUserId": 9,
+      "id": 5
     }
   ],
   "newsfeed": [
     {
       "userId": 1,
       "type": "article",
-      "title": "new",
+      "title": "THAT NEW NEW",
       "description": "so  new new ",
       "url": "https://github.com/nashville-software-school/client-side-mastery",
       "eventDate": "2019-05-31",
-      "postDate": 1559233381743,
+      "postDate": 1559335659544,
       "id": 3
     },
     {
@@ -89,46 +94,6 @@
     },
     {
       "userId": 1,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238711317,
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "type": "article",
-      "title": "new",
-      "description": "so  new new ",
-      "url": "https://github.com/nashville-software-school/client-side-mastery",
-      "eventDate": "2019-05-31",
-      "postDate": 1559233381743,
-      "id": 3
-    },
-    {
-      "userId": null,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238611739,
-      "id": 4
-    },
-    {
-      "userId": null,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238615562,
-      "id": 5
-    },
-    {
-      "userId": null,
       "type": "event",
       "title": "ddd",
       "description": "sss",
@@ -179,13 +144,43 @@
     },
     {
       "userId": 1,
+      "type": "article",
+      "title": "does this work now? YESssss!",
+      "description": "yeti coolers are overpriced",
+      "url": "https://github.com/nashville-software-school/client-side-mastery",
+      "eventDate": "2019-05-14",
+      "postDate": 1559334939277,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "new-EST event",
+      "description": "cxz",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-06-21",
+      "postDate": 1559335670911,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "jake",
+      "description": "PARTY",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-07-04",
+      "postDate": 1559319680102,
+      "id": 13
+    },
+    {
+      "userId": 1,
       "type": "event",
       "title": "uPDATED222",
       "description": "j",
       "url": "ss",
       "eventDate": "2019-05-10",
       "postDate": 1559328593017,
-      "id": 11
+      "id": 114
     }
   ],
   "messages": [
@@ -218,19 +213,15 @@
       "userId": 9,
       "message": "I am not your friend",
       "postedTime": "05:00am"
-    },
-    {
-      "userId": "1",
-      "message": "Oksay",
-      "postedTime": "2:56:08 PM",
-      "id": 6
-    },
-    {
-      "userId": "1",
-      "message": "yayyyyy!",
-      "postedTime": "3:12:27 PM",
-      "id": 7
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "id": 1,
+      "entered": "05:00am",
+      "isComplete": false,
+      "userId": 1,
+      "task": "eat"
+    }
+  ]
 }

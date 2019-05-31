@@ -34,16 +34,29 @@ class ApplicationViews extends Component {
             })
     }
     addFriend = (newFriendObj) => {
-        // API.addFriend(newFriendObj)
-        //     .then(() => API.getMessages()
-        //         .then(messages => {
-        //             this.setState({ messages: messages })
-        //         })
-        //     )
+        console.log("inside addFriend func", this.state.friends)
+        const id = sessionStorage.getItem("id")
+        const newState = {}
+        console.log("newfriendobj", newFriendObj)
+        API.addFriend(newFriendObj)
+            .then(() => API.getFriends(id))
+            .then(friends => {
+                console.log("friends from API get friends", friends)
+                newState.friends = friends
+            })
+            .then(() => API.getMessages())
+            .then(messages => newState.messages = messages)
+            .then(() => {
+                this.setState(newState)
+                console.log("inside add friend - set state", this.state.friends)
+
+            })
+            .then(() => this.props.history.push("/messages"))
     }
 
     componentDidMount() {
         console.log("AppViews Mounted")
+        console.log("inside comp did mount", this.state.friends)
 
         const newState = {
             friends: [],
@@ -55,7 +68,7 @@ class ApplicationViews extends Component {
         dbCalls.getFriends(id)
             .then(friends => {
                 newState.friends = friends
-                this.setState(newState)
+                // this.setState(newState)
             }).then(_next => {
                 console.log("IsAUTH")
                 API.getUserInfo(id)
@@ -70,31 +83,35 @@ class ApplicationViews extends Component {
                             newState.newsfeed.push(news)
                         )
                     ))
-                    .then(() => this.setState(newState))
+                // .then(() => this.setState(newState))
             })
 
+            .then(() => {
 
-        API.getMessages()
-            .then(messages => {
-                console.log(messages)
-                newState.messages = messages
-                this.setState(newState)
+                API.getMessages()
+                    .then(messages => {
+                        console.log(messages)
+                        newState.messages = messages
+                        // this.setState(newState)
+                    })
+                    .then(() => {
+                        API.getFriendsRelationships(id)
+                            .then(relationships => {
+                                newState.relationships = relationships
+                                // this.setState(newState)
+                            })
+
+                            .then(() => this.setState(newState))
+                    })
+
+
             })
 
-        API.getFriendsRelationships(id)
-            .then(relationships => {
-                newState.relationships = relationships
-                this.setState(newState)
-            })
+        // if (this.isAuthenticated()) {
+        //     API.getUserInfo(id)
+        //if (this.isAuthenticated()) {
 
-
-
-        if (this.isAuthenticated()) {
-            API.getUserInfo(id)
-            //if (this.isAuthenticated()) {
-
-            //}
-        }
+        //}
     }
 
     loadUserData = () => {
@@ -288,7 +305,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} toggle={this.toggle} modal={this.state.modal} handleSelect={this.handleSelect} formtype={this.state.formtype} handleDbleClick={this.handleDbleClick} getSetAndPushNewsfeed={this.getSetAndPushNewsfeed}/>
+                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} toggle={this.toggle} modal={this.state.modal} handleSelect={this.handleSelect} formtype={this.state.formtype} handleDbleClick={this.handleDbleClick} getSetAndPushNewsfeed={this.getSetAndPushNewsfeed} />
                         )
                     } else {
                         return (
@@ -327,7 +344,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/messages" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} relationships={this.state.relationships} addFriend={this.addFriend} modal={this.state.modal} toggle={this.toggle} addMessage={this.addMessage} currentUserId={this.state.currentUserId} />
+                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} relationships={this.state.relationships} addFriend={this.addFriend} modal={this.state.modal} toggle={this.toggle} addMessage={this.addMessage} currentUserId={this.state.currentUserId} {...props} />
                         )
                     } else {
                         console.log("no user")

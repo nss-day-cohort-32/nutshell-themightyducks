@@ -8,14 +8,19 @@ import {
 } from 'reactstrap';
 import API from '../dbCalls/dbCalls';
 
+const userId = sessionStorage.getItem("id");
 
 class FriendButton extends Component {
+    state = {
+        saveDisabled: false
+    }
 
+    constructNewFriend = () => {
+        this.setState({ saveDisabled: true })
 
-    constructNewFriend = (userId, friendUserId) => {
         const newFriend = {
             userId: parseInt(userId),
-            friendUserId: friendUserId
+            friendUserId: this.props.message.userId
         }
 
         this.props.addFriend(newFriend)
@@ -27,7 +32,7 @@ class FriendButton extends Component {
         return (
             <>
 
-                <Button className="add-friend-btn" outline color="primary" onClick={this.constructNewFriend(userId, this.props.message.userId)}>Add Friend</Button>
+                <Button className="add-friend-btn" outline color="primary" onClick={this.constructNewFriend} disabled={this.state.saveDisabled}>Add Friend</Button>
 
             </>
         );
