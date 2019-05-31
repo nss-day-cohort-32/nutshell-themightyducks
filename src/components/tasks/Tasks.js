@@ -17,29 +17,35 @@ export default class Tasks extends Component {
         // todos: []
         todos: []
     }
-//This updates state every time a character is entered into the FORM input
+    //This updates state every time a character is entered into the FORM input
     handleChange = (event) => {
         this.setState({
             todoValue: event.target.value,
         })
     }
-//This handles the clicking of the ADD button
+    //This handles the clicking of the ADD button
     handleClick = (event) => {
         event.preventDefault();
         if (this.state.todoValue !== "") {
+            const userId = parseInt(sessionStorage.getItem("id"))
             const todo = {
-                id: Date.now(),
+                //id: Date.now(),
+                entered: Date.now(),
+                userId: userId,
                 task: this.state.todoValue,
-                done: false,
+                done: false
             }
             this.setState({
-                todoValue: "",
-                todos: [todo, ...this.state.todos],
-            })
+                    todoValue: "",
+                    todos: [todo, ...this.state.todos],
+                })
+            console.log("NEW OBJ", todo)
+            this.props.postTask(todo)
         }
     }
 
     handleToggle = (id) => {
+        console.log("HANDLE TOGGLE")
         this.setState((prevState) => {
             return {
                 todos: prevState.todos.map((item, i) => {
@@ -54,12 +60,11 @@ export default class Tasks extends Component {
             }
         })
     }
-    //Not using this as of now
-    // handleDelete = (id) => {
-    //     this.setState({
-    //         todos: this.state.todos.filter(item => item.id !== id)
-    //     })
-    // }
+    handleDelete = (id) => {
+        this.setState({
+            todos: this.state.todos.filter(item => item.id !== id)
+        })
+    }
 
     deleteCompleted = () => {
         this.setState({
@@ -86,44 +91,30 @@ export default class Tasks extends Component {
         })
     }
 
-    // componentDidMount(){
-    //    // iterate over todos, create a todos obj with state.todos types and add to state.todos array.
-    //    console.log("thisPROPStodos", this.props.todos)
-    //    let newTodos = []
-    //    this.props.todos.forEach(API_task => {
-    //        let todoOBJ = {
-    //            id : "",
-    //            done : false,
-    //            task : API_task.task
-    //        }
-    //     newTodos.push(todoOBJ)
-    //     });
-    //     console.log("newTodos:", newTodos)
-    //     this.setState({
-    //         todos: newTodos
-    //     })
-    // }
+
+
 
     render() {
+
         console.log("TASKS State = ", this.state)
         console.log("TASKS todos = ", this.props.todos)
         return (
             <>
-            <TitleBar title="Tasks" />
-            <div className="container">
-                <Header countTodo={this.state.todos.length} />
-                <Form //handleDelete={this.handleDelete}
-                    deleteTask={this.props.deleteTask}
-                    handleToggle={this.handleToggle}
-                    handleClick={this.handleClick}
-                    handleChange={this.handleChange}
-                    todoValue={this.state.todoValue}
-                    // todos={this.getVisibleTodos()} />
-                    todos={this.props.todos} />
-                <Footer setActiveFilter={this.setActiveFilter}
-                    deleteCompleted={this.deleteCompleted}
-                    filter={this.state.filterType} />
-            </div>
+                <TitleBar title="Tasks" />
+                <div className="container">
+                    <Header countTodo={this.state.todos.length} />
+                    <Form handleDelete={this.handleDelete}
+                        deleteTask={this.props.deleteTask}
+                        handleToggle={this.handleToggle}
+                        handleClick={this.handleClick}
+                        handleChange={this.handleChange}
+                        todoValue={this.state.todoValue}
+                        // todos={this.getVisibleTodos()} />
+                        todos={this.props.todos} />
+                    <Footer setActiveFilter={this.setActiveFilter}
+                        deleteCompleted={this.deleteCompleted}
+                        filter={this.state.filterType} />
+                </div>
             </>
         )
     }

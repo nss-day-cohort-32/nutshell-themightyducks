@@ -13,7 +13,7 @@ export default class Form extends Component {
                 <button className="form__button" type="submit" onClick={this.props.handleClick}>╋</button>
                 <Todo todos={this.props.todos} handleToggle={this.props.handleToggle}
                 deleteTask={this.props.deleteTask}
-                //handleDelete={this.props.handleDelete}
+                handleDelete={this.props.handleDelete}
                 />
             </form>
         )

@@ -8,6 +8,7 @@
 
 .container {
     margin: 0 auto;
+    margin-top: 2em;
     width: 650px;
 }
 
@@ -31,6 +32,7 @@
 
 .form__button {
     background: transparent;
+    background: #89d4a2;
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
@@ -57,6 +59,12 @@
     float: right;
     text-align: center;
     width: 40px;
+}
+.todo-item__delete-button:hover {
+    font-size: 1.5em;
+    width: 40px;
+    color: red;
+    box-shadow: 0 0 2px black;
 }
 
 .footer__button {

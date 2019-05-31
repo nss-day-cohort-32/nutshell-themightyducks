@@ -29,7 +29,7 @@ const API = {
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then(e => console.log("Delete Response=", e))
+        })//.then(e => e.json())
     },
     post: (resource, data) => {
         return fetch(`${db}/${resource}`, {

@@ -108,30 +108,21 @@
       "entered": "05:00am",
       "isComplete": false,
       "userId": 1,
-      "task": "Jump",
-      "done": false
+      "task": "Jump"
     },
     {
       "id": 2,
       "entered": "05:00am",
       "isComplete": false,
       "userId": 1,
-      "task": "Wake Up",
-      "done": false
+      "task": "Wake Up"
     },
     {
-      "entered": 1559260123631,
+      "id": 3,
+      "entered": "05:00am",
+      "isComplete": false,
       "userId": 1,
-      "task": "Smash Laptop",
-      "done": false,
-      "id": 3
-    },
-    {
-      "entered": 1559260365287,
-      "userId": 1,
-      "task": "Restart JSON Server",
-      "done": false,
-      "id": 4
+      "task": "Run"
     }
   ]
 }

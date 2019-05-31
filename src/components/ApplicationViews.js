@@ -91,12 +91,28 @@ class ApplicationViews extends Component {
 
     }
     //Jason
-    deleteTask = (idtodelete) => {
-        console.log("ID to delete ", idtodelete)
+    deleteTask = (idToDelete) => {
+        console.log("ID to delete ", idToDelete)
         const newState = {}
         const userId = sessionStorage.getItem("id")
         const url = "tasks"
-        API.delete(url, idtodelete)
+        API.delete(url, idToDelete)
+            .then(() => dbCalls.getTasks(userId))
+            .then(tasks => {
+                newState.tasks = tasks
+            })
+            .then(() => {
+                //this.props.history.push("/tasks")
+                this.setState(newState);
+            })
+    }
+    //Jason
+    postTask = (objToPost) => {
+        console.log("OBJ to POST", objToPost)
+        const newState = {}
+        const userId = sessionStorage.getItem("id")
+        const url = "tasks"
+        API.post(url, objToPost)
             .then(() => dbCalls.getTasks(userId))
             .then(tasks => {
                 newState.tasks = tasks
@@ -169,7 +185,8 @@ class ApplicationViews extends Component {
                 <Route exact path="/tasks" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Tasks todos={this.state.tasks} deleteTask={this.deleteTask}/>
+                            <Tasks todos={this.state.tasks} deleteTask={this.deleteTask}
+                            postTask={this.postTask}/>
                         )
                     } else {
                         console.log("no user")
