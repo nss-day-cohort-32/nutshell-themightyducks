@@ -41,9 +41,9 @@ const API = {
         })
             .then(e => e.json())
     },
-    patch: (resource, id, data) => {
+    put: (resource, id, data) => {
         return fetch(`${db}/${resource}/${id}`, {
-            method: "PATCH",
+            method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
             },
