@@ -296,7 +296,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} toggle={this.toggle} modal={this.state.modal} handleSelect={this.handleSelect} formtype={this.state.formtype} handleDbleClick={this.handleDbleClick} />
+                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} toggle={this.toggle} modal={this.state.modal} handleSelect={this.handleSelect} formtype={this.state.formtype} handleDbleClick={this.handleDbleClick} getSetAndPushNewsfeed={this.getSetAndPushNewsfeed}/>
                         )
                     } else {
                         return (

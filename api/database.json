@@ -64,22 +64,62 @@
   "newsfeed": [
     {
       "userId": 1,
-      "type": "event",
-      "title": "ddd",
-      "description": "dddd",
-      "url": "ddd",
-      "eventDate": "2019-05-23",
-      "postDate": 1559238776500,
-      "id": 7
+      "type": "article",
+      "title": "THAT NEW NEW",
+      "description": "so  new new ",
+      "url": "https://github.com/nashville-software-school/client-side-mastery",
+      "eventDate": "2019-05-31",
+      "postDate": 1559335659544,
+      "id": 3
     },
     {
       "userId": 1,
       "type": "event",
-      "title": "baby shark mommy shark daddy shark",
-      "description": "do dooooo dooo dodoo doo doo DOOOOOOO",
+      "title": "ddd",
+      "description": "sss",
+      "url": "ss",
+      "eventDate": "2019-05-09",
+      "postDate": 1559238611739,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "ddd",
+      "description": "sss",
+      "url": "ss",
+      "eventDate": "2019-05-09",
+      "postDate": 1559238615562,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "ddd",
+      "description": "sss",
+      "url": "ss",
+      "eventDate": "2019-05-09",
+      "postDate": 1559238711317,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "NOWwwww",
+      "description": "jhg",
+      "url": "ddd",
+      "eventDate": "2019-05-04",
+      "postDate": 1559326680692,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "type": "article",
+      "title": "baby sharkzzz just one",
+      "description": "do dooooo",
       "url": "https://github.com/nss-day-cohort-32/nutshell-themightyducks/blob/master/api/database.json",
-      "eventDate": "2019-05-31",
-      "postDate": 1559327828664,
+      "eventDate": "2019-05-18",
+      "postDate": 1559335086429,
       "id": 8
     },
     {
@@ -95,11 +135,11 @@
     {
       "userId": 1,
       "type": "event",
-      "title": "new sososoosososososo",
-      "description": "ew",
-      "url": "dsdsds",
-      "eventDate": "2019-05-22",
-      "postDate": 1559328136861,
+      "title": "asdasdgggggg",
+      "description": "asdasd",
+      "url": "asdasd",
+      "eventDate": "2019-05-15",
+      "postDate": 1559335072921,
       "id": 10
     },
     {
@@ -115,11 +155,11 @@
     {
       "userId": 1,
       "type": "event",
-      "title": "new event",
+      "title": "new-EST event",
       "description": "cxz",
       "url": "https://www.google.com/maps",
       "eventDate": "2019-06-21",
-      "postDate": 1559318965808,
+      "postDate": 1559335670911,
       "id": 12
     },
     {
@@ -135,12 +175,12 @@
     {
       "userId": 1,
       "type": "event",
-      "title": "jake",
-      "description": "mn",
-      "url": "https://www.google.com/maps",
-      "eventDate": "2019-05-15",
-      "postDate": 1559326750106,
-      "id": 14
+      "title": "uPDATED222",
+      "description": "j",
+      "url": "ss",
+      "eventDate": "2019-05-10",
+      "postDate": 1559328593017,
+      "id": 114
     }
   ],
   "messages": [
@@ -175,5 +215,13 @@
       "postedTime": "05:00am"
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "id": 1,
+      "entered": "05:00am",
+      "isComplete": false,
+      "userId": 1,
+      "task": "eat"
+    }
+  ]
 }
