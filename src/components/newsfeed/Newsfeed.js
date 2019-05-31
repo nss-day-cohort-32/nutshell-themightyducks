@@ -10,6 +10,13 @@ import AddFormModal from './addFormModal';
 
 
 class Newsfeed extends Component {
+    state = {
+        newsItem: []
+    }
+
+    getNewsItem = (event, newsItem) => {
+        this.setState({ newsItem: newsItem })
+    }
 
     state = {
         newsItem: []
@@ -20,6 +27,7 @@ class Newsfeed extends Component {
     }
 
     render() {
+        const newArray = [];
         return (
             <>
                 <TitleBar title="News Feed" />
