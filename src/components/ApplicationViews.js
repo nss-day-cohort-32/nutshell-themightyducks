@@ -23,7 +23,16 @@ class ApplicationViews extends Component {
     }
 
     isAuthenticated = () => localStorage.getItem("user") !== null
-
+    addMessage = (obj) => {
+        API.post("messages", obj)
+            .then(() => API.getMessages())
+            .then(messages => {
+                console.log(messages)
+                const newState = {}
+                newState.messages = messages
+                this.setState(newState)
+            })
+    }
     addFriend = (newFriendObj) => {
         console.log("inside addFriend func", this.state.friends)
         const id = sessionStorage.getItem("id")
@@ -296,7 +305,7 @@ class ApplicationViews extends Component {
 
                     if (this.isAuthenticated()) {
                         return (
-                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} toggle={this.toggle} modal={this.state.modal} handleSelect={this.handleSelect} formtype={this.state.formtype} handleDbleClick={this.handleDbleClick} getSetAndPushNewsfeed={this.getSetAndPushNewsfeed}/>
+                            <NewsFeed newsfeed={this.state.newsfeed} deleteNewsItem={this.deleteNewsItem} addNewsfeed={this.addNewsfeed} currentUserId={this.state.currentUserId} toggle={this.toggle} modal={this.state.modal} handleSelect={this.handleSelect} formtype={this.state.formtype} handleDbleClick={this.handleDbleClick} getSetAndPushNewsfeed={this.getSetAndPushNewsfeed} />
                         )
                     } else {
                         return (
@@ -335,7 +344,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/messages" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} relationships={this.state.relationships} addFriend={this.addFriend} {...props} />
+                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} relationships={this.state.relationships} addFriend={this.addFriend} modal={this.state.modal} toggle={this.toggle} addMessage={this.addMessage} currentUserId={this.state.currentUserId} {...props} />
                         )
                     } else {
                         console.log("no user")
