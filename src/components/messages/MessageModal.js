@@ -10,14 +10,13 @@ class MessageModal extends React.Component {
 
         return (
             <div>
-                <Form inline onSubmit={(e) => e.preventDefault()}>
-                    {' '}
-                    <Button color="danger" onClick={this.props.toggle}>Add an Item</Button>
+                <Form className="messageBtnContainer" inline onSubmit={(e) => e.preventDefault()}>
+                    <Button onClick={this.props.toggle}>Add Message</Button>
                 </Form>
                 <Modal isOpen={this.props.modal} toggle={this.props.toggle} >
-                    <ModalHeader toggle={this.props.toggle}>Add an {this.props.formtype}</ModalHeader>
+                    <ModalHeader >Add Message</ModalHeader>
                     <ModalBody>
-                        <MessageForm />
+                        <MessageForm addMessage={this.props.addMessage} toggle={this.props.toggle} currentUserId={this.props.currentUserId} />
                     </ModalBody>
                 </Modal>
             </div>

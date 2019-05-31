@@ -19,7 +19,7 @@ class Messages extends Component {
         return (
             <>
                 <TitleBar title="Messages" />
-                <MessageModal modal={this.props.modal} toggle={this.props.toggle} />
+                <MessageModal modal={this.props.modal} toggle={this.props.toggle} addMessage={this.props.addMessage} currentUserId={this.props.currentUserId} />
                 {
                     (this.props.messages) ? (
                         this.props.messages.map(message => {

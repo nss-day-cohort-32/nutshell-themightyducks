@@ -70,3 +70,9 @@
     color: #2CB79C;
     border-color: #2CB79C;
 }
+
+.messageBtnContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}

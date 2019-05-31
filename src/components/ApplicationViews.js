@@ -23,7 +23,16 @@ class ApplicationViews extends Component {
     }
 
     isAuthenticated = () => localStorage.getItem("user") !== null
-
+    addMessage = (obj) => {
+        API.post("messages", obj)
+            .then(() => API.getMessages())
+            .then(messages => {
+                console.log(messages)
+                const newState = {}
+                newState.messages = messages
+                this.setState(newState)
+            })
+    }
     addFriend = (newFriendObj) => {
         // API.addFriend(newFriendObj)
         //     .then(() => API.getMessages()
@@ -318,7 +327,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/messages" render={(props) => {
                     if (this.isAuthenticated()) {
                         return (
-                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} relationships={this.state.relationships} addFriend={this.addFriend} modal={this.state.modal} toggle={this.toggle} />
+                            <Messages messages={this.state.messages} deleteMessage={this.deleteMessage} friends={this.state.friends} user={this.state.user} relationships={this.state.relationships} addFriend={this.addFriend} modal={this.state.modal} toggle={this.toggle} addMessage={this.addMessage} currentUserId={this.state.currentUserId} />
                         )
                     } else {
                         console.log("no user")

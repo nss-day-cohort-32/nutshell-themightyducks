@@ -158,6 +158,18 @@
       "userId": 9,
       "message": "I am not your friend",
       "postedTime": "05:00am"
+    },
+    {
+      "userId": "1",
+      "message": "Oksay",
+      "postedTime": "2:56:08 PM",
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "message": "yayyyyy!",
+      "postedTime": "3:12:27 PM",
+      "id": 7
     }
   ],
   "tasks": []
