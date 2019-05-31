@@ -24,14 +24,7 @@
   ],
   "newsfeed": [
     {
-      "userId": 1,
-      "type": "article",
-      "description": "so  new new nwnwnwnwnwnwnwn",
-      "postDate": 1559312647355,
-      "id": 3
-    },
-    {
-      "userId": null,
+      "userId": 2,
       "type": "event",
       "title": "ddd",
       "description": "sss",
@@ -39,26 +32,6 @@
       "eventDate": "2019-05-09",
       "postDate": 1559238611739,
       "id": 4
-    },
-    {
-      "userId": null,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238615562,
-      "id": 5
-    },
-    {
-      "userId": null,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238711317,
-      "id": 6
     },
     {
       "userId": 1,
@@ -76,8 +49,8 @@
       "title": "baby shark mommy shark",
       "description": "do dooooo dooo dodoo",
       "url": "https://github.com/nss-day-cohort-32/nutshell-themightyducks/blob/master/api/database.json",
-      "eventDate": "2019-05-31",
-      "postDate": 1559313250565,
+      "eventDate": "2019-06-27",
+      "postDate": 1559316831397,
       "id": 8
     },
     {
@@ -89,6 +62,46 @@
       "eventDate": "2019-05-03",
       "postDate": 1559242687679,
       "id": 9
+    },
+    {
+      "userId": 1,
+      "type": "article",
+      "title": "new",
+      "description": "ew",
+      "url": "dsdsds",
+      "eventDate": "2019-05-22",
+      "postDate": 1559314624790,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "type": "article",
+      "title": "does this work now?",
+      "description": "ewq",
+      "url": "https://github.com/nashville-software-school/client-side-mastery",
+      "eventDate": "2019-05-18",
+      "postDate": 1559317113892,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "new event",
+      "description": "cxz",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-06-21",
+      "postDate": 1559318965808,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "jake",
+      "description": "PARTY",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-07-04",
+      "postDate": 1559319680102,
+      "id": 13
     }
   ],
   "messages": [

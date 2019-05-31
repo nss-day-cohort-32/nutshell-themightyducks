@@ -30,7 +30,7 @@ class ApplicationViews extends Component {
             friends: []
         }
         const id = sessionStorage.getItem("id")
-        dbCalls.getFriends(1)
+        dbCalls.getFriends(id)
             .then(friends => {
                 newState.friends = friends
                 this.setState(newState)

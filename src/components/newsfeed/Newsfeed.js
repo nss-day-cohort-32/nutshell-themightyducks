@@ -19,6 +19,7 @@ class Newsfeed extends Component {
     }
 
     render() {
+        const newArray = [];
         return (
             <>
                 <TitleBar title="News Feed" />
@@ -26,8 +27,8 @@ class Newsfeed extends Component {
                     <section className="newsfeed--list">
                         {
                             (this.props.newsfeed) ? (
-                                this.props.newsfeed.map((item) => {
-                                    console.log(item.type)
+                                this.props.newsfeed.sort((a, b) => { return Date.parse(b.eventDate) - Date.parse(a.eventDate) }).map((item) => {
+                                    // console.log(item)
                                     let color;
                                     if (item.type === "article") {
                                         color = "lightblue"
