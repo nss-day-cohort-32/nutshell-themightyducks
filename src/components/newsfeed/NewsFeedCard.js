@@ -23,7 +23,7 @@ const NewsFeedCard = (props) => {
           <CardText>{props.newsItem.description}</CardText>
           <CardSubtitle>{props.newsItem.location}</CardSubtitle>
           <CardSubtitle>{props.newsItem.eventDate}</CardSubtitle>
-          <CardLink href={props.newsItem.url} target="_blank">{props.newsItem.type} Link</CardLink>
+          <CardLink href={props.newsItem.url} target="_blank" style={{ color: "#2CB79C" }}>{props.newsItem.type} Link</CardLink>
           <section className="newsItem--buttons">
             <Button className="newsItem--delete-btn"
                     onClick={() => props.deleteNewsItem("newsfeed", newsItemId)}
