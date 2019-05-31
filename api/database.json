@@ -20,6 +20,18 @@
       "email": "strangehandle@gmail.com",
       "password": "nashville",
       "userPhoto": "url"
+    },
+    {
+      "email": "",
+      "password": "",
+      "url": "url",
+      "id": 4
+    },
+    {
+      "email": "fake@fake.com",
+      "password": "testtest",
+      "url": "url",
+      "id": 5
     }
   ],
   "friends": [

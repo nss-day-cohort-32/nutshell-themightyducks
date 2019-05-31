@@ -53,7 +53,7 @@ class Nutshell extends Component {
                         <>
                             <TopNav />
                             <ApplicationViews />
-                        </>) : <Auth setNutshellState={this.setNutshellState} />//(<Route path="/auth" component={Auth} />)
+                        </>) : (<Route path="/auth" component={Auth} />)
                 }
             </>
         )
