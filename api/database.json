@@ -13,6 +13,25 @@
       "email": "jake@jake.com",
       "password": "jake",
       "userPhoto": "url"
+    },
+    {
+      "id": 3,
+      "userName": "jason",
+      "email": "strangehandle@gmail.com",
+      "password": "nashville",
+      "userPhoto": "url"
+    },
+    {
+      "email": "",
+      "password": "",
+      "url": "url",
+      "id": 4
+    },
+    {
+      "email": "fake@fake.com",
+      "password": "testtest",
+      "url": "url",
+      "id": 5
     }
   ],
   "friends": [
@@ -23,46 +42,7 @@
     }
   ],
   "newsfeed": [
-    {
-      "userId": 1,
-      "type": "article",
-      "title": "new",
-      "description": "so  new new ",
-      "url": "https://github.com/nashville-software-school/client-side-mastery",
-      "eventDate": "2019-05-31",
-      "postDate": 1559233381743,
-      "id": 3
-    },
-    {
-      "userId": null,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238611739,
-      "id": 4
-    },
-    {
-      "userId": null,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238615562,
-      "id": 5
-    },
-    {
-      "userId": null,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238711317,
-      "id": 6
-    },
+    
     {
       "userId": 1,
       "type": "event",
@@ -124,11 +104,39 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "entered": "05:00am",
-      "isComplete": false,
+      "entered": 1559260123631,
       "userId": 1,
-      "task": "eat"
+      "task": "Smash Laptop",
+      "done": false,
+      "id": 3
+    },
+    {
+      "entered": 1559260365287,
+      "userId": 1,
+      "task": "Restart JSON Server",
+      "done": false,
+      "id": 4
+    },
+    {
+      "entered": 1559322169280,
+      "userId": 3,
+      "task": "I cant remember",
+      "done": false,
+      "id": 13
+    },
+    {
+      "entered": 1559322323638,
+      "userId": 3,
+      "task": "utftfh",
+      "done": false,
+      "id": 14
+    },
+    {
+      "entered": 1559323193429,
+      "userId": 3,
+      "task": "dgdg",
+      "done": false,
+      "id": 15
     }
   ]
 }

@@ -7,6 +7,7 @@ import API from "../dbCalls/dbCalls"
 
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import ApplicationViews from '../ApplicationViews';
 
 class Auth extends Component {
 
@@ -45,13 +46,8 @@ class Auth extends Component {
         }
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then((u) => { localStorage.setItem('user', u.uid) })
-            .then(() => API.getUserID(this.state.email)
-                .then(result => sessionStorage.setItem('id', parseInt(result[0].id)))
-                .then(() => {
-                    this.props.history.push('/newsfeed')
-                })
-            ).catch((error) => {
+        .then(() => {this.props.history.push("/newsfeed")})
+        .catch((error) => {
                 console.log("ERROR", error)
                 newState.modal = !this.state.modal
                 newState.error = error.message
@@ -60,32 +56,28 @@ class Auth extends Component {
     }
 
     signup = (e) => {
-        const newState = {
-            modal: false,
-            error: []
-        }
-        e.preventDefault();
-        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-        }).then((u) => {
-            console.log(u)
-            console.log("email", this.state.email)
-        }).catch((error) => {
-            console.log("ERROR", error)
-            newState.modal = !this.state.modal
-            newState.error = error.message
-            this.setState(newState)
-        }).then(() => {
-            let URL = "url"
-            let newUser = {
-                email: this.state.email,
-                password: this.state.password,
-                url: URL
-            }
-            API.post("users", newUser)
-                .then(() => API.getUserID(this.state.email))
-                .then(result => sessionStorage.setItem('id', parseInt(result[0].id)))
-                .then(() => this.props.history.push('/newsfeed'))
-        })
+        // const newState = {
+        //     modal: false,
+        //     error: []
+        // }
+        // e.preventDefault();
+        // fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
+        // }).catch((error) => {
+        //     console.log("ERROR", error)
+        //     newState.modal = !this.state.modal
+        //     newState.error = error.message
+        //     this.setState(newState)
+        // }).then(() => {
+        //     let URL = "url"
+        //     let newUser = {
+        //         email: this.state.email,
+        //         password: this.state.password,
+        //         url: URL
+        //     }
+        //     API.post("users", newUser)
+        //         .then(() => API.getUserID(this.state.email))
+        //         .then(result => sessionStorage.setItem('id', parseInt(result[0].id)))
+        // })
     }
     render() {
 
