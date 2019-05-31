@@ -24,6 +24,7 @@ class Newsfeed extends Component {
             <>
                 <TitleBar title="News Feed" />
                 <div className="newsfeed--container">
+                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} toggle={this.props.toggle} modal={this.props.modal} newsfeed={this.props.newsfeed} handleSelect={this.props.handleSelect} formtype={this.props.formtype} handleDbleClick={this.props.handleDbleClick} newsItem={this.state.newsItem} getSetAndPushNewsfeed={this.props.getSetAndPushNewsfeed} />
                     <section className="newsfeed--list">
                         {
                             (this.props.newsfeed) ? (
@@ -40,7 +41,6 @@ class Newsfeed extends Component {
                                 : null
                         }
                     </section>
-                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} toggle={this.props.toggle} modal={this.props.modal} newsfeed={this.props.newsfeed} handleSelect={this.props.handleSelect} formtype={this.props.formtype} handleDbleClick={this.props.handleDbleClick} newsItem={this.state.newsItem} getSetAndPushNewsfeed={this.props.getSetAndPushNewsfeed} />
                 </div>
             </>
         );
