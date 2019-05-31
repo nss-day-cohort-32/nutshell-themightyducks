@@ -46,7 +46,7 @@ class ApplicationViews extends Component {
         dbCalls.getFriends(id)
             .then(friends => {
                 newState.friends = friends
-                this.setState(newState)
+                // this.setState(newState)
             }).then(_next => {
                 console.log("IsAUTH")
                 API.getUserInfo(id)
@@ -61,31 +61,35 @@ class ApplicationViews extends Component {
                             newState.newsfeed.push(news)
                         )
                     ))
-                    .then(() => this.setState(newState))
+                // .then(() => this.setState(newState))
             })
 
+            .then(() => {
 
-        API.getMessages()
-            .then(messages => {
-                console.log(messages)
-                newState.messages = messages
-                this.setState(newState)
+                API.getMessages()
+                    .then(messages => {
+                        console.log(messages)
+                        newState.messages = messages
+                        // this.setState(newState)
+                    })
+                    .then(() => {
+                        API.getFriendsRelationships(id)
+                            .then(relationships => {
+                                newState.relationships = relationships
+                                // this.setState(newState)
+                            })
+
+                            .then(() => this.setState(newState))
+                    })
+
+
             })
 
-        API.getFriendsRelationships(id)
-            .then(relationships => {
-                newState.relationships = relationships
-                this.setState(newState)
-            })
+        // if (this.isAuthenticated()) {
+        //     API.getUserInfo(id)
+        //if (this.isAuthenticated()) {
 
-
-
-        if (this.isAuthenticated()) {
-            API.getUserInfo(id)
-            //if (this.isAuthenticated()) {
-
-            //}
-        }
+        //}
     }
 
     loadUserData = () => {

@@ -41,11 +41,6 @@
   ],
   "friends": [
     {
-      "id": 1,
-      "userId": 1,
-      "friendUserId": 2
-    },
-    {
       "id": 2,
       "userId": 1,
       "friendUserId": 3
@@ -54,6 +49,11 @@
       "id": 3,
       "userId": 1,
       "friendUserId": 4
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "friendUserId": 9
     }
   ],
   "newsfeed": [
@@ -126,6 +126,26 @@
       "eventDate": "2019-05-03",
       "postDate": 1559242687679,
       "id": 9
+    },
+    {
+      "userId": 1,
+      "type": "article",
+      "title": "asdf",
+      "description": "asdf",
+      "url": "asdf",
+      "eventDate": "2019-05-10",
+      "postDate": 1559330211940,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "asdf",
+      "description": "",
+      "url": "asdf",
+      "eventDate": "2019-05-10",
+      "postDate": 1559330232293,
+      "id": 11
     }
   ],
   "messages": [
