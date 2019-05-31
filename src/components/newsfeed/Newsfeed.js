@@ -27,13 +27,13 @@ class Newsfeed extends Component {
                                     } else if (item.type === "event") {
                                         color = "lightgray"
                                     }
-                                    return <NewsFeedCard key={item.id} newsItem={item} {...this.props} color={color} deleteNewsItem={this.props.deleteNewsItem} />
+                                    return <NewsFeedCard key={item.id} newsItem={item} {...this.props} color={color} deleteNewsItem={this.props.deleteNewsItem} toggle={this.props.toggle} modal={this.props.modal} handleSelect={this.props.handleSelect} formtype={this.props.formtype} handleDbleClick={this.props.handleDbleClick} />
                                 })
                             )
                                 : null
                         }
                     </section>
-                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} />
+                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} toggle={this.props.toggle} modal={this.props.modal} newsfeed={this.props.newsfeed} handleSelect={this.props.handleSelect} formtype={this.props.formtype} handleDbleClick={this.props.handleDbleClick} />
                 </div>
             </>
         );
