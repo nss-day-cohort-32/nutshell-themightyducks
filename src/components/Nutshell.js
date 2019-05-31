@@ -19,6 +19,7 @@ class Nutshell extends Component {
     }
 
 
+
     componentDidMount = () => {
         console.log("Nutshell Mounted")
         this.authListener();
@@ -38,12 +39,12 @@ class Nutshell extends Component {
                     }).then(_next => {
                         this.setState({ user });
                     })
-                } else {
-                    this.setState({ user: null });
-                    localStorage.clear();
-                    sessionStorage.clear();
-                    }
-            })
+            } else {
+                this.setState({ user: null });
+                localStorage.clear();
+                sessionStorage.clear();
+            }
+        })
     }
     render() {
         return (

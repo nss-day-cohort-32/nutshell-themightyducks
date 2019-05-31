@@ -51,7 +51,7 @@ class Auth extends Component {
                 console.log("ERROR", error)
                 newState.modal = !this.state.modal
                 newState.error = error.message
-                this.setState(newState)
+                this.setState()
             })
     }
 

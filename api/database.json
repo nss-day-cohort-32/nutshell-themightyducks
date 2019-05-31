@@ -5,36 +5,75 @@
       "userName": "carly",
       "email": "carly@carly.com",
       "password": "carly",
-      "userPhoto": "url"
+      "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/49895255_10213128530997235_6275040282807369728_o.jpg?_nc_cat=104&_nc_ht=scontent-atl3-1.xx&oh=926d3e581c68cd24819976d5771d686d&oe=5D555EE2"
     },
     {
       "id": 2,
       "userName": "jake",
       "email": "jake@jake.com",
       "password": "jake",
-      "userPhoto": "url"
+      "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/52995408_2294319350589304_4371270216101920768_n.jpg?_nc_cat=107&_nc_ht=scontent-atl3-1.xx&oh=26e86ceac2fff7300e3efe9d5aaccd95&oe=5D5469FE"
+    },
+    {
+      "id": 3,
+      "userName": "Colin",
+      "email": "colinasandlin0024@gmail.com",
+      "password": "nashville",
+      "status": "My brain is running out of RAM",
+      "userPhoto": "https://avatars3.githubusercontent.com/u/47002404?s=460&v=4"
+    },
+    {
+      "id": 4,
+      "userName": "jason",
+      "email": "strangehandle@gmail.com",
+      "password": "nashville",
+      "status": "Firing firebase",
+      "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/980145_10103194319550195_6182930118244811468_o.jpg?_nc_cat=107&_nc_ht=scontent-atl3-1.xx&oh=19a3f390f891aac15ddeedb89b6cb811&oe=5D9D6EB7"
+    },
+    {
+      "id": 9,
+      "userName": "Not Your Friend",
+      "email": "strangehandle@gmail.com",
+      "password": "nashville",
+      "status": "Firing firebase",
+      "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/980145_10103194319550195_6182930118244811468_o.jpg?_nc_cat=107&_nc_ht=scontent-atl3-1.xx&oh=19a3f390f891aac15ddeedb89b6cb811&oe=5D9D6EB7"
     }
   ],
   "friends": [
     {
-      "id": 1,
+      "id": 2,
       "userId": 1,
-      "friendUserId": 2
+      "friendUserId": 3
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "friendUserId": 4
+    },
+    {
+      "userId": 1,
+      "friendUserId": 2,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "friendUserId": 9,
+      "id": 5
     }
   ],
   "newsfeed": [
     {
       "userId": 1,
       "type": "article",
-      "title": "new",
+      "title": "THAT NEW NEW",
       "description": "so  new new ",
       "url": "https://github.com/nashville-software-school/client-side-mastery",
       "eventDate": "2019-05-31",
-      "postDate": 1559233381743,
+      "postDate": 1559335659544,
       "id": 3
     },
     {
-      "userId": null,
+      "userId": 1,
       "type": "event",
       "title": "ddd",
       "description": "sss",
@@ -44,7 +83,7 @@
       "id": 4
     },
     {
-      "userId": null,
+      "userId": 1,
       "type": "event",
       "title": "ddd",
       "description": "sss",
@@ -54,7 +93,7 @@
       "id": 5
     },
     {
-      "userId": null,
+      "userId": 1,
       "type": "event",
       "title": "ddd",
       "description": "sss",
@@ -105,13 +144,43 @@
     },
     {
       "userId": 1,
+      "type": "article",
+      "title": "does this work now? YESssss!",
+      "description": "yeti coolers are overpriced",
+      "url": "https://github.com/nashville-software-school/client-side-mastery",
+      "eventDate": "2019-05-14",
+      "postDate": 1559334939277,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "new-EST event",
+      "description": "cxz",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-06-21",
+      "postDate": 1559335670911,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "jake",
+      "description": "PARTY",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-07-04",
+      "postDate": 1559319680102,
+      "id": 13
+    },
+    {
+      "userId": 1,
       "type": "event",
       "title": "uPDATED222",
       "description": "j",
       "url": "ss",
       "eventDate": "2019-05-10",
       "postDate": 1559328593017,
-      "id": 11
+      "id": 114
     }
   ],
   "messages": [
@@ -119,6 +188,30 @@
       "id": 1,
       "userId": 1,
       "message": "message yooo",
+      "postedTime": "05:00am"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "message": "message yooo",
+      "postedTime": "05:00am"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "message": "message yooo",
+      "postedTime": "05:00am"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "message": "message yooo",
+      "postedTime": "05:00am"
+    },
+    {
+      "id": 5,
+      "userId": 9,
+      "message": "I am not your friend",
       "postedTime": "05:00am"
     }
   ],

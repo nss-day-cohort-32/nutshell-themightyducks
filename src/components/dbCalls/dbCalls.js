@@ -76,6 +76,44 @@ const API = {
                 }
             })
     },
+    deleteFriend: (friendId, userId) => {
+        return fetch(`${db}/friends/?friendUserId=${friendId}&_userId=${userId}`)
+            .then(response => response.json())
+            .then(friendRelationship => {
+                return fetch(`${db}/friends/${friendRelationship[0].id}`, {
+                    method: "DELETE",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+            })
+    },
+    getMessages: () => {
+        return fetch(`${db}/messages?_expand=user`)
+            .then(response => response.json())
+    },
+    deleteMessage: (id) => {
+        return fetch(`${db}/messages/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    },
+    getFriendsRelationships: (userId) => {
+        return fetch(`${db}/users/${userId}?_embed=friends`)
+            .then(response => response.json())
+    },
+    addFriend: (obj) => {
+        return fetch(`${db}/friends`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+            .then(e => e.json())
+    },
     getTasks: (userId) => {
         return fetch(`${db}/tasks/?userId=${userId}`)
             .then(results => results.json())
