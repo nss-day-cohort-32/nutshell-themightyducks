@@ -29,7 +29,7 @@ const API = {
             headers: {
                 'Content-Type': 'application/json'
             }
-        })
+        })//.then(e => e.json())
     },
     post: (resource, data) => {
         return fetch(`${db}/${resource}`, {
@@ -52,16 +52,28 @@ const API = {
             .then(e => e.json())
 
     },
+    patch: (resource, id, data) => {
+        return fetch(`${db}/${resource}/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }).then(response => response.json())
+    },
     getFriends: (userId) => {
+        console.log("Get Friends of ID#:", userId)
         return fetch(`${db}/users/${userId}?_embed=friends`)
             .then(results => results.json())
             .then(users => {
-                const data = users.friends.map(friend => {
-                    let friendId = friend.friendUserId
-                    return fetch(`${db}/users/${friendId}`)
-                        .then(results => results.json())
-                })
-                return Promise.all(data)
+                if (users.length !== 0) {
+                    const data = users.friends.map(friend => {
+                        let friendId = friend.friendUserId
+                        return fetch(`${db}/users/${friendId}`)
+                            .then(results => results.json())
+                    })
+                    return Promise.all(data)
+                }
             })
     },
     deleteFriend: (friendId, userId) => {
@@ -101,7 +113,15 @@ const API = {
             body: JSON.stringify(obj)
         })
             .then(e => e.json())
+        getTasks: (userId) => {
+            return fetch(`${db}/tasks/?userId=${userId}`)
+                .then(results => results.json())
+        },
+            getTask: (id) => {
+                return fetch(`${db}/tasks/${id}`)
+                    .then(results => results.json())
+            }
+
     }
-}
 
 export default API
