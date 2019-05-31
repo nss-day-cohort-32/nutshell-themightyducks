@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
+import FriendButton from "./FriendButton"
 
 
 export default class ButtonOptions extends Component {
@@ -31,7 +32,6 @@ export default class ButtonOptions extends Component {
                 {
                     (userId == this.props.message.userId) ?
                         (<>
-                            <Button key={this.props.message.id} className="edit-message-btn" outline color="warning">Edit</Button>
                             <Button onClick={() => this.props.deleteMessage(this.props.message.id)} className="delete-message-btn" outline color="danger">Delete
                             </Button>
 
@@ -39,7 +39,7 @@ export default class ButtonOptions extends Component {
                         ) : (null)
                 }
                 {
-                    (this.determineIfFriend()) ? (null) : (<Button key={this.props.message.id} className="edit-message-btn" outline color="primary">Add Friend</Button>)
+                    (this.determineIfFriend()) ? (null) : (<FriendButton key={this.props.message.id} message={this.props.message} onClick={this.props.addFriend} className="edit-message-btn" outline color="primary" addFriend={this.props.addFriend}>Add Friend</FriendButton>)
                 }
             </>
         )

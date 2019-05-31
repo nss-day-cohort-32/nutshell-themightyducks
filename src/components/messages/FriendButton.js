@@ -14,7 +14,7 @@ class FriendButton extends Component {
 
     constructNewFriend = (userId, friendUserId) => {
         const newFriend = {
-            userId: userId,
+            userId: parseInt(userId),
             friendUserId: friendUserId
         }
 
@@ -26,14 +26,9 @@ class FriendButton extends Component {
         const userId = sessionStorage.getItem("id");
         return (
             <>
-                {
-                    (this.props.relationships) ?
-                        (
-                            <>
-                                <Button className="add-friend-btn" outline color="primary" onClick={this.constructNewFriend(userId, this.props.userId)}>Add Friend</Button>
-                            </>
-                        ) : (null)
-                }
+
+                <Button className="add-friend-btn" outline color="primary" onClick={this.constructNewFriend(userId, this.props.message.userId)}>Add Friend</Button>
+
             </>
         );
     }

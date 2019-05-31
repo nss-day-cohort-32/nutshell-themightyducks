@@ -24,14 +24,24 @@ class ApplicationViews extends Component {
 
     isAuthenticated = () => localStorage.getItem("user") !== null
 
+    addFriend = (newFriendObj) => {
+        // API.addFriend(newFriendObj)
+        //     .then(() => API.getMessages()
+        //         .then(messages => {
+        //             this.setState({ messages: messages })
+        //         })
+        //     )
+    }
+
     componentDidMount() {
         // Declaring new state
         const newState = {
             friends: [],
             messages: [],
         }
+
         const id = sessionStorage.getItem("id")
-        dbCalls.getFriends(1)
+        dbCalls.getFriends(id)
             .then(friends => {
                 newState.friends = friends
                 this.setState(newState)
@@ -125,18 +135,6 @@ class ApplicationViews extends Component {
     }
 
 
-
-
-    addFriend = (newFriendObj) => {
-        API.addFriend(newFriendObj)
-            .then(() => API.getMessages())
-            .then(messages =>
-                this.setState({
-                    messages: messages
-                }))
-            .then(() => this.props.history.push("/messages"))
-    }
-
     //Carly - toggle function for modal
     toggle = () => {
         this.setState(prevState => ({
@@ -175,6 +173,8 @@ class ApplicationViews extends Component {
                 this.setState(newState)
             })
     }
+
+
 
     //Carly
     deleteNewsItem = (newsfeed, newsItemId) => {

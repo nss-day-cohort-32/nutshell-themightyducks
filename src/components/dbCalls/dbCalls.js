@@ -92,7 +92,7 @@ const API = {
         return fetch(`${db}/users/${userId}?_embed=friends`)
             .then(response => response.json())
     },
-    addFriend: (userId, friendId, obj) => {
+    addFriend: (obj) => {
         return fetch(`${db}/friends`, {
             method: "POST",
             headers: {

@@ -27,7 +27,7 @@ export default class MessageItem extends Component {
                             </CardHeader>
                             <CardBody className="friend-card-body">
                                 <CardText>{this.props.message.postedTime}: "{this.props.message.message}"</CardText>
-                                <ButtonOptions key={this.props.message.id} message={this.props.message} relationships={this.props.relationships} deleteMessage={this.props.deleteMessage} />
+                                <ButtonOptions key={this.props.message.id} message={this.props.message} relationships={this.props.relationships} deleteMessage={this.props.deleteMessage} addFriend={this.props.addFriend} />
 
                             </CardBody>
                         </Card>
