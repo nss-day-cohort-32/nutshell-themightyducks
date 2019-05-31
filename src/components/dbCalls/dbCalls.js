@@ -113,15 +113,16 @@ const API = {
             body: JSON.stringify(obj)
         })
             .then(e => e.json())
-        getTasks: (userId) => {
-            return fetch(`${db}/tasks/?userId=${userId}`)
-                .then(results => results.json())
-        },
-            getTask: (id) => {
-                return fetch(`${db}/tasks/${id}`)
-                    .then(results => results.json())
-            }
-
+    },
+    getTasks: (userId) => {
+        return fetch(`${db}/tasks/?userId=${userId}`)
+            .then(results => results.json())
+    },
+    getTask: (id) => {
+        return fetch(`${db}/tasks/${id}`)
+            .then(results => results.json())
     }
+
+}
 
 export default API
