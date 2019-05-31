@@ -179,7 +179,7 @@ class ApplicationViews extends Component {
     //Carly - toggle function for modal
     toggle = () => {
         this.setState(prevState => ({
-          modal: !prevState.modal
+            modal: !prevState.modal
         }));
     }
 
