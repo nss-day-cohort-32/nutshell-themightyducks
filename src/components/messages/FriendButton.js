@@ -11,9 +11,13 @@ import API from '../dbCalls/dbCalls';
 const userId = sessionStorage.getItem("id");
 
 class FriendButton extends Component {
-
+    state = {
+        saveDisabled: false
+    }
 
     constructNewFriend = () => {
+        this.setState({ saveDisabled: true })
+
         const newFriend = {
             userId: parseInt(userId),
             friendUserId: this.props.message.userId
@@ -28,7 +32,7 @@ class FriendButton extends Component {
         return (
             <>
 
-                <Button className="add-friend-btn" outline color="primary" onClick={this.constructNewFriend}>Add Friend</Button>
+                <Button className="add-friend-btn" outline color="primary" onClick={this.constructNewFriend} disabled={this.state.saveDisabled}>Add Friend</Button>
 
             </>
         );

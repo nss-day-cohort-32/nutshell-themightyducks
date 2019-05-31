@@ -54,6 +54,11 @@
       "userId": 1,
       "friendUserId": 2,
       "id": 4
+    },
+    {
+      "userId": 1,
+      "friendUserId": 9,
+      "id": 5
     }
   ],
   "newsfeed": [
