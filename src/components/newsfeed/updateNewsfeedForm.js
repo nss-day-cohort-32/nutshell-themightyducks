@@ -10,7 +10,7 @@ export default class ArticleUpdateForm extends React.Component {
         this.setState(stateToChange);
     };
     updateForm = () => {
-        const newsfeed = {
+        const newsObj = {
             userId: parseInt(this.props.currentUserId),
             type: "article",
             title: this.state.title,
@@ -19,8 +19,8 @@ export default class ArticleUpdateForm extends React.Component {
             eventDate: this.state.eventDate,
             postDate: Date.now()
         }
-        console.log(this.props.newsItem)
-        API.patch("newsfeed", this.props.newsItem.id, newsfeed)
+        console.log("update", newsObj)
+        API.patch("newsfeed", this.props.newsItem.id, newsObj)
     }
     render() {
         return (
@@ -41,7 +41,7 @@ export default class ArticleUpdateForm extends React.Component {
                     <Label for="synopsis">Synopsis</Label>
                     <Input type="textarea" name="text" id="description" onChange={this.handleFieldChange} defaultValue={this.props.newsItem.description} />
                 </FormGroup>
-                <Button onClick={() => { this.updateForm(); this.props.toggle() }}>Submit</Button>
+                <Button onClick={() => { this.updateForm(); this.props.toggle(); }}>Submit</Button>
             </Form >
         );
     }

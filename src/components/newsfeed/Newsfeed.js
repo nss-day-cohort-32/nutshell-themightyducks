@@ -42,7 +42,7 @@ class Newsfeed extends Component {
                                 : null
                         }
                     </section>
-                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} toggle={this.props.toggle} modal={this.props.modal} newsfeed={this.props.newsfeed} handleSelect={this.props.handleSelect} formtype={this.props.formtype} handleDbleClick={this.props.handleDbleClick} newsItem={this.state.newsItem} />
+                    <AddFormModal currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} toggle={this.props.toggle} modal={this.props.modal} newsfeed={this.props.newsfeed} handleSelect={this.props.handleSelect} formtype={this.props.formtype} handleDbleClick={this.props.handleDbleClick} newsItem={this.state.newsItem} getSetAndPushNewsfeed={this.props.getSetAndPushNewsfeed} s />
                 </div>
             </>
         );

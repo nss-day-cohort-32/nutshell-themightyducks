@@ -45,12 +45,12 @@
     },
     {
       "userId": 1,
-      "type": "article",
-      "title": "baby shark mommy shark",
-      "description": "do dooooo dooo dodoo",
+      "type": "event",
+      "title": "baby shark mommy shark daddy shark",
+      "description": "do dooooo dooo dodoo doo doo DOOOOOOO",
       "url": "https://github.com/nss-day-cohort-32/nutshell-themightyducks/blob/master/api/database.json",
-      "eventDate": "2019-06-27",
-      "postDate": 1559316831397,
+      "eventDate": "2019-05-31",
+      "postDate": 1559327828664,
       "id": 8
     },
     {
@@ -65,22 +65,22 @@
     },
     {
       "userId": 1,
-      "type": "article",
-      "title": "new",
+      "type": "event",
+      "title": "new sososoosososososo",
       "description": "ew",
       "url": "dsdsds",
       "eventDate": "2019-05-22",
-      "postDate": 1559314624790,
+      "postDate": 1559328136861,
       "id": 10
     },
     {
       "userId": 1,
       "type": "article",
-      "title": "does this work now?",
-      "description": "ewq",
+      "title": "does this work now? YESssss!",
+      "description": "ewqaaa",
       "url": "https://github.com/nashville-software-school/client-side-mastery",
       "eventDate": "2019-05-18",
-      "postDate": 1559317113892,
+      "postDate": 1559328266947,
       "id": 11
     },
     {
@@ -102,6 +102,16 @@
       "eventDate": "2019-07-04",
       "postDate": 1559319680102,
       "id": 13
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "jake",
+      "description": "mn",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-05-15",
+      "postDate": 1559326750106,
+      "id": 14
     }
   ],
   "messages": [

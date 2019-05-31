@@ -17,7 +17,7 @@ class AddFormModal extends React.Component {
       formType = <EventsForm currentUserId={this.props.currentUserId} addNewsfeed={this.props.addNewsfeed} modal={this.props.modal} toggle={this.props.toggle} />
     }
     else if (this.props.formtype === "article") {
-      formType = <ArticleUpdateForm currentUserId={this.props.currentUserId} modal={this.props.modal} toggle={this.props.toggle} newsfeed={this.props.newsfeed} newsItem={this.props.newsItem} />
+      formType = <ArticleUpdateForm currentUserId={this.props.currentUserId} modal={this.props.modal} toggle={this.props.toggle} newsfeed={this.props.newsfeed} newsItem={this.props.newsItem} getSetAndPushNewsfeed={this.props.getSetAndPushNewsfeed} />
     }
     else if (this.props.formtype === "event") {
       formType = <EventUpdateForm currentUserId={this.props.currentUserId} modal={this.props.modal} toggle={this.props.toggle} newsfeed={this.props.newsfeed} />
