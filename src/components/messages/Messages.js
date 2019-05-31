@@ -21,6 +21,7 @@ class Messages extends Component {
                 {
                     (this.props.messages) ? (
                         this.props.messages.map(message => {
+                            console.log("card created");
                             return <MessageItem key={message.id} message={message} relationships={this.props.relationships} addFriend={this.props.addFriend} deleteMessage={this.props.deleteMessage} />
                         })
                     ) : null

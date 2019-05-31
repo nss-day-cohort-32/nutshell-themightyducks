@@ -52,7 +52,6 @@ class ApplicationViews extends Component {
                 API.getUserInfo(id)
                     .then(user => {
                         newState.newsfeed = user.newsfeed
-                        newState.messages = user.messages
                         newState.tasks = user.tasks
                         newState.currentUserId = id
                     })
