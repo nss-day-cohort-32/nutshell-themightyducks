@@ -4,32 +4,47 @@ import ApplicationViews from "./ApplicationViews"
 import { withRouter, Route } from 'react-router'
 import fire from '../config/Fire';
 import Auth from "./auth/Auth"
+import dbCalls from "./dbCalls/dbCalls"
+import API from "./dbCalls/dbCalls"
 
 
 class Nutshell extends Component {
     state = {
         user: null
     }
+    setNutshellState = () => {
+        console.log("Setting New Nutshell State")
+        //this.authListener()
+        this.setState()
+    }
+
 
     componentDidMount = () => {
+        console.log("Nutshell Mounted")
         this.authListener();
     }
 
     authListener = () => {
         fire.auth().onAuthStateChanged((user) => {
-            // console.log("user", user);
+            console.log("authListener - Nutshell - user:", user)
+
             if (user) {
-                this.setState({ user });
-                localStorage.setItem('user', user.uid);
-
-            } else {
-                this.setState({ user: null });
-                localStorage.removeItem('user');
-                sessionStorage.removeItem('id');
-            }
-        });
+                console.log("NUTSHELL - email ", user.email)
+                API.getUserID(user.email)
+                    .then(result => {
+                        localStorage.setItem('user', user.uid);
+                        sessionStorage.setItem('id', parseInt(result[0].id))
+                        console.log("NUTSHELL - Setting Session Storage - ", user)
+                    }).then(_next => {
+                        this.setState({ user });
+                    })
+                } else {
+                    this.setState({ user: null });
+                    localStorage.clear();
+                    sessionStorage.clear();
+                    }
+            })
     }
-
     render() {
         return (
             <>
