@@ -30,9 +30,9 @@ class Newsfeed extends Component {
                                 this.props.newsfeed.sort((a, b) => { return Date.parse(b.eventDate) - Date.parse(a.eventDate) }).map((item) => {
                                     let color;
                                     if (item.type === "article") {
-                                        color = "lightblue"
+                                        color = "#2CB79C"
                                     } else if (item.type === "event") {
-                                        color = "lightgray"
+                                        color = "#C0C0C0"
                                     }
                                     return <NewsFeedCard key={item.id} newsItem={item} {...this.props} color={color} deleteNewsItem={this.props.deleteNewsItem} toggle={this.props.toggle} modal={this.props.modal} handleSelect={this.props.handleSelect} formtype={this.props.formtype} handleDbleClick={this.props.handleDbleClick} getNewsItem={this.getNewsItem} />
                                 })

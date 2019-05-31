@@ -10,16 +10,16 @@ const NewsFeedCard = (props) => {
   const newsItemType = props.newsItem.type
 
   return (
-      <Card className="newsCard" style={{ backgroundColor: props.color }} onDoubleClick={(event) => {
+      <Card className="newsCard"  onDoubleClick={(event) => {
         props.toggle()
         props.handleSelect(event)
         props.handleDbleClick(event, newsItemType)
         props.getNewsItem(event, newsItem)
       }} value={props.newsItem.type} >
-        <CardHeader className="card-header">
+        <CardHeader className="card-header" style={{ backgroundColor: props.color }}>
            <CardTitle className="newsCard-title">{props.newsItem.title}</CardTitle>
         </CardHeader>
-        <CardBody>
+        <CardBody style={{ backgroundColor: "#E0E0E0" }}>
           <CardText>{props.newsItem.description}</CardText>
           <CardSubtitle>{props.newsItem.location}</CardSubtitle>
           <CardSubtitle>{props.newsItem.eventDate}</CardSubtitle>
