@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TitleBar from "../nav/TitleBar"
 import MessageItem from "./MessageItem"
+import MessageModal from './MessageModal';
 
 const userId = sessionStorage.getItem("id");
 
@@ -18,6 +19,7 @@ class Messages extends Component {
         return (
             <>
                 <TitleBar title="Messages" />
+                <MessageModal modal={this.props.modal} toggle={this.props.toggle} />
                 {
                     (this.props.messages) ? (
                         this.props.messages.map(message => {
