@@ -14,7 +14,7 @@ export default class Todo extends Component {
                                 <span className="todo-item__delete-button"
                                       onClick={() => {this.props.handleDelete(item.id)
                                         this.props.deleteTask(item.id)
-                                      }}>×</span>
+                                      }}>x</span>
                             </li>
                         )
                     })

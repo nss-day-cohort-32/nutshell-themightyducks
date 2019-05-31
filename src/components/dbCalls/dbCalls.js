@@ -52,6 +52,15 @@ const API = {
             .then(e => e.json())
 
     },
+    patch : (resource, id, data) => {
+        return fetch(`${db}/${resource}/${id}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          }).then(response => response.json())
+    },
     getFriends: (userId) => {
         return fetch(`${db}/users/${userId}?_embed=friends`)
             .then(results => results.json())
@@ -67,7 +76,12 @@ const API = {
     getTasks: (userId) => {
         return fetch(`${db}/tasks/?userId=${userId}`)
             .then(results => results.json())
+        },
+    getTask: (id) => {
+        return fetch(`${db}/tasks/${id}`)
+            .then(results => results.json())
         }
+
 }
 
 export default API

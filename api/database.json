@@ -13,6 +13,13 @@
       "email": "jake@jake.com",
       "password": "jake",
       "userPhoto": "url"
+    },
+    {
+      "id": 3,
+      "userName": "jason",
+      "email": "strangehandle@gmail.com",
+      "password": "nashville",
+      "userPhoto": "url"
     }
   ],
   "friends": [
@@ -104,22 +111,6 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "entered": "05:00am",
-      "isComplete": false,
-      "userId": 1,
-      "task": "Jump",
-      "done": false
-    },
-    {
-      "id": 2,
-      "entered": "05:00am",
-      "isComplete": false,
-      "userId": 1,
-      "task": "Wake Up",
-      "done": false
-    },
-    {
       "entered": 1559260123631,
       "userId": 1,
       "task": "Smash Laptop",
@@ -132,6 +123,27 @@
       "task": "Restart JSON Server",
       "done": false,
       "id": 4
+    },
+    {
+      "entered": 1559271432876,
+      "userId": 1,
+      "task": "Buy Healthy Food",
+      "done": false,
+      "id": 6
+    },
+    {
+      "entered": 1559274873114,
+      "userId": 3,
+      "task": "Fix article submission bug that sets userId to NULL",
+      "done": false,
+      "id": 11
+    },
+    {
+      "entered": 1559274974713,
+      "userId": 3,
+      "task": "Possibly move code in APPVIEWS to another page that will re-render Tasks",
+      "done": false,
+      "id": 12
     }
   ]
 }

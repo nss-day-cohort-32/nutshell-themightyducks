@@ -46,6 +46,7 @@
 }
 
 .todos-list {
+    margin-top: 1em;
     font-size: 1.4em;
 }
 
@@ -64,7 +65,7 @@
     font-size: 1.5em;
     width: 40px;
     color: red;
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 0 .4px rgb(180, 58, 58);
 }
 
 .footer__button {

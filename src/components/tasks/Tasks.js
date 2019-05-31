@@ -48,11 +48,11 @@ export default class Tasks extends Component {
         console.log("HANDLE TOGGLE")
         this.setState((prevState) => {
             return {
-                todos: prevState.todos.map((item, i) => {
+                todos: this.props.todos.map((item, i) => {
                     if (item.id === id) {
                         return {
                             ...item,
-                            done: !prevState.todos[i].done,
+                            done: !this.props.todos[i].done,
                         }
                     }
                     return item;
@@ -66,22 +66,17 @@ export default class Tasks extends Component {
         })
     }
 
-    deleteCompleted = () => {
-        this.setState({
-            todos: this.state.todos.filter(item => !item.done)
-        })
-    }
 
     getVisibleTodos = () => {
         const filterType = this.state.filterType;
         let filterState = null;
         switch (filterType) {
             case "Completed":
-                return filterState = this.state.todos.filter(item => item.done);
+                return filterState = this.props.todos.filter(item => item.done);
             case "Active":
-                return filterState = this.state.todos.filter(item => !item.done);
+                return filterState = this.props.todos.filter(item => !item.done);
             default:
-                return filterState = this.state.todos;
+                return filterState = this.props.todos;
         }
     }
 
@@ -102,17 +97,17 @@ export default class Tasks extends Component {
             <>
                 <TitleBar title="Tasks" />
                 <div className="container">
-                    <Header countTodo={this.state.todos.length} />
+                    <Header countTodo={this.props.todos.length} />
                     <Form handleDelete={this.handleDelete}
                         deleteTask={this.props.deleteTask}
-                        handleToggle={this.handleToggle}
+                        handleToggle={this.props.handleToggle}
                         handleClick={this.handleClick}
                         handleChange={this.handleChange}
                         todoValue={this.state.todoValue}
                         // todos={this.getVisibleTodos()} />
                         todos={this.props.todos} />
                     <Footer setActiveFilter={this.setActiveFilter}
-                        deleteCompleted={this.deleteCompleted}
+                        deleteCompleted={this.props.deleteCompleted}
                         filter={this.state.filterType} />
                 </div>
             </>

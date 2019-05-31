@@ -92,23 +92,15 @@ class ApplicationViews extends Component {
     }
     //Jason
     deleteTask = (idToDelete) => {
-        console.log("ID to delete ", idToDelete)
         const newState = {}
         const userId = sessionStorage.getItem("id")
         const url = "tasks"
         API.delete(url, idToDelete)
-            .then(() => dbCalls.getTasks(userId))
-            .then(tasks => {
+            .then(() => dbCalls.getTasks(userId)).then(tasks => {
                 newState.tasks = tasks
-            })
-            .then(() => {
-                //this.props.history.push("/tasks")
-                this.setState(newState);
-            })
+            }).then(() => { this.setState(newState) })
     }
-    //Jason
     postTask = (objToPost) => {
-        console.log("OBJ to POST", objToPost)
         const newState = {}
         const userId = sessionStorage.getItem("id")
         const url = "tasks"
@@ -118,9 +110,34 @@ class ApplicationViews extends Component {
                 newState.tasks = tasks
             })
             .then(() => {
-                //this.props.history.push("/tasks")
                 this.setState(newState);
             })
+    }
+    handleToggle = (id) => {
+        let newState = {}
+        const userId = sessionStorage.getItem("id")
+        API.getTask(id)
+            .then(task => {
+                let value = !(task.done)
+                let obj = task
+                obj.done = value
+                API.put("tasks", id, obj).then(() => API.getTasks(userId).then(results => {
+                    newState.tasks = results
+                }).then(() => {
+                    this.setState(newState)
+                }))
+            })
+    }
+    deleteCompleted = () => {
+        const userId = sessionStorage.getItem("id")
+        let newState = {}
+        let obj = {}
+        API.getTasks(userId).then(tasks=>{
+            obj.tasks = tasks.filter(item => item.done)
+        }).then(results=> obj.tasks.forEach(element => {
+            console.log(element.id)
+            this.deleteTask(element.id)
+        }))
     }
 
     //Carly and Jake - calls the newsfeeds of the current user and their friends, sets a new newsfeed state and sends the user back to their updated newsfeed page
@@ -128,25 +145,25 @@ class ApplicationViews extends Component {
         const newState = {}
         const userId = this.state.currentUserId
         API.getUserInfo(userId)
-                .then(user => {
-                    newState.newsfeed = user.newsfeed
-                })
-                .then(() => API.getFriendNewsfeed(userId))
-                .then(friends => friends.map(friend =>
-                    friend.newsfeed.map(news =>
-                        newState.newsfeed.push(news)
-                    )
-                ))
-                .then(() => {
-                    this.props.history.push("/newsfeed")
-                    this.setState(newState)
-                })
+            .then(user => {
+                newState.newsfeed = user.newsfeed
+            })
+            .then(() => API.getFriendNewsfeed(userId))
+            .then(friends => friends.map(friend =>
+                friend.newsfeed.map(news =>
+                    newState.newsfeed.push(news)
+                )
+            ))
+            .then(() => {
+                this.props.history.push("/newsfeed")
+                this.setState(newState)
+            })
     }
 
     //Carly
     deleteNewsItem = (newsfeed, newsItemId) => {
         API.delete(newsfeed, newsItemId)
-        .then(() => this.getSetAndPushNewsfeed())
+            .then(() => this.getSetAndPushNewsfeed())
     }
 
 
@@ -186,7 +203,8 @@ class ApplicationViews extends Component {
                     if (this.isAuthenticated()) {
                         return (
                             <Tasks todos={this.state.tasks} deleteTask={this.deleteTask}
-                            postTask={this.postTask}/>
+                                postTask={this.postTask} handleToggle={this.handleToggle}
+                                deleteCompleted={this.deleteCompleted}/>
                         )
                     } else {
                         console.log("no user")
