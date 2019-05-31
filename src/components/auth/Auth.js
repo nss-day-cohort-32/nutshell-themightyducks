@@ -7,6 +7,7 @@ import API from "../dbCalls/dbCalls"
 
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import ApplicationViews from '../ApplicationViews';
 
 class Auth extends Component {
 
@@ -45,13 +46,7 @@ class Auth extends Component {
         }
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then((u) => { localStorage.setItem('user', u.uid) })
-            .then(() => API.getUserID(this.state.email)
-                .then(result => sessionStorage.setItem('id', parseInt(result[0].id)))
-                .then(() => {
-                    this.props.history.push('/newsfeed')
-                })
-            ).catch((error) => {
+            .catch((error) => {
                 console.log("ERROR", error)
                 newState.modal = !this.state.modal
                 newState.error = error.message
@@ -84,7 +79,6 @@ class Auth extends Component {
             API.post("users", newUser)
                 .then(() => API.getUserID(this.state.email))
                 .then(result => sessionStorage.setItem('id', parseInt(result[0].id)))
-                .then(() => this.props.history.push('/newsfeed'))
         })
     }
     render() {

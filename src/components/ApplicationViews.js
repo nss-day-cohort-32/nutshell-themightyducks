@@ -23,33 +23,67 @@ class ApplicationViews extends Component {
     isAuthenticated = () => localStorage.getItem("user") !== null
 
     componentDidMount() {
+        console.log("AppViews Mounted")
+
+        const newState = {
+            friends: []
+        }
+        const id = sessionStorage.getItem("id")
+        console.log("APPV MOUNT SESSION ID:", id)
+        dbCalls.getFriends(id)
+            .then(friends => {
+                newState.friends = friends
+                this.setState(newState)
+            }).then(_next => {
+                console.log("IsAUTH")
+                API.getUserInfo(id)
+                    .then(user => {
+                        newState.newsfeed = user.newsfeed
+                        newState.messages = user.messages
+                        newState.tasks = user.tasks
+                        newState.currentUserId = id
+                    })
+                    .then(() => API.getFriendNewsfeed(id))
+                    .then(friends => friends.map(friend =>
+                        friend.newsfeed.map(news =>
+                            newState.newsfeed.push(news)
+                        )
+                    ))
+                    .then(() => this.setState(newState))
+            })
+        //if (this.isAuthenticated()) {
+
+        //}
+    }
+
+
+    loadUserData = () => {
+
+
         // Declaring new state
         const newState = {
             friends: []
         }
         const id = sessionStorage.getItem("id")
-        dbCalls.getFriends(1)
+        dbCalls.getFriends(id)
             .then(friends => {
                 newState.friends = friends
-                this.setState(newState)
-            })
-        if (this.isAuthenticated()) {
-            console.log("IsAUTH")
-            API.getUserInfo(id)
+                //this.setState(newState)
+            }).then(_next => API.getUserInfo(id)
                 .then(user => {
                     newState.newsfeed = user.newsfeed
                     newState.messages = user.messages
                     newState.tasks = user.tasks
                     newState.currentUserId = id
-                })
-                .then(() => API.getFriendNewsfeed(id))
-                .then(friends => friends.map(friend =>
-                    friend.newsfeed.map(news =>
-                        newState.newsfeed.push(news)
-                    )
-                ))
-                .then(() => this.setState(newState))
-        }
+                }))
+            .then(() => API.getFriendNewsfeed(id))
+            .then(friends => friends.map(friend =>
+                friend.newsfeed.map(news =>
+                    newState.newsfeed.push(news)
+                )
+            ))
+            .then(() => this.setState(newState))
+
     }
 
 
@@ -132,9 +166,9 @@ class ApplicationViews extends Component {
         const userId = sessionStorage.getItem("id")
         let newState = {}
         let obj = {}
-        API.getTasks(userId).then(tasks=>{
+        API.getTasks(userId).then(tasks => {
             obj.tasks = tasks.filter(item => item.done)
-        }).then(results=> obj.tasks.forEach(element => {
+        }).then(results => obj.tasks.forEach(element => {
             console.log(element.id)
             this.deleteTask(element.id)
         }))
@@ -172,7 +206,7 @@ class ApplicationViews extends Component {
 
         return (
             <>
-                <Route path="/auth" component={Auth} />
+                <Route path="/auth" component={Auth} loadUserData={this.loadUserData} />
 
                 <Route exact path="/newsfeed" render={(props) => {
 
@@ -182,7 +216,7 @@ class ApplicationViews extends Component {
                         )
                     } else {
                         return (
-                            <Redirect to="/auth" component={Auth} />
+                            <Redirect to="/auth" component={Auth} loadUserData={this.loadUserData} />
                         )
                     }
                 }} />
@@ -194,7 +228,7 @@ class ApplicationViews extends Component {
                     } else {
                         console.log("no user")
                         return (
-                            <Redirect to="/auth" component={Auth} />
+                            <Redirect to="/auth" component={Auth} loadUserData={this.loadUserData} />
                         )
                     }
                 }} />
@@ -204,12 +238,12 @@ class ApplicationViews extends Component {
                         return (
                             <Tasks todos={this.state.tasks} deleteTask={this.deleteTask}
                                 postTask={this.postTask} handleToggle={this.handleToggle}
-                                deleteCompleted={this.deleteCompleted}/>
+                                deleteCompleted={this.deleteCompleted} />
                         )
                     } else {
                         console.log("no user")
                         return (
-                            <Redirect to="/auth" component={Auth} />
+                            <Redirect to="/auth" component={Auth} loadUserData={this.loadUserData} />
                         )
                     }
                 }} />
@@ -222,7 +256,7 @@ class ApplicationViews extends Component {
                     } else {
                         console.log("no user")
                         return (
-                            <Redirect to="/auth" component={Auth} />
+                            <Redirect to="/auth" component={Auth} loadUserData={this.loadUserData} />
                         )
                     }
                 }} />
