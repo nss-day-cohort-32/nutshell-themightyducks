@@ -25,16 +25,28 @@ class ApplicationViews extends Component {
     isAuthenticated = () => localStorage.getItem("user") !== null
 
     addFriend = (newFriendObj) => {
-        // API.addFriend(newFriendObj)
-        //     .then(() => API.getMessages()
-        //         .then(messages => {
-        //             this.setState({ messages: messages })
-        //         })
-        //     )
+        console.log("inside addFriend func", this.state.friends)
+        const id = sessionStorage.getItem("id")
+        const newState = {}
+        console.log("newfriendobj", newFriendObj)
+        API.addFriend(newFriendObj)
+            .then(() => API.getFriends(id))
+            .then(friends => {
+                console.log("friends from API get friends", friends)
+                newState.friends = friends
+            })
+            .then(() => API.getMessages())
+            .then(messages => newState.messages = messages)
+            .then(() => {
+                this.setState(newState)
+                console.log("inside add friend - set state", this.state.friends)
+                // window.location.reload();
+            })
     }
 
     componentDidMount() {
         console.log("AppViews Mounted")
+        console.log("inside comp did mount", this.state.friends)
 
         const newState = {
             friends: [],

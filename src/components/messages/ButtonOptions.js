@@ -39,7 +39,7 @@ export default class ButtonOptions extends Component {
                         ) : (null)
                 }
                 {
-                    (this.determineIfFriend()) ? (null) : (<FriendButton key={this.props.message.id} message={this.props.message} onClick={this.props.addFriend} className="edit-message-btn" outline color="primary" addFriend={this.props.addFriend}>Add Friend</FriendButton>)
+                    (this.determineIfFriend()) ? (null) : (<FriendButton key={this.props.message.id} message={this.props.message} className="edit-message-btn" outline color="primary" addFriend={this.props.addFriend}>Add Friend</FriendButton>)
                 }
             </>
         )

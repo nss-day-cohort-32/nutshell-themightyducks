@@ -51,9 +51,9 @@
       "friendUserId": 4
     },
     {
-      "id": 1,
       "userId": 1,
-      "friendUserId": 9
+      "friendUserId": 2,
+      "id": 4
     }
   ],
   "newsfeed": [
