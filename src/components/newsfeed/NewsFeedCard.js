@@ -6,7 +6,7 @@ import {
 import { Route, Redirect, withRouter } from "react-router-dom"
 
 const NewsFeedCard = (props) => {
-
+  const newsItem = props.newsItem
   const newsItemId = props.newsItem.id
   const newsItemType = props.newsItem.type
 
@@ -15,6 +15,7 @@ const NewsFeedCard = (props) => {
       props.toggle()
       props.handleSelect(event)
       props.handleDbleClick(event, newsItemType)
+      props.getNewsItem(event, newsItem)
     }}>
       <CardBody value={props.newsItem.type}>
         <CardTitle>{props.newsItem.title}</CardTitle>

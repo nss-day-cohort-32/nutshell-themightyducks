@@ -64,46 +64,6 @@
   "newsfeed": [
     {
       "userId": 1,
-      "type": "article",
-      "title": "new",
-      "description": "so  new new ",
-      "url": "https://github.com/nashville-software-school/client-side-mastery",
-      "eventDate": "2019-05-31",
-      "postDate": 1559233381743,
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238611739,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238615562,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238711317,
-      "id": 6
-    },
-    {
-      "userId": 1,
       "type": "event",
       "title": "ddd",
       "description": "dddd",
@@ -114,12 +74,12 @@
     },
     {
       "userId": 1,
-      "type": "article",
-      "title": "baby shark",
-      "description": "do dooooo",
+      "type": "event",
+      "title": "baby shark mommy shark daddy shark",
+      "description": "do dooooo dooo dodoo doo doo DOOOOOOO",
       "url": "https://github.com/nss-day-cohort-32/nutshell-themightyducks/blob/master/api/database.json",
-      "eventDate": "2019-05-18",
-      "postDate": 1559239312409,
+      "eventDate": "2019-05-31",
+      "postDate": 1559327828664,
       "id": 8
     },
     {
@@ -134,23 +94,53 @@
     },
     {
       "userId": 1,
-      "type": "article",
-      "title": "asdf",
-      "description": "asdf",
-      "url": "asdf",
-      "eventDate": "2019-05-10",
-      "postDate": 1559330211940,
+      "type": "event",
+      "title": "new sososoosososososo",
+      "description": "ew",
+      "url": "dsdsds",
+      "eventDate": "2019-05-22",
+      "postDate": 1559328136861,
       "id": 10
     },
     {
       "userId": 1,
-      "type": "event",
-      "title": "asdf",
-      "description": "",
-      "url": "asdf",
-      "eventDate": "2019-05-10",
-      "postDate": 1559330232293,
+      "type": "article",
+      "title": "does this work now? YESssss!",
+      "description": "yeti coolers are overpriced",
+      "url": "https://github.com/nashville-software-school/client-side-mastery",
+      "eventDate": "2019-05-14",
+      "postDate": 1559334939277,
       "id": 11
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "new event",
+      "description": "cxz",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-06-21",
+      "postDate": 1559318965808,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "jake",
+      "description": "PARTY",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-07-04",
+      "postDate": 1559319680102,
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "type": "event",
+      "title": "jake",
+      "description": "mn",
+      "url": "https://www.google.com/maps",
+      "eventDate": "2019-05-15",
+      "postDate": 1559326750106,
+      "id": 14
     }
   ],
   "messages": [
