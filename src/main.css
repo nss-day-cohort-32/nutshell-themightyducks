@@ -26,7 +26,21 @@
     justify-content: space-between;
     align-content: center;
 }
+.message-sender {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    color: grey;
 
+}
+
+.message-text {
+    margin-top: 10px;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    color: rgb(167, 167, 167);
+}
 .message-user-container {
     display: flex;
     flex-direction: row;
@@ -88,4 +102,8 @@
 .newsCard-title {
     font-family: 'Ubuntu';
     font-weight: 500;
+}
+
+.loginlogo {
+    height: 100px;
 }

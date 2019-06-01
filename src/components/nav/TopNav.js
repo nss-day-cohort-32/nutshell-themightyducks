@@ -40,21 +40,22 @@ class TopNav extends Component {
                     <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                     <Collapse isOpen={!this.state.collapsed} navbar>
                         <Nav navbar>
+                            <DropdownItem divider />
                             <NavItem>
-                                <NavLink href="/newsfeed/">Newsfeed</NavLink>
+                                <NavLink style={{ marginLeft: '50px' }} href="/newsfeed/">Newsfeed</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/friends">Friends</NavLink>
+                                <NavLink style={{ marginLeft: '50px' }} href="/friends">Friends</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/tasks">Tasks</NavLink>
+                                <NavLink style={{ marginLeft: '50px' }} href="/tasks">Tasks</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/messages">Messages</NavLink>
+                                <NavLink style={{ marginLeft: '50px' }} href="/messages">Messages</NavLink>
                             </NavItem>
                             <DropdownItem divider />
                             <NavItem>
-                                <NavLink href="/auth/" onClick={this.logoutRedirect}>Logout</NavLink>
+                                <NavLink style={{ marginLeft: '50px' }} href="/auth/" onClick={this.logoutRedirect}>Logout</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>

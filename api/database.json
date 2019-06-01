@@ -54,11 +54,6 @@
       "userId": 1,
       "friendUserId": 2,
       "id": 4
-    },
-    {
-      "userId": 1,
-      "friendUserId": 9,
-      "id": 5
     }
   ],
   "newsfeed": [
@@ -191,20 +186,8 @@
       "postedTime": "05:00am"
     },
     {
-      "id": 2,
-      "userId": 1,
-      "message": "message yooo",
-      "postedTime": "05:00am"
-    },
-    {
       "id": 3,
       "userId": 2,
-      "message": "message yooo",
-      "postedTime": "05:00am"
-    },
-    {
-      "id": 4,
-      "userId": 1,
       "message": "message yooo",
       "postedTime": "05:00am"
     },
@@ -213,15 +196,67 @@
       "userId": 9,
       "message": "I am not your friend",
       "postedTime": "05:00am"
+    },
+    {
+      "userId": "1",
+      "message": "Whats up yall",
+      "postedTime": "4:02:33 PM",
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "message": "nm u",
+      "postedTime": "4:03:05 PM",
+      "id": 7
+    },
+    {
+      "userId": "1",
+      "message": "Gym Tan Laundry",
+      "postedTime": "5:18:37 PM",
+      "id": 8
+    },
+    {
+      "userId": "1",
+      "message": "Does anyone else consider scootering to NSS?",
+      "postedTime": "5:27:06 PM",
+      "id": 9
     }
   ],
   "tasks": [
     {
-      "id": 1,
-      "entered": "05:00am",
-      "isComplete": false,
+      "entered": 1559427396950,
       "userId": 1,
-      "task": "eat"
+      "task": "Tell mom you love her",
+      "done": false,
+      "id": 1
+    },
+    {
+      "entered": 1559427423484,
+      "userId": 1,
+      "task": "Look up pictures of Alpacas",
+      "done": false,
+      "id": 2
+    },
+    {
+      "entered": 1559427431659,
+      "userId": 1,
+      "task": "Enjoy an ice cold Dr. Pepper",
+      "done": true,
+      "id": 3
+    },
+    {
+      "entered": 1559427445259,
+      "userId": 1,
+      "task": "Eliminate mosquitos in yard",
+      "done": false,
+      "id": 4
+    },
+    {
+      "entered": 1559427462406,
+      "userId": 1,
+      "task": "Create In N Out franchise in Nashville",
+      "done": false,
+      "id": 5
     }
   ]
 }

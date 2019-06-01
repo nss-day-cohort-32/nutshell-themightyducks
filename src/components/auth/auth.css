@@ -1,0 +1,17 @@
+.modal-head {
+    background-color: #2CB79C;
+    color: white;
+}
+
+.auth-form-container {
+    display: block;
+    left: 25%;
+    margin-top: 200px;
+    font-family: 'Ubuntu';
+    font-weight: 350;
+    background-color: white;
+    padding: 50px;
+    width: 400px;
+    box-shadow: 0px 5px 6px -2px rgba(194,194,194,0.7);
+
+}
