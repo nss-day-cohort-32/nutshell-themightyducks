@@ -4,6 +4,8 @@ import fire from '../../config/Fire';
 import App from "../../App"
 import TitleBar from "../nav/TitleBar"
 import API from "../dbCalls/dbCalls"
+import auth from "./auth.css"
+import logo from "../../Nutshell-02.svg"
 
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
@@ -41,17 +43,17 @@ class Auth extends Component {
 
     login = (e) => {
         const newState = {
-            modal: false,
+            modal: true,
             error: []
         }
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then(() => {this.props.history.push("/newsfeed")})
-        .catch((error) => {
+            .then(() => { this.props.history.push("/newsfeed") })
+            .catch((error) => {
                 console.log("ERROR", error)
                 newState.modal = !this.state.modal
                 newState.error = error.message
-                this.setState()
+                this.setState(newState)
             })
     }
 
@@ -83,23 +85,28 @@ class Auth extends Component {
 
         return (
             <>
-                <div className="col-md-6">
+                <div className="col-md-6 auth-form-container">
+                    <div className="button-group" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', paddingTop: '20px' }}>
+                        <img className="loginlogo" src={logo} style={{ marginBottom: '50px' }}></img>
+                    </div>
                     <form>
-                        <div className="form-group">
+                        <div className="form-group" style={{ padding: '0px 50px 0px 50px' }}>
                             <label htmlFor="exampleInputEmail1">Email address</label>
                             <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group" style={{ padding: '0px 50px 0px 50px' }}>
                             <label htmlFor="exampleInputPassword1">Password</label>
                             <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                         </div>
-                        <button type="submit" onClick={this.login} className="btn btn-primary">Login</button>
-                        <button onClick={this.signup} style={{ marginLeft: '25px' }} className="btn btn-success">Signup</button>
+                        <div className="button-group" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', paddingTop: '20px' }}>
+                            <button type="submit" onClick={this.login} className="btn btn-primary">Login</button>
+                            <button onClick={this.signup} style={{ marginLeft: '25px' }} className="btn btn-success">Signup</button>
+                        </div>
                     </form>
                 </div>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} onClose={this.closeModal} centered={true}>
-                    <ModalHeader toggle={this.toggle}>Login Error</ModalHeader>
+                    <ModalHeader className="modal-head" toggle={this.toggle}>Login Error</ModalHeader>
                     <ModalBody>
                         {this.state.error}
                     </ModalBody>

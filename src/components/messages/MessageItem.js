@@ -21,12 +21,12 @@ export default class MessageItem extends Component {
                             <CardHeader className="message-card-header" >
                                 <div className="message-user-container">
                                     <img className="message-image" src={this.props.message.user.userPhoto} ></img>
-                                    <h6>{this.props.message.user.userName}</h6>
+                                    <h6 className="message-sender">{this.props.message.user.userName}</h6>
                                 </div>
                                 <p></p>
                             </CardHeader>
                             <CardBody className="friend-card-body">
-                                <CardText>{this.props.message.postedTime}: "{this.props.message.message}"</CardText>
+                                <CardText className="message-text">{this.props.message.postedTime}   |   "{this.props.message.message}"</CardText>
                                 <ButtonOptions key={this.props.message.id} message={this.props.message} relationships={this.props.relationships} deleteMessage={this.props.deleteMessage} addFriend={this.props.addFriend} />
 
                             </CardBody>
