@@ -36,9 +36,9 @@ export default class Tasks extends Component {
                 done: false
             }
             this.setState({
-                    todoValue: "",
-                    todos: [todo, ...this.state.todos],
-                })
+                todoValue: "",
+                todos: [todo, ...this.state.todos],
+            })
             console.log("NEW OBJ", todo)
             this.props.postTask(todo)
         }
@@ -96,8 +96,8 @@ export default class Tasks extends Component {
         return (
             <>
                 <TitleBar title="Tasks" />
+                <Header countTodo={this.props.todos.length} />
                 <div className="container">
-                    <Header countTodo={this.props.todos.length} />
                     <Form handleDelete={this.handleDelete}
                         deleteTask={this.props.deleteTask}
                         handleToggle={this.props.handleToggle}

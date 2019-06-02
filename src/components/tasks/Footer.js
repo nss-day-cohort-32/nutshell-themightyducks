@@ -19,7 +19,8 @@ export default class Footer extends Component {
         console.log("FOOTER")
         return (
             <footer className="footer">
-                <ButtonDelete className={"footer__button"} deleteCompleted={this.props.deleteCompleted} text="Delete completed"  />
+                <ButtonDelete className={"footer__button"} deleteCompleted={this.props.deleteCompleted} text="Delete completed" >
+                </ButtonDelete>
             </footer>
         )
     }

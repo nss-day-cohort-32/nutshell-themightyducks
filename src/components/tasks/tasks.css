@@ -1,15 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700&subset=cyrillic,cyrillic-ext');
 @import url(https://fonts.googleapis.com/css?family=Quicksand:300,400,700);
 
+.tasks-input-container {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0px 30px 0px;
+    justify-content: center;
+}
+
 .container {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
+    font-size: .8em;
 }
 
 .container {
     margin: 0 auto;
     margin-top: 2em;
     width: 650px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .header {
@@ -21,7 +35,7 @@
 
 .form__input {
     background: transparent;
-    border: 1px solid black;
+    border: 1px solid grey;
     border-radius: 5px;
     font-size: 1.4em;
     height: 40px;
@@ -32,32 +46,43 @@
 
 .form__button {
     background: transparent;
-    background: #89d4a2;
-    border: 1px solid black;
+    background: #2CB79C;
+    color: white;
+    /* border: 1px solid grey; */
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.4em;
     float: right;
     padding: 0;
-    line-height: 40px;
+    height: 40px;
     vertical-align: top;
     width: 115px;
     outline: none;
 }
 
 .todos-list {
+    display: flex;
+    flex-direction: column;
     margin-top: 1em;
     font-size: 1.4em;
+    justify-content: center;
+    width: 100%;
 }
 
 .todo-item {
-    border-bottom: 2px solid #837c7c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #2CB79C;
     cursor: pointer;
     line-height: 40px;
+    width: 90%;
+    justify-self: center;
+    align-self: center;
 }
 
 .todo-item__delete-button {
-    float: right;
+    justify-self: flex-end;
     text-align: center;
     width: 40px;
 }
@@ -71,7 +96,7 @@
 .footer__button {
     font-family: 'quicksand';
     background: transparent;
-    border: 2px solid black;
+    border: 1px solid grey;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.4em;
@@ -79,12 +104,12 @@
     padding: 0 10px;
     line-height: 40px;
     vertical-align: top;
-    margin-right: 10px;
+    margin: auto;
 }
 
 .footer__button:hover {
     box-sizing: border-box;
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px grey;
 }
 
 .delete-completed {
@@ -93,12 +118,26 @@
 }
 
 .active {
-    border: 2px solid black;
+    border: 2px solid grey;
     box-sizing: border-box;
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px grey;
     font-weight: bold;
 }
 
 .disabled{
     text-decoration: line-through;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: auto;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 30px;
+    box-shadow: 0px 5px 6px -2px rgba(194,194,194,0.7);
 }
