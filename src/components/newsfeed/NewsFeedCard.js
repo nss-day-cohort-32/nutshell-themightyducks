@@ -17,7 +17,7 @@ const NewsFeedCard = (props) => {
         props.getNewsItem(event, newsItem)
       }} value={props.newsItem.type} >
         <CardHeader className="card-header" style={{ backgroundColor: props.color }}>
-           <CardTitle className="newsCard-title">{props.newsItem.title}</CardTitle>
+           <CardTitle className="newsCard-title">{props.newsItem.type}: {props.newsItem.title}</CardTitle>
         </CardHeader>
         <CardBody style={{ backgroundColor: "#E0E0E0" }}>
           <CardText>{props.newsItem.description}</CardText>
