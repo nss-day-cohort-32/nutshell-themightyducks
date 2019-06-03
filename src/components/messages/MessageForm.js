@@ -15,10 +15,11 @@ export default class MessageForm extends React.Component {
 
     constructMessage = () => {
         const time = new Date()
+        const splitTime = time.toLocaleTimeString().split(":").join('.')
         const messageObj = {
             userId: parseInt(this.props.currentUserId),
             message: this.state.message.trim(),
-            postedTime: time.toLocaleTimeString()
+            postedTime: splitTime
         }
         this.props.addMessage(messageObj)
 

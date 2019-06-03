@@ -60,7 +60,7 @@ class ApplicationViews extends Component {
 
         const newState = {
             friends: [],
-            messages: [],
+            messages: []
         }
 
         const id = sessionStorage.getItem("id")
@@ -83,7 +83,7 @@ class ApplicationViews extends Component {
                             newState.newsfeed.push(news)
                         )
                     ))
-                // .then(() => this.setState(newState))
+                .then(() => this.setState(newState))
             })
 
             .then(() => {

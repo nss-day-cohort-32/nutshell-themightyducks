@@ -9,7 +9,8 @@ export default class EventsForm extends React.Component {
         description: "",
         url: "",
         eventDate: "",
-        postDate: ""
+        postDate: "",
+        location: ""
     }
 
     handleFieldChange = evt => {
@@ -24,6 +25,7 @@ export default class EventsForm extends React.Component {
             type: this.state.type,
             title: this.state.title,
             description: this.state.description,
+            location: this.state.location,
             url: this.state.url,
             eventDate: this.state.eventDate,
             postDate: Date.now()
@@ -47,11 +49,15 @@ export default class EventsForm extends React.Component {
                 </FormGroup>
                 <FormGroup>
                     <Label for="eventLocation">Location</Label>
-                    <Input type="url" name="eventLocation" id="url" onChange={this.handleFieldChange} />
+                    <Input type="text" name="eventLocation" id="location" onChange={this.handleFieldChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label for="eventDescription">Description</Label>
                     <Input type="textarea" name="text" id="description" onChange={this.handleFieldChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="eventURL">URL</Label>
+                    <Input type="url" name="text" id="url" onChange={this.handleFieldChange} />
                 </FormGroup>
                 <Button onClick={() => {
                     this.contructNewNewsfeed()

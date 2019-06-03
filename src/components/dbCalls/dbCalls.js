@@ -89,7 +89,7 @@ const API = {
             })
     },
     getMessages: () => {
-        return fetch(`${db}/messages?_expand=user&_sort=postedTime&_order=desc`)
+        return fetch(`${db}/messages?_expand=user&_sort=id&_order=desc`)
             .then(response => response.json())
     },
     deleteMessage: (id) => {
