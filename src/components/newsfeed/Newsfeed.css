@@ -8,8 +8,8 @@
     text-transform: uppercase;
 }
 
-.card {
-    width: 25rem;
+.newsCard {
+    width: 35rem;
     margin: 1rem;
     text-transform: capitalize;
 }

@@ -5,6 +5,7 @@
       "userName": "carly",
       "email": "carly@carly.com",
       "password": "carly",
+      "status": "My dreams run on JSON server",
       "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/49895255_10213128530997235_6275040282807369728_o.jpg?_nc_cat=104&_nc_ht=scontent-atl3-1.xx&oh=926d3e581c68cd24819976d5771d686d&oe=5D555EE2"
     },
     {
@@ -12,6 +13,7 @@
       "userName": "jake",
       "email": "jake@jake.com",
       "password": "jake",
+      "status": "#marglife",
       "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/52995408_2294319350589304_4371270216101920768_n.jpg?_nc_cat=107&_nc_ht=scontent-atl3-1.xx&oh=26e86ceac2fff7300e3efe9d5aaccd95&oe=5D5469FE"
     },
     {
@@ -37,6 +39,22 @@
       "password": "nashville",
       "status": "Firing firebase",
       "userPhoto": "https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-8/980145_10103194319550195_6182930118244811468_o.jpg?_nc_cat=107&_nc_ht=scontent-atl3-1.xx&oh=19a3f390f891aac15ddeedb89b6cb811&oe=5D9D6EB7"
+    },
+    {
+      "id": 10,
+      "userName": "Stacy's Mom",
+      "email": "stacysmome@gmail.com",
+      "password": "nashville",
+      "status": "I've got it goin on",
+      "userPhoto": "data:image/jpeg;base64,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"
+    },
+    {
+      "id": 11,
+      "userName": "Sloth",
+      "email": "sloth@gmail.com",
+      "password": "nashville",
+      "status": "HEYYY YOU GUUUUUUUUUYS",
+      "userPhoto": "https://i.ytimg.com/vi/4Qto049GEkA/maxresdefault.jpg"
     }
   ],
   "friends": [
@@ -54,128 +72,55 @@
       "userId": 1,
       "friendUserId": 2,
       "id": 4
+    },
+    {
+      "userId": 2,
+      "friendUserId": 1,
+      "id": 4
     }
   ],
   "newsfeed": [
     {
       "userId": 1,
       "type": "article",
-      "title": "THAT NEW NEW",
-      "description": "so  new new ",
-      "url": "https://github.com/nashville-software-school/client-side-mastery",
-      "eventDate": "2019-05-31",
-      "postDate": 1559335659544,
-      "id": 3
+      "title": "Waltham Iron Ore Tramway",
+      "description": "The Waltham Iron Ore Tramway was a 1,000 mm (3 ft 3 3⁄8 in) gauge industrial tramway serving the ironstone pits of the Waltham Iron Ore Company, a subsidiary of the Staveley Coal and Iron Company. It was located to the north of the village of Branston in Leicestershire on the edge of the Belvoir Estate. The tramway operated from 1884 until 1958.",
+      "url": "https://en.wikipedia.org/wiki/Waltham_Iron_Ore_Tramway",
+      "eventDate": "2007-06-27",
+      "postDate": 1559506394805,
+      "id": 115
     },
     {
-      "userId": 1,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238611739,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238615562,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "type": "event",
-      "title": "ddd",
-      "description": "sss",
-      "url": "ss",
-      "eventDate": "2019-05-09",
-      "postDate": 1559238711317,
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "type": "event",
-      "title": "NOWwwww",
-      "description": "jhg",
-      "url": "ddd",
-      "eventDate": "2019-05-04",
-      "postDate": 1559326680692,
-      "id": 7
-    },
-    {
-      "userId": 1,
+      "userId": 2,
       "type": "article",
-      "title": "baby sharkzzz just one",
-      "description": "do dooooo",
-      "url": "https://github.com/nss-day-cohort-32/nutshell-themightyducks/blob/master/api/database.json",
-      "eventDate": "2019-05-18",
-      "postDate": 1559335086429,
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "type": "article",
-      "title": "asdsad",
-      "description": "asdsad",
-      "url": "asdasd",
-      "eventDate": "2019-05-03",
-      "postDate": 1559242687679,
-      "id": 9
+      "title": "Athletics at the 1956 Summer Olympics – Women's discus throw",
+      "description": "These are the official results of the Women's Discus Throw event at the 1956 Summer Olympics in Melbourne, Australia. The qualification round mark was set at 42.00 metres. Nine competitors failed to reach that distance.[1]",
+      "url": "https://en.wikipedia.org/wiki/Athletics_at_the_1956_Summer_Olympics_%E2%80%93_Women%27s_discus_throw",
+      "eventDate": "2012-09-13",
+      "postDate": 1559506461837,
+      "id": 116
     },
     {
       "userId": 1,
       "type": "event",
-      "title": "asdasdgggggg",
-      "description": "asdasd",
-      "url": "asdasd",
-      "eventDate": "2019-05-15",
-      "postDate": 1559335072921,
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "type": "article",
-      "title": "does this work now? YESssss!",
-      "description": "yeti coolers are overpriced",
-      "url": "https://github.com/nashville-software-school/client-side-mastery",
-      "eventDate": "2019-05-14",
-      "postDate": 1559334939277,
-      "id": 11
+      "title": "Tiny Living Festival",
+      "description": "Weekend Of All Things Tiny Living - Tour, Learn And Get Inspired! Showcase Of Tiny Houses, School Bus Conversions, Van Conversions And Many More Micro Homes! Talk Part In Talks And Workshops, Live Music, Marketplace, And Yummy Food Trucks!",
+      "location": "Nissan Stadium",
+      "url": "https://www.eventbrite.com/e/tiny-living-festival-tennessee-tickets-58799764679",
+      "eventDate": "2019-06-09",
+      "postDate": 1559507984695,
+      "id": 119
     },
     {
       "userId": 1,
       "type": "event",
-      "title": "new-EST event",
-      "description": "cxz",
-      "url": "https://www.google.com/maps",
+      "title": "Hot Air Balloon Festival",
+      "description": "Is there any better way to kick off summer Tennessee?! Held on a large field just minutes from downtown join dozens of vendors, chefs, local musicians, artists, cooking demonstrations, pop-up art galleries, PLUS food and alcohol tasting partners.",
+      "location": "Fontanel",
+      "url": "https://www.eventbrite.com/e/nashville-hot-air-balloon-festival-polo-match-tickets-52409383878?aff=ebdssbcitybrowse",
       "eventDate": "2019-06-21",
-      "postDate": 1559335670911,
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "type": "event",
-      "title": "jake",
-      "description": "PARTY",
-      "url": "https://www.google.com/maps",
-      "eventDate": "2019-07-04",
-      "postDate": 1559319680102,
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "type": "event",
-      "title": "uPDATED222",
-      "description": "j",
-      "url": "ss",
-      "eventDate": "2019-05-10",
-      "postDate": 1559328593017,
-      "id": 114
+      "postDate": 1559507975030,
+      "id": 120
     }
   ],
   "messages": [
@@ -198,28 +143,46 @@
       "postedTime": "05:00am"
     },
     {
-      "userId": "1",
+      "userId": 1,
       "message": "Whats up yall",
       "postedTime": "4:02:33 PM",
       "id": 6
     },
     {
-      "userId": "1",
+      "userId": 1,
       "message": "nm u",
       "postedTime": "4:03:05 PM",
       "id": 7
     },
     {
-      "userId": "1",
+      "userId": 1,
       "message": "Gym Tan Laundry",
       "postedTime": "5:18:37 PM",
       "id": 8
     },
     {
-      "userId": "1",
+      "userId": 1,
       "message": "Does anyone else consider scootering to NSS?",
       "postedTime": "5:27:06 PM",
       "id": 9
+    },
+    {
+      "userId": 1,
+      "message": "French fries are always top of my mind",
+      "postedTime": "8:59:10 AM",
+      "id": 10
+    },
+    {
+      "userId": 11,
+      "message": "Lookin out for the kids. Protectin from bad guys",
+      "postedTime": "9:10:10 AM",
+      "id": 11
+    },
+    {
+      "userId": 10,
+      "message": "Anyone want to Netflix and chill??",
+      "postedTime": "9:12:10 AM",
+      "id": 12
     }
   ],
   "tasks": [

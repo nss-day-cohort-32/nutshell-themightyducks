@@ -32,7 +32,7 @@ class FriendButton extends Component {
         return (
             <>
 
-                <Button className="add-friend-btn" outline color="primary" onClick={this.constructNewFriend} disabled={this.state.saveDisabled}>Add Friend</Button>
+                <Button className="add-friend-btn" outline color="primary" onClick={this.constructNewFriend} disabled={this.state.saveDisabled}>Follow</Button>
 
             </>
         );
