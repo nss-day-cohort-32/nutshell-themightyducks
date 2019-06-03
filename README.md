@@ -1,5 +1,5 @@
 
-![Nutshell Logo](https://i.ibb.co/C9HWp2m/Nutshell-02.jpg | width=200)
+![Nutshell Logo](https://i.ibb.co/C9HWp2m/Nutshell-02.jpg)
 
 
 ## Brought to you by The Mighty Ducks
