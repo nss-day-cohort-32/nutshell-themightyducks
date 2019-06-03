@@ -1,6 +1,6 @@
 # Project Nutshell - The Mighty Ducks
 
-![alt text](desktop/Nutshell-01.svg)
+![alt text](Desktop/Nutshell-01.svg)
 
 
 ## Brought to you by The Mighty Ducks
