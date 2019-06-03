@@ -1,6 +1,5 @@
-# Project Nutshell - The Mighty Ducks
 
-![Nutshell Logo](https://i.ibb.co/C9HWp2m/Nutshell-02.jpg)
+![Nutshell Logo](https://i.ibb.co/C9HWp2m/Nutshell-02.jpg | width=200)
 
 
 ## Brought to you by The Mighty Ducks
@@ -46,6 +45,8 @@ This project utilized the following concepts that we have learned throughout the
 ### Database Diagram
 
 Below is the Entity Relation Diagram (ERD) used during the planning process of this project
+
+![DB Diagram](https://i.ibb.co/c8GdLDx/screen-shot-2019-05-28-at-1-35-36-pm.png)
 
 
 # Nutshell: The Information Dashboard - Assignment Requirements
