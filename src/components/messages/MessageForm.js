@@ -16,7 +16,7 @@ export default class MessageForm extends React.Component {
     constructMessage = () => {
         const time = new Date()
         const messageObj = {
-            userId: this.props.currentUserId,
+            userId: parseInt(this.props.currentUserId),
             message: this.state.message.trim(),
             postedTime: time.toLocaleTimeString()
         }
